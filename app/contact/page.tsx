@@ -71,9 +71,9 @@ const ContactPage = () => {
     {
       icon: Mail,
       title: 'Email Us',
-      details: 'hello@aiconsultancy.com',
+      details: 'hello@trart.uk',
       description: 'Send us an email anytime',
-      action: 'mailto:hello@aiconsultancy.com'
+      action: 'mailto:hello@trart.uk'
     },
     {
       icon: Phone,
@@ -102,25 +102,25 @@ const ContactPage = () => {
     {
       name: 'LinkedIn',
       icon: '💼',
-      url: 'https://linkedin.com/company/aiconsultancy',
+      url: 'https://linkedin.com/company/trart',
       color: 'hover:bg-blue-600'
     },
     {
       name: 'Twitter',
       icon: '🐦',
-      url: 'https://twitter.com/aiconsultancy',
+      url: 'https://twitter.com/trart',
       color: 'hover:bg-blue-400'
     },
     {
       name: 'GitHub',
       icon: '🐙',
-      url: 'https://github.com/aiconsultancy',
+      url: 'https://github.com/trart',
       color: 'hover:bg-gray-600'
     },
     {
       name: 'YouTube',
       icon: '📺',
-      url: 'https://youtube.com/aiconsultancy',
+      url: 'https://youtube.com/trart',
       color: 'hover:bg-red-600'
     }
   ]

@@ -76,7 +76,7 @@ const AboutPage = () => {
     {
       year: "2024",
       title: "AI Innovation Award",
-      description: "Recognized as 'Best AI Consultancy' by TechCrunch and AI Industry Awards."
+      description: "Recognized as 'Best AI Innovation Award' by TechCrunch and AI Industry Awards."
     }
   ]
 

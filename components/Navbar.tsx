@@ -44,7 +44,7 @@ const Navbar = () => {
             >
               <Zap className="w-5 h-5 sm:w-6 sm:h-6 text-pearl" />
             </motion.div>
-            <span className="text-lg sm:text-xl md:text-2xl font-bold gradient-text">AI Consultancy</span>
+            <span className="text-lg sm:text-xl md:text-2xl font-bold gradient-text">TRART Ai</span>
           </Link>
 
           {/* Desktop Navigation */}

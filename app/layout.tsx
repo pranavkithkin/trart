@@ -8,20 +8,20 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000'),
-  title: 'AI Agent Consultancy - Transform Your Business with Intelligent Automation',
-  description: 'Leading AI Agent Consultancy specializing in intelligent automation solutions. Get your free AI audit and discover how AI agents can transform your business operations.',
-  keywords: 'AI agents, business automation, intelligent automation, AI consultancy, digital transformation',
-  authors: [{ name: 'AI Agent Consultancy' }],
+  title: 'TRART Ai - Transform Your Business with Intelligent Automation',
+  description: 'TRART Ai specializes in intelligent automation solutions. Get your free AI audit and discover how AI agents can transform your business operations.',
+  keywords: 'AI agents, business automation, intelligent automation, TRART Ai, digital transformation',
+  authors: [{ name: 'TRART Ai' }],
   openGraph: {
-    title: 'AI Agent Consultancy - Transform Your Business with Intelligent Automation',
-    description: 'Leading AI Agent Consultancy specializing in intelligent automation solutions.',
+    title: 'TRART Ai - Transform Your Business with Intelligent Automation',
+    description: 'TRART Ai specializes in intelligent automation solutions.',
     type: 'website',
     locale: 'en_US',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'AI Agent Consultancy - Transform Your Business with Intelligent Automation',
-    description: 'Leading AI Agent Consultancy specializing in intelligent automation solutions.',
+    title: 'TRART Ai - Transform Your Business with Intelligent Automation',
+    description: 'TRART Ai specializes in intelligent automation solutions.',
   },
   robots: {
     index: true,

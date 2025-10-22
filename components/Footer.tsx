@@ -45,10 +45,10 @@ const Footer = () => {
   }
 
   const socialLinks = [
-    { name: 'LinkedIn', icon: Linkedin, href: 'https://linkedin.com/company/aiconsultancy', color: 'hover:text-blue-400' },
-    { name: 'Twitter', icon: Twitter, href: 'https://twitter.com/aiconsultancy', color: 'hover:text-blue-400' },
-    { name: 'GitHub', icon: Github, href: 'https://github.com/aiconsultancy', color: 'hover:text-gray-400' },
-    { name: 'YouTube', icon: Youtube, href: 'https://youtube.com/aiconsultancy', color: 'hover:text-red-400' }
+    { name: 'LinkedIn', icon: Linkedin, href: 'https://linkedin.com/company/trart', color: 'hover:text-blue-400' },
+    { name: 'Twitter', icon: Twitter, href: 'https://twitter.com/trart', color: 'hover:text-blue-400' },
+    { name: 'GitHub', icon: Github, href: 'https://github.com/trart', color: 'hover:text-gray-400' },
+    { name: 'YouTube', icon: Youtube, href: 'https://youtube.com/trart', color: 'hover:text-red-400' }
   ]
 
   return (
@@ -72,7 +72,7 @@ const Footer = () => {
                 >
                   <Zap className="w-6 h-6 text-pearl" />
                 </motion.div>
-                <span className="text-2xl font-bold gradient-text">AI Consultancy</span>
+                <span className="text-2xl font-bold gradient-text">TRART Ai</span>
               </Link>
               <p className="text-pearl/70 mb-6 max-w-md">
                 Transforming businesses with intelligent automation. We help companies 
@@ -89,8 +89,8 @@ const Footer = () => {
             >
               <div className="flex items-center space-x-3 text-pearl/70">
                 <Mail className="w-5 h-5 text-gold" />
-                <a href="mailto:hello@aiconsultancy.com" className="hover:text-gold transition-colors">
-                  hello@aiconsultancy.com
+                <a href="mailto:hello@trart.uk" className="hover:text-gold transition-colors">
+                  hello@trart.uk
                 </a>
               </div>
               <div className="flex items-center space-x-3 text-pearl/70">
@@ -183,7 +183,7 @@ const Footer = () => {
               transition={{ duration: 0.6 }}
               className="text-pearl/60 text-sm"
             >
-              © {currentYear} AI Consultancy. All rights reserved.
+              © {currentYear} TRART Ai. All rights reserved.
             </motion.div>
 
             {/* Social Links */}
