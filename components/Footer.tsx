@@ -52,7 +52,7 @@ const Footer = () => {
   ]
 
   return (
-    <footer className="bg-gray-900 border-t border-gray-800">
+    <footer className="bg-gradient-to-b from-teal to-noir border-t border-gold/20">
       {/* Main Footer Content */}
       <div className="container-custom py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8">
@@ -68,13 +68,13 @@ const Footer = () => {
                 <motion.div
                   whileHover={{ rotate: 360 }}
                   transition={{ duration: 0.5 }}
-                  className="w-10 h-10 bg-gradient-to-r from-neon-blue to-neon-purple rounded-lg flex items-center justify-center"
+                  className="w-10 h-10 bg-gradient-to-r from-burgundy via-gold to-burgundy rounded-lg flex items-center justify-center shadow-lg shadow-gold/40"
                 >
-                  <Zap className="w-6 h-6 text-white" />
+                  <Zap className="w-6 h-6 text-pearl" />
                 </motion.div>
                 <span className="text-2xl font-bold gradient-text">AI Consultancy</span>
               </Link>
-              <p className="text-gray-400 mb-6 max-w-md">
+              <p className="text-pearl/70 mb-6 max-w-md">
                 Transforming businesses with intelligent automation. We help companies 
                 harness the power of AI agents to streamline operations and drive growth.
               </p>
@@ -87,20 +87,20 @@ const Footer = () => {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="space-y-3"
             >
-              <div className="flex items-center space-x-3 text-gray-400">
-                <Mail className="w-5 h-5" />
-                <a href="mailto:hello@aiconsultancy.com" className="hover:text-white transition-colors">
+              <div className="flex items-center space-x-3 text-pearl/70">
+                <Mail className="w-5 h-5 text-gold" />
+                <a href="mailto:hello@aiconsultancy.com" className="hover:text-gold transition-colors">
                   hello@aiconsultancy.com
                 </a>
               </div>
-              <div className="flex items-center space-x-3 text-gray-400">
-                <Phone className="w-5 h-5" />
-                <a href="tel:+15551234567" className="hover:text-white transition-colors">
+              <div className="flex items-center space-x-3 text-pearl/70">
+                <Phone className="w-5 h-5 text-gold" />
+                <a href="tel:+15551234567" className="hover:text-gold transition-colors">
                   +1 (555) 123-4567
                 </a>
               </div>
-              <div className="flex items-center space-x-3 text-gray-400">
-                <MapPin className="w-5 h-5" />
+              <div className="flex items-center space-x-3 text-pearl/70">
+                <MapPin className="w-5 h-5 text-gold" />
                 <span>San Francisco, CA</span>
               </div>
             </motion.div>
@@ -114,7 +114,7 @@ const Footer = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 + categoryIndex * 0.1 }}
             >
-              <h3 className="text-white font-bold text-lg mb-4 capitalize">
+              <h3 className="text-gold font-bold text-lg mb-4 capitalize">
                 {category}
               </h3>
               <ul className="space-y-3">
@@ -127,10 +127,10 @@ const Footer = () => {
                   >
                     <Link
                       href={link.href}
-                      className="text-gray-400 hover:text-white transition-colors duration-300 flex items-center group"
+                      className="text-pearl/70 hover:text-gold transition-colors duration-300 flex items-center group"
                     >
                       <span>{link.name}</span>
-                      <ArrowRight className="w-4 h-4 ml-2 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-300" />
+                      <ArrowRight className="w-4 h-4 ml-2 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-300 text-gold" />
                     </Link>
                   </motion.li>
                 ))}
@@ -144,20 +144,20 @@ const Footer = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="mt-12 pt-8 border-t border-gray-800"
+          className="mt-12 pt-8 border-t border-gold/20"
         >
           <div className="max-w-2xl mx-auto text-center">
-            <h3 className="text-2xl font-bold text-white mb-4">
+            <h3 className="text-2xl font-bold text-pearl mb-4">
               Stay Updated with AI Insights
             </h3>
-            <p className="text-gray-400 mb-6">
+            <p className="text-pearl/70 mb-6">
               Get the latest news, tips, and insights about AI automation delivered to your inbox.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="flex-1 px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-neon-blue focus:border-transparent"
+                className="flex-1 px-4 py-3 bg-teal/50 border border-gold/30 rounded-lg text-pearl placeholder-pearl/50 focus:outline-none focus:ring-2 focus:ring-gold focus:border-gold transition-all"
               />
               <motion.button
                 whileHover={{ scale: 1.05 }}
@@ -173,7 +173,7 @@ const Footer = () => {
       </div>
 
       {/* Bottom Footer */}
-      <div className="border-t border-gray-800">
+      <div className="border-t border-gold/20">
         <div className="container-custom py-6">
           <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
             {/* Copyright */}
@@ -181,7 +181,7 @@ const Footer = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="text-gray-400 text-sm"
+              className="text-pearl/60 text-sm"
             >
               © {currentYear} AI Consultancy. All rights reserved.
             </motion.div>
@@ -204,7 +204,7 @@ const Footer = () => {
                   transition={{ duration: 0.4, delay: 0.2 + index * 0.1 }}
                   whileHover={{ scale: 1.2 }}
                   whileTap={{ scale: 0.9 }}
-                  className={`text-gray-400 ${social.color} transition-all duration-300`}
+                  className="text-pearl/60 hover:text-gold transition-all duration-300"
                   aria-label={social.name}
                 >
                   <social.icon className="w-5 h-5" />
@@ -219,13 +219,13 @@ const Footer = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="flex items-center space-x-6 text-sm"
             >
-              <Link href="/privacy" className="text-gray-400 hover:text-white transition-colors">
+              <Link href="/privacy" className="text-pearl/60 hover:text-gold transition-colors">
                 Privacy Policy
               </Link>
-              <Link href="/terms" className="text-gray-400 hover:text-white transition-colors">
+              <Link href="/terms" className="text-pearl/60 hover:text-gold transition-colors">
                 Terms of Service
               </Link>
-              <Link href="/cookies" className="text-gray-400 hover:text-white transition-colors">
+              <Link href="/cookies" className="text-pearl/60 hover:text-gold transition-colors">
                 Cookie Policy
               </Link>
             </motion.div>

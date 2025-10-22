@@ -104,11 +104,11 @@ const AboutPage = () => {
   ]
 
   return (
-    <div className="min-h-screen bg-gray-900 pt-20">
+    <div className="min-h-screen bg-gradient-to-b from-noir via-teal to-noir pt-20">
       {/* Hero Section */}
-      <section className="section-padding bg-gradient-to-br from-gray-900 via-electric-900 to-gray-900 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-50" style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
+      <section className="section-padding bg-gradient-to-br from-noir via-teal to-noir relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10" style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23A38560' fill-opacity='0.15'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
         }} />
         
         <div className="container-custom relative z-10">
@@ -121,7 +121,7 @@ const AboutPage = () => {
             <h1 className="text-5xl md:text-7xl font-bold mb-6">
               About <span className="gradient-text">Our Mission</span>
             </h1>
-            <p className="text-xl md:text-2xl text-gray-300 mb-12 leading-relaxed">
+            <p className="text-xl md:text-2xl text-pearl/80 mb-12 leading-relaxed">
               We're on a mission to democratize AI automation and help businesses 
               of all sizes harness the power of intelligent agents.
             </p>
@@ -142,12 +142,12 @@ const AboutPage = () => {
               <h2 className="text-4xl md:text-5xl font-bold mb-6">
                 Our <span className="gradient-text">Story</span>
               </h2>
-              <p className="text-xl text-gray-300 mb-8 leading-relaxed">
+              <p className="text-xl text-pearl/80 mb-8 leading-relaxed">
                 Founded in 2020 by a team of AI researchers and business automation experts, 
                 we recognized that most businesses were missing out on the transformative 
                 power of AI agents due to complexity and cost barriers.
               </p>
-              <p className="text-lg text-gray-400 mb-8 leading-relaxed">
+              <p className="text-lg text-pearl/70 mb-8 leading-relaxed">
                 We set out to change that by creating accessible, powerful AI solutions 
                 that any business can implement and benefit from. Today, we've helped 
                 over 100 companies automate their operations and achieve unprecedented efficiency.
@@ -155,11 +155,11 @@ const AboutPage = () => {
               <div className="grid grid-cols-2 gap-8">
                 <div className="text-center">
                   <div className="text-4xl font-bold gradient-text mb-2">100+</div>
-                  <div className="text-gray-400">Clients Served</div>
+                  <div className="text-pearl/70">Clients Served</div>
                 </div>
                 <div className="text-center">
                   <div className="text-4xl font-bold gradient-text mb-2">300%</div>
-                  <div className="text-gray-400">Average ROI</div>
+                  <div className="text-pearl/70">Average ROI</div>
                 </div>
               </div>
             </motion.div>
@@ -171,8 +171,8 @@ const AboutPage = () => {
               className="relative"
             >
               <div className="glass rounded-3xl p-8">
-                <h3 className="text-2xl font-bold text-white mb-6">Our Vision</h3>
-                <p className="text-gray-300 mb-6">
+                <h3 className="text-2xl font-bold text-pearl mb-6">Our Vision</h3>
+                <p className="text-pearl/80 mb-6">
                   To create a world where every business, regardless of size or industry, 
                   can leverage AI agents to automate their operations and focus on what 
                   truly matters - growth and innovation.
@@ -191,8 +191,8 @@ const AboutPage = () => {
                       transition={{ duration: 0.5, delay: 0.4 + index * 0.1 }}
                       className="flex items-center space-x-3"
                     >
-                      <CheckCircle className="w-5 h-5 text-neon-green" />
-                      <span className="text-gray-300">{item}</span>
+                      <CheckCircle className="w-5 h-5 text-gold" />
+                      <span className="text-pearl/80">{item}</span>
                     </motion.div>
                   ))}
                 </div>
@@ -203,7 +203,7 @@ const AboutPage = () => {
       </section>
 
       {/* Values Section */}
-      <section className="section-padding bg-gray-800/50">
+      <section className="section-padding bg-gradient-to-b from-teal via-noir to-teal">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -214,7 +214,7 @@ const AboutPage = () => {
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               Our <span className="gradient-text">Values</span>
             </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            <p className="text-xl text-pearl/80 max-w-3xl mx-auto">
               These core values guide everything we do and shape how we work with our clients
             </p>
           </motion.div>
@@ -227,17 +227,17 @@ const AboutPage = () => {
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.8, delay: index * 0.2 }}
                 whileHover={{ scale: 1.05 }}
-                className="glass rounded-2xl p-6 text-center group hover:bg-white/20 transition-all duration-300"
+                className="glass rounded-2xl p-6 text-center group hover:bg-teal/60 border-2 border-gold/20 hover:border-gold/60 transition-all duration-300"
               >
                 <motion.div
                   whileHover={{ rotate: 360 }}
                   transition={{ duration: 0.5 }}
-                  className="w-16 h-16 bg-gradient-to-r from-neon-blue to-neon-purple rounded-full flex items-center justify-center mx-auto mb-6"
+                  className="w-16 h-16 bg-gradient-to-r from-burgundy via-burgundy-light to-gold rounded-full flex items-center justify-center mx-auto mb-6"
                 >
-                  <value.icon className="w-8 h-8 text-white" />
+                  <value.icon className="w-8 h-8 text-pearl" />
                 </motion.div>
-                <h3 className="text-xl font-bold text-white mb-4">{value.title}</h3>
-                <p className="text-gray-300">{value.description}</p>
+                <h3 className="text-xl font-bold text-pearl mb-4">{value.title}</h3>
+                <p className="text-pearl/80">{value.description}</p>
               </motion.div>
             ))}
           </div>
@@ -256,7 +256,7 @@ const AboutPage = () => {
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               Meet Our <span className="gradient-text">Team</span>
             </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            <p className="text-xl text-pearl/80 max-w-3xl mx-auto">
               Our diverse team of AI experts, developers, and business strategists 
               work together to deliver exceptional results
             </p>
@@ -270,11 +270,11 @@ const AboutPage = () => {
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.8, delay: index * 0.1 }}
                 whileHover={{ scale: 1.05 }}
-                className="glass rounded-3xl p-6 text-center group hover:bg-white/20 transition-all duration-300"
+                className="glass rounded-3xl p-6 text-center group hover:bg-teal/60 border-2 border-gold/20 hover:border-gold/60 transition-all duration-300"
               >
                 <motion.div
                   whileHover={{ scale: 1.1 }}
-                  className="w-24 h-24 bg-gradient-to-r from-neon-blue to-neon-purple rounded-full mx-auto mb-6 overflow-hidden"
+                  className="w-24 h-24 bg-gradient-to-r from-burgundy via-burgundy-light to-gold rounded-full mx-auto mb-6 overflow-hidden"
                 >
                   <img
                     src={member.image}
@@ -282,14 +282,14 @@ const AboutPage = () => {
                     className="w-full h-full object-cover"
                   />
                 </motion.div>
-                <h3 className="text-xl font-bold text-white mb-2">{member.name}</h3>
-                <p className="text-neon-blue font-semibold mb-4">{member.role}</p>
-                <p className="text-gray-300 text-sm mb-4">{member.bio}</p>
+                <h3 className="text-xl font-bold text-pearl mb-2">{member.name}</h3>
+                <p className="text-gold font-semibold mb-4">{member.role}</p>
+                <p className="text-pearl/80 text-sm mb-4">{member.bio}</p>
                 <div className="flex flex-wrap justify-center gap-2">
                   {member.expertise.map((skill) => (
                     <span
                       key={skill}
-                      className="px-3 py-1 bg-gray-800 text-gray-300 text-xs rounded-full"
+                      className="px-3 py-1 bg-teal/60 text-pearl/80 text-xs rounded-full"
                     >
                       {skill}
                     </span>
@@ -302,7 +302,7 @@ const AboutPage = () => {
       </section>
 
       {/* Timeline Section */}
-      <section className="section-padding bg-gray-800/50">
+      <section className="section-padding bg-gradient-to-b from-teal via-noir to-teal">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -313,14 +313,14 @@ const AboutPage = () => {
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               Our <span className="gradient-text">Journey</span>
             </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            <p className="text-xl text-pearl/80 max-w-3xl mx-auto">
               Key milestones in our mission to democratize AI automation
             </p>
           </motion.div>
 
           <div className="relative">
             {/* Timeline Line */}
-            <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-neon-blue via-neon-purple to-neon-pink" />
+            <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-burgundy via-gold to-burgundy" />
             
             <div className="space-y-12">
               {milestones.map((milestone, index) => (
@@ -332,14 +332,14 @@ const AboutPage = () => {
                   className="relative flex items-start space-x-8"
                 >
                   {/* Timeline Dot */}
-                  <div className="relative z-10 w-16 h-16 bg-gradient-to-r from-neon-blue to-neon-purple rounded-full flex items-center justify-center flex-shrink-0">
-                    <span className="text-white font-bold text-sm">{milestone.year}</span>
+                  <div className="relative z-10 w-16 h-16 bg-gradient-to-r from-burgundy via-burgundy-light to-gold rounded-full flex items-center justify-center flex-shrink-0">
+                    <span className="text-pearl font-bold text-sm">{milestone.year}</span>
                   </div>
                   
                   {/* Content */}
                   <div className="glass rounded-2xl p-6 flex-1">
-                    <h3 className="text-2xl font-bold text-white mb-2">{milestone.title}</h3>
-                    <p className="text-gray-300">{milestone.description}</p>
+                    <h3 className="text-2xl font-bold text-pearl mb-2">{milestone.title}</h3>
+                    <p className="text-pearl/80">{milestone.description}</p>
                   </div>
                 </motion.div>
               ))}
@@ -358,10 +358,10 @@ const AboutPage = () => {
             className="text-center"
           >
             <div className="glass rounded-3xl p-12 max-w-4xl mx-auto">
-              <h2 className="text-4xl font-bold text-white mb-6">
+              <h2 className="text-4xl font-bold text-pearl mb-6">
                 Ready to Work With Us?
               </h2>
-              <p className="text-xl text-gray-300 mb-8">
+              <p className="text-xl text-pearl/80 mb-8">
                 Join the growing number of businesses that have transformed their 
                 operations with our AI agents. Let's build the future together.
               </p>

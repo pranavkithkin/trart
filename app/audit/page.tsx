@@ -69,7 +69,7 @@ const AuditPage = () => {
 
   if (isSubmitted) {
     return (
-      <div className="min-h-screen bg-gray-900 pt-20 flex items-center justify-center">
+      <div className="min-h-screen bg-gradient-to-b from-noir via-teal to-noir pt-20 flex items-center justify-center">
         <motion.div
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -80,34 +80,34 @@ const AuditPage = () => {
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="w-24 h-24 bg-gradient-to-r from-neon-blue to-neon-purple rounded-full flex items-center justify-center mx-auto mb-8"
+            className="w-24 h-24 bg-gradient-to-r from-burgundy via-burgundy-light to-gold rounded-full flex items-center justify-center mx-auto mb-8"
           >
-            <CheckCircle className="w-12 h-12 text-white" />
+            <CheckCircle className="w-12 h-12 text-pearl" />
           </motion.div>
           
           <h1 className="text-4xl md:text-6xl font-bold mb-6">
             <span className="gradient-text">Thank You!</span>
           </h1>
           
-          <p className="text-xl text-gray-300 mb-8">
+          <p className="text-xl text-pearl/80 mb-8">
             Your AI audit request has been submitted successfully. Our team will review your 
             information and contact you within 24 hours to schedule your free consultation.
           </p>
           
           <div className="glass rounded-2xl p-8 mb-8">
-            <h3 className="text-2xl font-bold text-white mb-4">What Happens Next?</h3>
+            <h3 className="text-2xl font-bold text-pearl mb-4">What Happens Next?</h3>
             <div className="space-y-4 text-left">
               <div className="flex items-center space-x-3">
-                <div className="w-8 h-8 bg-gradient-to-r from-neon-blue to-neon-purple rounded-full flex items-center justify-center text-white font-bold">1</div>
-                <span className="text-gray-300">We'll analyze your current processes and identify automation opportunities</span>
+                <div className="w-8 h-8 bg-gradient-to-r from-burgundy via-burgundy-light to-gold rounded-full flex items-center justify-center text-pearl font-bold">1</div>
+                <span className="text-pearl/80">We'll analyze your current processes and identify automation opportunities</span>
               </div>
               <div className="flex items-center space-x-3">
-                <div className="w-8 h-8 bg-gradient-to-r from-neon-purple to-neon-pink rounded-full flex items-center justify-center text-white font-bold">2</div>
-                <span className="text-gray-300">Our AI experts will prepare a customized audit report</span>
+                <div className="w-8 h-8 bg-gradient-to-r from-gold via-gold-light to-burgundy rounded-full flex items-center justify-center text-pearl font-bold">2</div>
+                <span className="text-pearl/80">Our AI experts will prepare a customized audit report</span>
               </div>
               <div className="flex items-center space-x-3">
-                <div className="w-8 h-8 bg-gradient-to-r from-neon-pink to-neon-blue rounded-full flex items-center justify-center text-white font-bold">3</div>
-                <span className="text-gray-300">We'll schedule a free consultation to discuss your results</span>
+                <div className="w-8 h-8 bg-gradient-to-r from-burgundy via-gold to-burgundy rounded-full flex items-center justify-center text-pearl font-bold">3</div>
+                <span className="text-pearl/80">We'll schedule a free consultation to discuss your results</span>
               </div>
             </div>
           </div>
@@ -126,11 +126,11 @@ const AuditPage = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gray-900 pt-20">
+    <div className="min-h-screen bg-gradient-to-b from-noir via-teal to-noir pt-20">
       {/* Hero Section */}
-      <section className="section-padding bg-gradient-to-br from-gray-900 via-electric-900 to-gray-900 relative overflow-hidden">
+      <section className="section-padding bg-gradient-to-br from-noir via-teal to-noir relative overflow-hidden">
         <div className="absolute inset-0 opacity-50" style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23A38560' fill-opacity='0.15'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
         }} />
         
         <div className="container-custom relative z-10">
@@ -143,7 +143,7 @@ const AuditPage = () => {
             <h1 className="text-5xl md:text-7xl font-bold mb-6">
               Get Your <span className="gradient-text">Free AI Audit</span>
             </h1>
-            <p className="text-xl md:text-2xl text-gray-300 mb-12 leading-relaxed">
+            <p className="text-xl md:text-2xl text-pearl/80 mb-12 leading-relaxed">
               Discover how AI agents can transform your business operations. 
               Get a comprehensive analysis and personalized recommendations.
             </p>
@@ -163,8 +163,8 @@ const AuditPage = () => {
               transition={{ duration: 0.8 }}
               className="glass rounded-3xl p-8"
             >
-              <h2 className="text-3xl font-bold text-white mb-6">Request Your Free Audit</h2>
-              <p className="text-gray-300 mb-8">
+              <h2 className="text-3xl font-bold text-pearl mb-6">Request Your Free Audit</h2>
+              <p className="text-pearl/80 mb-8">
                 Fill out the form below and our AI experts will analyze your business 
                 processes to identify automation opportunities.
               </p>
@@ -172,26 +172,26 @@ const AuditPage = () => {
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-white font-semibold mb-2">Full Name *</label>
+                    <label className="block text-pearl font-semibold mb-2">Full Name *</label>
                     <input
                       type="text"
                       name="name"
                       value={formData.name}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-neon-blue focus:border-transparent"
+                      className="w-full px-4 py-3 bg-teal/60 border border-gold/30 rounded-lg text-pearl placeholder-pearl/50 focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent"
                       placeholder="John Doe"
                     />
                   </div>
                   <div>
-                    <label className="block text-white font-semibold mb-2">Email Address *</label>
+                    <label className="block text-pearl font-semibold mb-2">Email Address *</label>
                     <input
                       type="email"
                       name="email"
                       value={formData.email}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-neon-blue focus:border-transparent"
+                      className="w-full px-4 py-3 bg-teal/60 border border-gold/30 rounded-lg text-pearl placeholder-pearl/50 focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent"
                       placeholder="john@company.com"
                     />
                   </div>
@@ -199,50 +199,50 @@ const AuditPage = () => {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-white font-semibold mb-2">Company Name *</label>
+                    <label className="block text-pearl font-semibold mb-2">Company Name *</label>
                     <input
                       type="text"
                       name="company"
                       value={formData.company}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-neon-blue focus:border-transparent"
+                      className="w-full px-4 py-3 bg-teal/60 border border-gold/30 rounded-lg text-pearl placeholder-pearl/50 focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent"
                       placeholder="Acme Corporation"
                     />
                   </div>
                   <div>
-                    <label className="block text-white font-semibold mb-2">Phone Number</label>
+                    <label className="block text-pearl font-semibold mb-2">Phone Number</label>
                     <input
                       type="tel"
                       name="phone"
                       value={formData.phone}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-neon-blue focus:border-transparent"
+                      className="w-full px-4 py-3 bg-teal/60 border border-gold/30 rounded-lg text-pearl placeholder-pearl/50 focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent"
                       placeholder="+1 (555) 123-4567"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-white font-semibold mb-2">Current Business Challenges *</label>
+                  <label className="block text-pearl font-semibold mb-2">Current Business Challenges *</label>
                   <textarea
                     name="challenges"
                     value={formData.challenges}
                     onChange={handleInputChange}
                     required
                     rows={4}
-                    className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-neon-blue focus:border-transparent"
+                    className="w-full px-4 py-3 bg-teal/60 border border-gold/30 rounded-lg text-pearl placeholder-pearl/50 focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent"
                     placeholder="Describe your current business challenges and pain points..."
                   />
                 </div>
 
                 <div>
-                  <label className="block text-white font-semibold mb-2">Current Automation Level</label>
+                  <label className="block text-pearl font-semibold mb-2">Current Automation Level</label>
                   <select
                     name="currentAutomation"
                     value={formData.currentAutomation}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-neon-blue focus:border-transparent"
+                    className="w-full px-4 py-3 bg-teal/60 border border-gold/30 rounded-lg text-pearl focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent"
                   >
                     <option value="">Select current automation level</option>
                     <option value="none">No automation</option>
@@ -254,12 +254,12 @@ const AuditPage = () => {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-white font-semibold mb-2">Budget Range</label>
+                    <label className="block text-pearl font-semibold mb-2">Budget Range</label>
                     <select
                       name="budget"
                       value={formData.budget}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-neon-blue focus:border-transparent"
+                      className="w-full px-4 py-3 bg-teal/60 border border-gold/30 rounded-lg text-pearl focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent"
                     >
                       <option value="">Select budget range</option>
                       <option value="under-5k">Under $5,000/month</option>
@@ -269,12 +269,12 @@ const AuditPage = () => {
                     </select>
                   </div>
                   <div>
-                    <label className="block text-white font-semibold mb-2">Timeline</label>
+                    <label className="block text-pearl font-semibold mb-2">Timeline</label>
                     <select
                       name="timeline"
                       value={formData.timeline}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-neon-blue focus:border-transparent"
+                      className="w-full px-4 py-3 bg-teal/60 border border-gold/30 rounded-lg text-pearl focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent"
                     >
                       <option value="">Select timeline</option>
                       <option value="asap">ASAP</option>
@@ -322,7 +322,7 @@ const AuditPage = () => {
               className="space-y-8"
             >
               <div>
-                <h3 className="text-3xl font-bold text-white mb-6">What You'll Get</h3>
+                <h3 className="text-3xl font-bold text-pearl mb-6">What You'll Get</h3>
                 <div className="space-y-6">
                   {[
                     {
@@ -348,12 +348,12 @@ const AuditPage = () => {
                       transition={{ duration: 0.5, delay: 0.4 + index * 0.1 }}
                       className="flex items-start space-x-4"
                     >
-                      <div className="w-12 h-12 bg-gradient-to-r from-neon-blue to-neon-purple rounded-xl flex items-center justify-center flex-shrink-0">
-                        <benefit.icon className="w-6 h-6 text-white" />
+                      <div className="w-12 h-12 bg-gradient-to-r from-burgundy via-burgundy-light to-gold rounded-xl flex items-center justify-center flex-shrink-0">
+                        <benefit.icon className="w-6 h-6 text-pearl" />
                       </div>
                       <div>
-                        <h4 className="text-xl font-bold text-white mb-2">{benefit.title}</h4>
-                        <p className="text-gray-300">{benefit.description}</p>
+                        <h4 className="text-xl font-bold text-pearl mb-2">{benefit.title}</h4>
+                        <p className="text-pearl/80">{benefit.description}</p>
                       </div>
                     </motion.div>
                   ))}
@@ -361,23 +361,23 @@ const AuditPage = () => {
               </div>
 
               <div className="glass rounded-2xl p-6">
-                <h4 className="text-xl font-bold text-white mb-4">Why Choose Our Audit?</h4>
+                <h4 className="text-xl font-bold text-pearl mb-4">Why Choose Our Audit?</h4>
                 <ul className="space-y-3">
                   <li className="flex items-center space-x-3">
-                    <CheckCircle className="w-5 h-5 text-neon-green" />
-                    <span className="text-gray-300">100% Free with no obligations</span>
+                    <CheckCircle className="w-5 h-5 text-gold" />
+                    <span className="text-pearl/80">100% Free with no obligations</span>
                   </li>
                   <li className="flex items-center space-x-3">
-                    <CheckCircle className="w-5 h-5 text-neon-green" />
-                    <span className="text-gray-300">Conducted by AI experts</span>
+                    <CheckCircle className="w-5 h-5 text-gold" />
+                    <span className="text-pearl/80">Conducted by AI experts</span>
                   </li>
                   <li className="flex items-center space-x-3">
-                    <CheckCircle className="w-5 h-5 text-neon-green" />
-                    <span className="text-gray-300">Delivered within 48 hours</span>
+                    <CheckCircle className="w-5 h-5 text-gold" />
+                    <span className="text-pearl/80">Delivered within 48 hours</span>
                   </li>
                   <li className="flex items-center space-x-3">
-                    <CheckCircle className="w-5 h-5 text-neon-green" />
-                    <span className="text-gray-300">Confidential and secure</span>
+                    <CheckCircle className="w-5 h-5 text-gold" />
+                    <span className="text-pearl/80">Confidential and secure</span>
                   </li>
                 </ul>
               </div>

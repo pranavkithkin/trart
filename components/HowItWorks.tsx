@@ -16,7 +16,7 @@ const HowItWorks = () => {
       title: "Audit",
       description: "We analyze your current processes and identify automation opportunities",
       icon: Search,
-      color: "from-neon-blue to-neon-purple",
+      color: "from-burgundy via-burgundy-light to-gold",
       details: [
         "Process analysis",
         "Gap identification", 
@@ -29,7 +29,7 @@ const HowItWorks = () => {
       title: "Build",
       description: "Our team develops custom AI agents tailored to your specific needs",
       icon: Wrench,
-      color: "from-neon-purple to-neon-pink",
+      color: "from-gold via-gold-light to-burgundy",
       details: [
         "Custom development",
         "Integration setup",
@@ -42,7 +42,7 @@ const HowItWorks = () => {
       title: "Run", 
       description: "Deploy and monitor your AI agents with ongoing support and optimization",
       icon: Play,
-      color: "from-neon-pink to-neon-blue",
+      color: "from-burgundy via-gold to-burgundy",
       details: [
         "Seamless deployment",
         "24/7 monitoring",
@@ -53,11 +53,12 @@ const HowItWorks = () => {
   ]
 
   return (
-    <section className="section-padding bg-gray-900 relative overflow-hidden">
+    <section className="section-padding bg-gradient-to-b from-teal via-noir to-teal relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0">
-        <div className="absolute top-1/4 left-0 w-96 h-96 bg-gradient-to-r from-neon-blue/10 to-neon-purple/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-gradient-to-r from-neon-purple/10 to-neon-pink/10 rounded-full blur-3xl" />
+        <div className="absolute top-1/4 left-0 w-96 h-96 bg-gradient-to-r from-burgundy/20 to-gold/20 rounded-full blur-3xl" />
+        <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-gradient-to-r from-gold/20 to-burgundy/20 rounded-full blur-3xl" />
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-teal-light/10 rounded-full blur-3xl" />
       </div>
 
       <div className="container-custom relative z-10">
@@ -69,9 +70,9 @@ const HowItWorks = () => {
           className="text-center mb-20"
         >
           <h2 className="text-4xl md:text-6xl font-bold mb-6">
-            How It <span className="gradient-text">Works</span>
+            How It <span className="gradient-text gold-glow">Works</span>
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-pearl/80 max-w-3xl mx-auto">
             Our proven 3-step process ensures your AI transformation is seamless, 
             effective, and delivers measurable results.
           </p>
@@ -89,26 +90,26 @@ const HowItWorks = () => {
             >
               {/* Connection Line */}
               {index < steps.length - 1 && (
-                <div className="hidden lg:block absolute top-24 left-full w-full h-0.5 bg-gradient-to-r from-gray-700 to-transparent z-0" />
+                <div className="hidden lg:block absolute top-24 left-full w-full h-0.5 bg-gradient-to-r from-gold/50 via-gold/20 to-transparent z-0" />
               )}
 
-              <div className="glass rounded-3xl p-8 h-full relative z-10 group-hover:bg-white/20 transition-all duration-300">
+              <div className="glass rounded-3xl p-8 h-full relative z-10 group-hover:bg-teal/60 transition-all duration-300 border-2 border-gold/20 group-hover:border-gold/60 shadow-xl shadow-gold/10">
                 {/* Step Number */}
                 <div className="flex items-center justify-between mb-6">
                   <motion.div
                     whileHover={{ scale: 1.1 }}
-                    className={`w-16 h-16 bg-gradient-to-r ${step.color} rounded-2xl flex items-center justify-center`}
+                    className={`w-16 h-16 bg-gradient-to-r ${step.color} rounded-2xl flex items-center justify-center shadow-lg shadow-gold/40`}
                   >
-                    <step.icon className="w-8 h-8 text-white" />
+                    <step.icon className="w-8 h-8 text-pearl" />
                   </motion.div>
-                  <span className="text-6xl font-bold text-gray-700 group-hover:text-gray-600 transition-colors">
+                  <span className="text-6xl font-bold text-teal-light group-hover:text-gold/30 transition-colors">
                     {step.number}
                   </span>
                 </div>
 
                 {/* Content */}
-                <h3 className="text-2xl font-bold text-white mb-4">{step.title}</h3>
-                <p className="text-gray-300 mb-6 leading-relaxed">{step.description}</p>
+                <h3 className="text-2xl font-bold text-pearl mb-4">{step.title}</h3>
+                <p className="text-pearl/80 mb-6 leading-relaxed">{step.description}</p>
 
                 {/* Details List */}
                 <ul className="space-y-2">
@@ -118,9 +119,9 @@ const HowItWorks = () => {
                       initial={{ opacity: 0, x: -20 }}
                       animate={inView ? { opacity: 1, x: 0 } : {}}
                       transition={{ duration: 0.5, delay: (index * 0.2) + (detailIndex * 0.1) }}
-                      className="flex items-center space-x-3 text-gray-400"
+                      className="flex items-center space-x-3 text-pearl/70"
                     >
-                      <div className={`w-2 h-2 bg-gradient-to-r ${step.color} rounded-full`} />
+                      <div className={`w-2 h-2 bg-gradient-to-r ${step.color} rounded-full shadow-sm shadow-gold/50`} />
                       <span>{detail}</span>
                     </motion.li>
                   ))}
@@ -128,7 +129,7 @@ const HowItWorks = () => {
 
                 {/* Hover Effect */}
                 <motion.div
-                  className="absolute inset-0 rounded-3xl bg-gradient-to-r from-neon-blue/5 to-neon-purple/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  className="absolute inset-0 rounded-3xl bg-gradient-to-r from-burgundy/5 to-gold/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                   initial={false}
                 />
               </div>
@@ -143,11 +144,11 @@ const HowItWorks = () => {
           transition={{ duration: 0.8, delay: 0.8 }}
           className="text-center mt-20"
         >
-          <div className="glass rounded-3xl p-12 max-w-4xl mx-auto">
-            <h3 className="text-3xl font-bold text-white mb-4">
+          <div className="glass rounded-3xl p-12 max-w-4xl mx-auto border-2 border-gold/30 shadow-2xl shadow-gold/20">
+            <h3 className="text-3xl font-bold text-pearl mb-4">
               Ready to Transform Your Business?
             </h3>
-            <p className="text-xl text-gray-300 mb-8">
+            <p className="text-xl text-pearl/80 mb-8">
               Start your AI journey today with our free audit and discover the potential 
               for intelligent automation in your organization.
             </p>

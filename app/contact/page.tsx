@@ -127,7 +127,7 @@ const ContactPage = () => {
 
   if (isSubmitted) {
     return (
-      <div className="min-h-screen bg-gray-900 pt-20 flex items-center justify-center">
+      <div className="min-h-screen bg-gradient-to-b from-noir via-teal to-noir pt-20 flex items-center justify-center">
         <motion.div
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -138,16 +138,16 @@ const ContactPage = () => {
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="w-24 h-24 bg-gradient-to-r from-neon-blue to-neon-purple rounded-full flex items-center justify-center mx-auto mb-8"
+            className="w-24 h-24 bg-gradient-to-r from-burgundy via-burgundy-light to-gold rounded-full flex items-center justify-center mx-auto mb-8"
           >
-            <CheckCircle className="w-12 h-12 text-white" />
+            <CheckCircle className="w-12 h-12 text-pearl" />
           </motion.div>
           
           <h1 className="text-4xl md:text-6xl font-bold mb-6">
             <span className="gradient-text">Message Sent!</span>
           </h1>
           
-          <p className="text-xl text-gray-300 mb-8">
+          <p className="text-xl text-pearl/80 mb-8">
             Thank you for reaching out! We've received your message and will get back to you 
             within 24 hours. In the meantime, feel free to explore our demos and services.
           </p>
@@ -176,11 +176,11 @@ const ContactPage = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gray-900 pt-20">
+    <div className="min-h-screen bg-gradient-to-b from-noir via-teal to-noir pt-20">
       {/* Hero Section */}
-      <section className="section-padding bg-gradient-to-br from-gray-900 via-electric-900 to-gray-900 relative overflow-hidden">
+      <section className="section-padding bg-gradient-to-br from-noir via-teal to-noir relative overflow-hidden">
         <div className="absolute inset-0 opacity-50" style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23A38560' fill-opacity='0.15'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
         }} />
         
         <div className="container-custom relative z-10">
@@ -193,7 +193,7 @@ const ContactPage = () => {
             <h1 className="text-5xl md:text-7xl font-bold mb-6">
               Get In <span className="gradient-text">Touch</span>
             </h1>
-            <p className="text-xl md:text-2xl text-gray-300 mb-12 leading-relaxed">
+            <p className="text-xl md:text-2xl text-pearl/80 mb-12 leading-relaxed">
               Ready to transform your business with AI? Let's discuss your needs 
               and explore how we can help you achieve your goals.
             </p>
@@ -214,7 +214,7 @@ const ContactPage = () => {
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               Multiple Ways to <span className="gradient-text">Connect</span>
             </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            <p className="text-xl text-pearl/80 max-w-3xl mx-auto">
               Choose the communication method that works best for you
             </p>
           </motion.div>
@@ -228,18 +228,18 @@ const ContactPage = () => {
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.8, delay: index * 0.1 }}
                 whileHover={{ scale: 1.05 }}
-                className="glass rounded-2xl p-6 text-center group hover:bg-white/20 transition-all duration-300"
+                className="glass rounded-2xl p-6 text-center group hover:bg-teal/60 border-2 border-gold/20 hover:border-gold/60 transition-all duration-300"
               >
                 <motion.div
                   whileHover={{ rotate: 360 }}
                   transition={{ duration: 0.5 }}
-                  className="w-16 h-16 bg-gradient-to-r from-neon-blue to-neon-purple rounded-full flex items-center justify-center mx-auto mb-4"
+                  className="w-16 h-16 bg-gradient-to-r from-burgundy via-burgundy-light to-gold rounded-full flex items-center justify-center mx-auto mb-4"
                 >
-                  <info.icon className="w-8 h-8 text-white" />
+                  <info.icon className="w-8 h-8 text-pearl" />
                 </motion.div>
-                <h3 className="text-xl font-bold text-white mb-2">{info.title}</h3>
-                <p className="text-neon-blue font-semibold mb-2">{info.details}</p>
-                <p className="text-gray-400 text-sm">{info.description}</p>
+                <h3 className="text-xl font-bold text-pearl mb-2">{info.title}</h3>
+                <p className="text-gold font-semibold mb-2">{info.details}</p>
+                <p className="text-pearl/70 text-sm">{info.description}</p>
               </motion.a>
             ))}
           </div>
@@ -251,7 +251,7 @@ const ContactPage = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-center mb-16"
           >
-            <h3 className="text-2xl font-bold text-white mb-6">Follow Us</h3>
+            <h3 className="text-2xl font-bold text-pearl mb-6">Follow Us</h3>
             <div className="flex justify-center space-x-4">
               {socialLinks.map((social, index) => (
                 <motion.a
@@ -275,7 +275,7 @@ const ContactPage = () => {
       </section>
 
       {/* Contact Form Section */}
-      <section className="section-padding bg-gray-800/50">
+      <section className="section-padding bg-gradient-to-b from-teal via-noir to-teal">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             {/* Form */}
@@ -285,8 +285,8 @@ const ContactPage = () => {
               transition={{ duration: 0.8 }}
               className="glass rounded-3xl p-8"
             >
-              <h2 className="text-3xl font-bold text-white mb-6">Send Us a Message</h2>
-              <p className="text-gray-300 mb-8">
+              <h2 className="text-3xl font-bold text-pearl mb-6">Send Us a Message</h2>
+              <p className="text-pearl/80 mb-8">
                 Have a question or want to discuss your AI automation needs? 
                 Fill out the form below and we'll get back to you within 24 hours.
               </p>
@@ -294,26 +294,26 @@ const ContactPage = () => {
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-white font-semibold mb-2">Full Name *</label>
+                    <label className="block text-pearl font-semibold mb-2">Full Name *</label>
                     <input
                       type="text"
                       name="name"
                       value={formData.name}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-neon-blue focus:border-transparent"
+                      className="w-full px-4 py-3 bg-teal/60 border border-gold/30 rounded-lg text-pearl placeholder-pearl/50 focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent"
                       placeholder="John Doe"
                     />
                   </div>
                   <div>
-                    <label className="block text-white font-semibold mb-2">Email Address *</label>
+                    <label className="block text-pearl font-semibold mb-2">Email Address *</label>
                     <input
                       type="email"
                       name="email"
                       value={formData.email}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-neon-blue focus:border-transparent"
+                      className="w-full px-4 py-3 bg-teal/60 border border-gold/30 rounded-lg text-pearl placeholder-pearl/50 focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent"
                       placeholder="john@company.com"
                     />
                   </div>
@@ -321,23 +321,23 @@ const ContactPage = () => {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-white font-semibold mb-2">Company Name</label>
+                    <label className="block text-pearl font-semibold mb-2">Company Name</label>
                     <input
                       type="text"
                       name="company"
                       value={formData.company}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-neon-blue focus:border-transparent"
+                      className="w-full px-4 py-3 bg-teal/60 border border-gold/30 rounded-lg text-pearl placeholder-pearl/50 focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent"
                       placeholder="Acme Corporation"
                     />
                   </div>
                   <div>
-                    <label className="block text-white font-semibold mb-2">Inquiry Type</label>
+                    <label className="block text-pearl font-semibold mb-2">Inquiry Type</label>
                     <select
                       name="inquiryType"
                       value={formData.inquiryType}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-neon-blue focus:border-transparent"
+                      className="w-full px-4 py-3 bg-teal/60 border border-gold/30 rounded-lg text-pearl focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent"
                     >
                       <option value="">Select inquiry type</option>
                       <option value="general">General Question</option>
@@ -350,27 +350,27 @@ const ContactPage = () => {
                 </div>
 
                 <div>
-                  <label className="block text-white font-semibold mb-2">Subject *</label>
+                  <label className="block text-pearl font-semibold mb-2">Subject *</label>
                   <input
                     type="text"
                     name="subject"
                     value={formData.subject}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-neon-blue focus:border-transparent"
+                    className="w-full px-4 py-3 bg-teal/60 border border-gold/30 rounded-lg text-pearl placeholder-pearl/50 focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent"
                     placeholder="What's this about?"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-white font-semibold mb-2">Message *</label>
+                  <label className="block text-pearl font-semibold mb-2">Message *</label>
                   <textarea
                     name="message"
                     value={formData.message}
                     onChange={handleInputChange}
                     required
                     rows={6}
-                    className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-neon-blue focus:border-transparent"
+                    className="w-full px-4 py-3 bg-teal/60 border border-gold/30 rounded-lg text-pearl placeholder-pearl/50 focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent"
                     placeholder="Tell us about your project, questions, or how we can help..."
                   />
                 </div>
@@ -413,10 +413,10 @@ const ContactPage = () => {
               {/* Office Hours */}
               <div className="glass rounded-2xl p-6">
                 <div className="flex items-center space-x-3 mb-4">
-                  <Clock className="w-6 h-6 text-neon-blue" />
-                  <h3 className="text-xl font-bold text-white">Office Hours</h3>
+                  <Clock className="w-6 h-6 text-gold" />
+                  <h3 className="text-xl font-bold text-pearl">Office Hours</h3>
                 </div>
-                <div className="space-y-2 text-gray-300">
+                <div className="space-y-2 text-pearl/80">
                   <div className="flex justify-between">
                     <span>Monday - Friday</span>
                     <span>9:00 AM - 6:00 PM PST</span>
@@ -435,44 +435,44 @@ const ContactPage = () => {
               {/* Response Time */}
               <div className="glass rounded-2xl p-6">
                 <div className="flex items-center space-x-3 mb-4">
-                  <Zap className="w-6 h-6 text-neon-blue" />
-                  <h3 className="text-xl font-bold text-white">Response Time</h3>
+                  <Zap className="w-6 h-6 text-gold" />
+                  <h3 className="text-xl font-bold text-pearl">Response Time</h3>
                 </div>
                 <div className="space-y-3">
                   <div className="flex items-center space-x-3">
-                    <CheckCircle className="w-5 h-5 text-neon-green" />
-                    <span className="text-gray-300">Email: Within 24 hours</span>
+                    <CheckCircle className="w-5 h-5 text-gold" />
+                    <span className="text-pearl/80">Email: Within 24 hours</span>
                   </div>
                   <div className="flex items-center space-x-3">
-                    <CheckCircle className="w-5 h-5 text-neon-green" />
-                    <span className="text-gray-300">Phone: Immediate during business hours</span>
+                    <CheckCircle className="w-5 h-5 text-gold" />
+                    <span className="text-pearl/80">Phone: Immediate during business hours</span>
                   </div>
                   <div className="flex items-center space-x-3">
-                    <CheckCircle className="w-5 h-5 text-neon-green" />
-                    <span className="text-gray-300">WhatsApp: Within 2 hours</span>
+                    <CheckCircle className="w-5 h-5 text-gold" />
+                    <span className="text-pearl/80">WhatsApp: Within 2 hours</span>
                   </div>
                 </div>
               </div>
 
               {/* FAQ */}
               <div className="glass rounded-2xl p-6">
-                <h3 className="text-xl font-bold text-white mb-4">Frequently Asked Questions</h3>
+                <h3 className="text-xl font-bold text-pearl mb-4">Frequently Asked Questions</h3>
                 <div className="space-y-4">
                   <div>
-                    <h4 className="text-white font-semibold mb-2">How long does implementation take?</h4>
-                    <p className="text-gray-300 text-sm">
+                    <h4 className="text-pearl font-semibold mb-2">How long does implementation take?</h4>
+                    <p className="text-pearl/80 text-sm">
                       Most AI agents can be deployed within 2-4 weeks, depending on complexity.
                     </p>
                   </div>
                   <div>
-                    <h4 className="text-white font-semibold mb-2">Do you offer ongoing support?</h4>
-                    <p className="text-gray-300 text-sm">
+                    <h4 className="text-pearl font-semibold mb-2">Do you offer ongoing support?</h4>
+                    <p className="text-pearl/80 text-sm">
                       Yes, we provide 24/7 monitoring and support for all our AI agents.
                     </p>
                   </div>
                   <div>
-                    <h4 className="text-white font-semibold mb-2">Can I customize the AI agents?</h4>
-                    <p className="text-gray-300 text-sm">
+                    <h4 className="text-pearl font-semibold mb-2">Can I customize the AI agents?</h4>
+                    <p className="text-pearl/80 text-sm">
                       Absolutely! All our solutions are fully customizable to your specific needs.
                     </p>
                   </div>

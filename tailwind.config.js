@@ -8,36 +8,17 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: {
-          50: '#f0f9ff',
-          100: '#e0f2fe',
-          200: '#bae6fd',
-          300: '#7dd3fc',
-          400: '#38bdf8',
-          500: '#0ea5e9',
-          600: '#0284c7',
-          700: '#0369a1',
-          800: '#075985',
-          900: '#0c4a6e',
-        },
-        electric: {
-          50: '#f0f4ff',
-          100: '#e0e7ff',
-          200: '#c7d2fe',
-          300: '#a5b4fc',
-          400: '#818cf8',
-          500: '#6366f1',
-          600: '#4f46e5',
-          700: '#4338ca',
-          800: '#3730a3',
-          900: '#312e81',
-        },
-        neon: {
-          blue: '#00d4ff',
-          purple: '#8b5cf6',
-          pink: '#f472b6',
-          green: '#10b981',
-        }
+        // Custom sophisticated palette
+        noir: '#03110D',        // Almost black - primary background
+        teal: '#16302B',        // Dark teal - secondary background
+        burgundy: '#390517',    // Deep burgundy - accents
+        gold: '#A38560',        // Elegant gold - highlights
+        pearl: '#E0E0E0',       // Light gray - text
+        
+        // Gradient variations for smooth transitions
+        'burgundy-light': '#4D0A1F',
+        'gold-light': '#B59970',
+        'teal-light': '#1F4039',
       },
       fontFamily: {
         'display': ['Inter', 'system-ui', 'sans-serif'],
@@ -69,8 +50,10 @@ module.exports = {
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-        'hero-gradient': 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-        'electric-gradient': 'linear-gradient(135deg, #0ea5e9 0%, #8b5cf6 50%, #f472b6 100%)',
+        'hero-gradient': 'linear-gradient(135deg, #390517 0%, #A38560 100%)',
+        'elegant-gradient': 'linear-gradient(135deg, #390517 0%, #A38560 50%, #390517 100%)',
+        'gold-shine': 'linear-gradient(90deg, #A38560 0%, #B59970 50%, #A38560 100%)',
+        'deep-gradient': 'linear-gradient(180deg, #03110D 0%, #16302B 100%)',
       }
     },
   },

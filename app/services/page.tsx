@@ -26,7 +26,7 @@ const ServicesPage = () => {
       title: "Sales Agent",
       description: "AI-powered sales assistant that qualifies leads, schedules meetings, and closes deals 24/7",
       icon: MessageSquare,
-      color: "from-neon-blue to-neon-purple",
+      color: "from-burgundy via-burgundy-light to-gold",
       features: [
         "Lead qualification & scoring",
         "Automated follow-ups",
@@ -41,7 +41,7 @@ const ServicesPage = () => {
       title: "Support Agent", 
       description: "Intelligent customer support that resolves issues instantly and escalates when needed",
       icon: Headphones,
-      color: "from-neon-purple to-neon-pink",
+      color: "from-gold via-gold-light to-burgundy",
       features: [
         "24/7 customer support",
         "Multi-language support",
@@ -55,7 +55,7 @@ const ServicesPage = () => {
       title: "Finance Ops",
       description: "Automated financial operations including invoicing, expense tracking, and reporting",
       icon: Calculator,
-      color: "from-neon-pink to-neon-blue",
+      color: "from-burgundy via-gold to-burgundy",
       features: [
         "Automated invoicing",
         "Expense categorization",
@@ -69,7 +69,7 @@ const ServicesPage = () => {
       title: "HR Agent",
       description: "Streamlined HR operations with automated recruitment, onboarding, and employee management",
       icon: Users,
-      color: "from-neon-blue to-neon-green",
+      color: "from-gold via-burgundy-light to-gold",
       features: [
         "Resume screening",
         "Interview scheduling",
@@ -100,11 +100,11 @@ const ServicesPage = () => {
   ]
 
   return (
-    <div className="min-h-screen bg-gray-900 pt-20">
+    <div className="min-h-screen bg-gradient-to-b from-noir via-teal to-noir pt-20">
       {/* Hero Section */}
-      <section className="section-padding bg-gradient-to-br from-gray-900 via-electric-900 to-gray-900 relative overflow-hidden">
+      <section className="section-padding bg-gradient-to-br from-noir via-teal to-noir relative overflow-hidden">
         <div className="absolute inset-0 opacity-50" style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23A38560' fill-opacity='0.15'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
         }} />
         
         <div className="container-custom relative z-10">
@@ -117,7 +117,7 @@ const ServicesPage = () => {
             <h1 className="text-5xl md:text-7xl font-bold mb-6">
               AI Agent <span className="gradient-text">Services</span>
             </h1>
-            <p className="text-xl md:text-2xl text-gray-300 mb-12 leading-relaxed">
+            <p className="text-xl md:text-2xl text-pearl/80 mb-12 leading-relaxed">
               Transform your business operations with our comprehensive suite of 
               intelligent AI agents designed for modern enterprises.
             </p>
@@ -138,7 +138,7 @@ const ServicesPage = () => {
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               Choose Your <span className="gradient-text">AI Solution</span>
             </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            <p className="text-xl text-pearl/80 max-w-3xl mx-auto">
               Each AI agent is specifically designed to handle complex business processes 
               with intelligence, efficiency, and scalability.
             </p>
@@ -152,13 +152,13 @@ const ServicesPage = () => {
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.8, delay: index * 0.2 }}
                 whileHover={{ scale: 1.02 }}
-                className={`glass rounded-3xl p-8 relative group hover:bg-white/20 transition-all duration-300 ${
-                  service.popular ? 'ring-2 ring-neon-blue/50' : ''
+                className={`glass rounded-3xl p-8 relative group hover:bg-teal/60 border-2 border-gold/20 hover:border-gold/60 transition-all duration-300 ${
+                  service.popular ? 'ring-2 ring-gold/50' : ''
                 }`}
               >
                 {service.popular && (
                   <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                    <span className="bg-gradient-to-r from-neon-blue to-neon-purple text-white px-6 py-2 rounded-full text-sm font-semibold">
+                    <span className="bg-gradient-to-r from-burgundy via-burgundy-light to-gold text-pearl px-6 py-2 rounded-full text-sm font-semibold">
                       Most Popular
                     </span>
                   </div>
@@ -170,13 +170,13 @@ const ServicesPage = () => {
                     transition={{ duration: 0.5 }}
                     className={`w-16 h-16 bg-gradient-to-r ${service.color} rounded-2xl flex items-center justify-center`}
                   >
-                    <service.icon className="w-8 h-8 text-white" />
+                    <service.icon className="w-8 h-8 text-pearl" />
                   </motion.div>
-                  <span className="text-2xl font-bold text-gray-400">{service.price}</span>
+                  <span className="text-2xl font-bold text-pearl/70">{service.price}</span>
                 </div>
 
-                <h3 className="text-2xl font-bold text-white mb-4">{service.title}</h3>
-                <p className="text-gray-300 mb-6 leading-relaxed">{service.description}</p>
+                <h3 className="text-2xl font-bold text-pearl mb-4">{service.title}</h3>
+                <p className="text-pearl/80 mb-6 leading-relaxed">{service.description}</p>
 
                 <ul className="space-y-3 mb-8">
                   {service.features.map((feature, featureIndex) => (
@@ -187,8 +187,8 @@ const ServicesPage = () => {
                       transition={{ duration: 0.5, delay: (index * 0.2) + (featureIndex * 0.1) }}
                       className="flex items-center space-x-3"
                     >
-                      <CheckCircle className="w-5 h-5 text-neon-green flex-shrink-0" />
-                      <span className="text-gray-300">{feature}</span>
+                      <CheckCircle className="w-5 h-5 text-gold flex-shrink-0" />
+                      <span className="text-pearl/80">{feature}</span>
                     </motion.li>
                   ))}
                 </ul>
@@ -198,8 +198,8 @@ const ServicesPage = () => {
                   whileTap={{ scale: 0.95 }}
                   className={`w-full py-4 rounded-xl font-semibold transition-all duration-300 flex items-center justify-center space-x-2 group ${
                     service.popular
-                      ? 'bg-gradient-to-r from-neon-blue to-neon-purple text-white hover:shadow-lg hover:shadow-neon-blue/25'
-                      : 'glass text-white hover:bg-white/20'
+                      ? 'bg-gradient-to-r from-burgundy via-burgundy-light to-gold text-pearl hover:shadow-lg hover:shadow-gold/30'
+                      : 'glass text-pearl hover:bg-teal/60 border-2 border-gold/20 hover:border-gold/60'
                   }`}
                 >
                   <span>Get Started</span>
@@ -212,7 +212,7 @@ const ServicesPage = () => {
       </section>
 
       {/* Benefits Section */}
-      <section className="section-padding bg-gray-800/50">
+      <section className="section-padding bg-gradient-to-b from-teal via-noir to-teal">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -223,7 +223,7 @@ const ServicesPage = () => {
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               Why Choose <span className="gradient-text">Our AI Agents</span>
             </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            <p className="text-xl text-pearl/80 max-w-3xl mx-auto">
               Built with cutting-edge technology and designed for enterprise-grade performance
             </p>
           </motion.div>
@@ -236,17 +236,17 @@ const ServicesPage = () => {
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.8, delay: index * 0.2 }}
                 whileHover={{ scale: 1.05 }}
-                className="glass rounded-2xl p-8 text-center group hover:bg-white/20 transition-all duration-300"
+                className="glass rounded-2xl p-8 text-center group hover:bg-teal/60 border-2 border-gold/20 hover:border-gold/60 transition-all duration-300"
               >
                 <motion.div
                   whileHover={{ rotate: 360 }}
                   transition={{ duration: 0.5 }}
-                  className="w-16 h-16 bg-gradient-to-r from-neon-blue to-neon-purple rounded-full flex items-center justify-center mx-auto mb-6"
+                  className="w-16 h-16 bg-gradient-to-r from-burgundy via-burgundy-light to-gold rounded-full flex items-center justify-center mx-auto mb-6"
                 >
-                  <benefit.icon className="w-8 h-8 text-white" />
+                  <benefit.icon className="w-8 h-8 text-pearl" />
                 </motion.div>
-                <h3 className="text-2xl font-bold text-white mb-4">{benefit.title}</h3>
-                <p className="text-gray-300">{benefit.description}</p>
+                <h3 className="text-2xl font-bold text-pearl mb-4">{benefit.title}</h3>
+                <p className="text-pearl/80">{benefit.description}</p>
               </motion.div>
             ))}
           </div>
@@ -263,10 +263,10 @@ const ServicesPage = () => {
             className="text-center"
           >
             <div className="glass rounded-3xl p-12 max-w-4xl mx-auto">
-              <h2 className="text-4xl font-bold text-white mb-6">
+              <h2 className="text-4xl font-bold text-pearl mb-6">
                 Ready to Get Started?
               </h2>
-              <p className="text-xl text-gray-300 mb-8">
+              <p className="text-xl text-pearl/80 mb-8">
                 Schedule a free consultation and discover how our AI agents can 
                 transform your business operations.
               </p>

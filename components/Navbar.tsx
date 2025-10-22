@@ -40,11 +40,11 @@ const Navbar = () => {
             <motion.div
               whileHover={{ rotate: 360 }}
               transition={{ duration: 0.5 }}
-              className="w-10 h-10 bg-gradient-to-r from-neon-blue to-neon-purple rounded-lg flex items-center justify-center"
+              className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-r from-burgundy via-gold to-burgundy rounded-lg flex items-center justify-center shadow-lg shadow-gold/40"
             >
-              <Zap className="w-6 h-6 text-white" />
+              <Zap className="w-5 h-5 sm:w-6 sm:h-6 text-pearl" />
             </motion.div>
-            <span className="text-2xl font-bold gradient-text">AI Consultancy</span>
+            <span className="text-lg sm:text-xl md:text-2xl font-bold gradient-text">AI Consultancy</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -53,11 +53,11 @@ const Navbar = () => {
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-gray-300 hover:text-white transition-colors duration-300 relative group"
+                className="text-pearl/80 hover:text-gold transition-colors duration-300 relative group font-medium"
               >
                 {item.name}
                 <motion.div
-                  className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-neon-blue to-neon-purple group-hover:w-full transition-all duration-300"
+                  className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-burgundy via-gold to-burgundy group-hover:w-full transition-all duration-300"
                   initial={{ width: 0 }}
                   whileHover={{ width: '100%' }}
                 />
@@ -65,7 +65,7 @@ const Navbar = () => {
             ))}
             <Link
               href="/audit"
-              className="btn-primary text-sm px-6 py-2"
+              className="btn-primary text-xs sm:text-sm px-4 sm:px-6 py-2 whitespace-nowrap"
             >
               Get Free AI Audit
             </Link>
@@ -99,7 +99,7 @@ const Navbar = () => {
                   >
                     <Link
                       href={item.href}
-                      className="block text-gray-300 hover:text-white transition-colors py-2"
+                      className="block text-pearl/80 hover:text-gold transition-colors py-2 font-medium"
                       onClick={() => setIsOpen(false)}
                     >
                       {item.name}

@@ -7,6 +7,7 @@ import Footer from '@/components/Footer'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000'),
   title: 'AI Agent Consultancy - Transform Your Business with Intelligent Automation',
   description: 'Leading AI Agent Consultancy specializing in intelligent automation solutions. Get your free AI audit and discover how AI agents can transform your business operations.',
   keywords: 'AI agents, business automation, intelligent automation, AI consultancy, digital transformation',
