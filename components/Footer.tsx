@@ -2,8 +2,8 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
+import Image from 'next/image'
 import { 
-  Zap, 
   Mail, 
   Phone, 
   MapPin, 
@@ -64,15 +64,20 @@ const Footer = () => {
               transition={{ duration: 0.6 }}
               className="mb-6"
             >
-              <Link href="/" className="flex items-center space-x-2 mb-4">
+              <Link href="/" className="flex items-center mb-4">
                 <motion.div
-                  whileHover={{ rotate: 360 }}
-                  transition={{ duration: 0.5 }}
-                  className="w-10 h-10 bg-gradient-to-r from-burgundy via-gold to-burgundy rounded-lg flex items-center justify-center shadow-lg shadow-gold/40"
+                  transition={{ duration: 0.3, ease: "easeInOut" }}
+                  whileHover={{ scale: 1.05 }}
+                  className="relative w-32 h-16"
                 >
-                  <Zap className="w-6 h-6 text-pearl" />
+                  <Image 
+                    src="/trart-logo.png" 
+                    alt="TRART Logo" 
+                    width={128}
+                    height={64}
+                    className="w-full h-full object-contain"
+                  />
                 </motion.div>
-                <span className="text-2xl font-bold gradient-text">TRART Ai</span>
               </Link>
               <p className="text-pearl/70 mb-6 max-w-md">
                 Transforming businesses with intelligent automation. We help companies 
@@ -160,6 +165,7 @@ const Footer = () => {
                 className="flex-1 px-4 py-3 bg-teal/50 border border-gold/30 rounded-lg text-pearl placeholder-pearl/50 focus:outline-none focus:ring-2 focus:ring-gold focus:border-gold transition-all"
               />
               <motion.button
+                transition={{ duration: 0.2, ease: "easeOut" }}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="btn-primary px-6 py-3 flex items-center justify-center space-x-2"
@@ -201,7 +207,7 @@ const Footer = () => {
                   rel="noopener noreferrer"
                   initial={{ opacity: 0, scale: 0 }}
                   whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.4, delay: 0.2 + index * 0.1 }}
+                  transition={{ duration: 0.2, ease: "easeOut" }}
                   whileHover={{ scale: 1.2 }}
                   whileTap={{ scale: 0.9 }}
                   className="text-pearl/60 hover:text-gold transition-all duration-300"

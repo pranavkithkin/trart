@@ -39,16 +39,28 @@ export const staggerItem = {
 }
 
 export const hoverScale = {
+  transition: { duration: 0.2, ease: "easeOut" },
   whileHover: { scale: 1.05 },
   whileTap: { scale: 0.95 }
 }
 
+export const hoverScaleSmall = {
+  transition: { duration: 0.2, ease: "easeOut" },
+  whileHover: { scale: 1.02 },
+  whileTap: { scale: 0.98 }
+}
+
 export const hoverLift = {
+  transition: { duration: 0.2, ease: "easeOut" },
   whileHover: { 
     scale: 1.02,
-    y: -5,
-    transition: { duration: 0.2 }
+    y: -5
   }
+}
+
+export const hoverRotate = {
+  transition: { duration: 0.3, ease: "easeInOut" },
+  whileHover: { rotate: 360 }
 }
 
 export const rotateIn = {

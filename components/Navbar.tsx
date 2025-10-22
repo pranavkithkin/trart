@@ -2,8 +2,9 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Menu, X, Zap } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -36,15 +37,21 @@ const Navbar = () => {
       <div className="container-custom">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2">
+          <Link href="/" className="flex items-center space-x-3">
             <motion.div
-              whileHover={{ rotate: 360 }}
-              transition={{ duration: 0.5 }}
-              className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-r from-burgundy via-gold to-burgundy rounded-lg flex items-center justify-center shadow-lg shadow-gold/40"
+              transition={{ duration: 0.3, ease: "easeInOut" }}
+              whileHover={{ scale: 1.05 }}
+              className="relative w-12 h-12 sm:w-14 sm:h-14"
             >
-              <Zap className="w-5 h-5 sm:w-6 sm:h-6 text-pearl" />
+              <Image 
+                src="/trart-logo.png" 
+                alt="TRART Logo" 
+                width={56}
+                height={56}
+                className="w-full h-full object-contain"
+                priority
+              />
             </motion.div>
-            <span className="text-lg sm:text-xl md:text-2xl font-bold gradient-text">TRART Ai</span>
           </Link>
 
           {/* Desktop Navigation */}

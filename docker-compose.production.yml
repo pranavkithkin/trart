@@ -1,0 +1,40 @@
+version: '3.8'
+
+services:
+  trart-website:
+    build: .
+    container_name: trart-website
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env.production
+    networks:
+      - trart-network
+    depends_on:
+      - n8n
+    volumes:
+      - ./logs:/app/logs
+
+  # If n8n is also containerized, you can manage both together
+  # n8n:
+  #   image: n8nio/n8n
+  #   container_name: n8n
+  #   restart: unless-stopped
+  #   ports:
+  #     - "5678:5678"
+  #   environment:
+  #     - N8N_BASIC_AUTH_ACTIVE=true
+  #     - N8N_BASIC_AUTH_USER=admin
+  #     - N8N_BASIC_AUTH_PASSWORD=your_password
+  #   volumes:
+  #     - n8n_data:/home/node/.n8n
+  #   networks:
+  #     - trart-network
+
+networks:
+  trart-network:
+    driver: bridge
+
+# volumes:
+#   n8n_data:

@@ -154,6 +154,7 @@ const ContactPage = () => {
           
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <motion.button
+              transition={{ duration: 0.2, ease: "easeOut" }}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="btn-primary text-lg px-8 py-4"
@@ -162,6 +163,7 @@ const ContactPage = () => {
               Return to Home
             </motion.button>
             <motion.button
+              transition={{ duration: 0.2, ease: "easeOut" }}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="btn-secondary text-lg px-8 py-4"
@@ -226,13 +228,13 @@ const ContactPage = () => {
                 href={info.action}
                 initial={{ opacity: 0, y: 50 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.8, delay: index * 0.1 }}
+                transition={{ duration: 0.2, ease: "easeOut" }}
                 whileHover={{ scale: 1.05 }}
                 className="glass rounded-2xl p-6 text-center group hover:bg-teal/60 border-2 border-gold/20 hover:border-gold/60 transition-all duration-300"
               >
                 <motion.div
+                  transition={{ duration: 0.3, ease: "easeInOut" }}
                   whileHover={{ rotate: 360 }}
-                  transition={{ duration: 0.5 }}
                   className="w-16 h-16 bg-gradient-to-r from-burgundy via-burgundy-light to-gold rounded-full flex items-center justify-center mx-auto mb-4"
                 >
                   <info.icon className="w-8 h-8 text-pearl" />
@@ -261,7 +263,7 @@ const ContactPage = () => {
                   rel="noopener noreferrer"
                   initial={{ opacity: 0, scale: 0 }}
                   animate={inView ? { opacity: 1, scale: 1 } : {}}
-                  transition={{ duration: 0.5, delay: 0.6 + index * 0.1 }}
+                  transition={{ duration: 0.2, ease: "easeOut" }}
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
                   className={`w-12 h-12 glass rounded-full flex items-center justify-center text-2xl hover:scale-110 transition-all duration-300 ${social.color}`}
@@ -378,6 +380,7 @@ const ContactPage = () => {
                 <motion.button
                   type="submit"
                   disabled={isSubmitting}
+                  transition={{ duration: 0.2, ease: "easeOut" }}
                   whileHover={{ scale: isSubmitting ? 1 : 1.05 }}
                   whileTap={{ scale: isSubmitting ? 1 : 0.95 }}
                   className="w-full btn-primary text-lg py-4 flex items-center justify-center space-x-3 disabled:opacity-50 disabled:cursor-not-allowed"

@@ -174,7 +174,7 @@ const DemosPage = () => {
                   key={demo.id}
                   initial={{ opacity: 0, x: -50 }}
                   animate={inView ? { opacity: 1, x: 0 } : {}}
-                  transition={{ duration: 0.8, delay: index * 0.1 }}
+                  transition={{ duration: 0.2, ease: "easeOut" }}
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                   onClick={() => setActiveDemo(index)}
@@ -217,6 +217,7 @@ const DemosPage = () => {
                   {/* Video Overlay */}
                   <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
                     <motion.button
+                      transition={{ duration: 0.2, ease: "easeOut" }}
                       whileHover={{ scale: 1.1 }}
                       whileTap={{ scale: 0.9 }}
                       onClick={() => setIsPlaying(!isPlaying)}
@@ -311,7 +312,7 @@ const DemosPage = () => {
                 key={template.title}
                 initial={{ opacity: 0, y: 50 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.8, delay: index * 0.1 }}
+                transition={{ duration: 0.2, ease: "easeOut" }}
                 whileHover={{ scale: 1.02 }}
                 className="glass rounded-2xl p-6 group hover:bg-teal/60 border-2 border-gold/20 hover:border-gold/60 transition-all duration-300"
               >
@@ -321,6 +322,7 @@ const DemosPage = () => {
                     <p className="text-pearl/80 text-sm">{template.description}</p>
                   </div>
                   <motion.button
+                    transition={{ duration: 0.2, ease: "easeOut" }}
                     whileHover={{ scale: 1.1 }}
                     className="p-2 glass rounded-lg hover:bg-teal/60 border-2 border-gold/20 hover:border-gold/60 transition-colors"
                   >
@@ -346,6 +348,7 @@ const DemosPage = () => {
                     <span>Pre-configured</span>
                   </div>
                   <motion.button
+                    transition={{ duration: 0.2, ease: "easeOut" }}
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     className="btn-primary text-sm px-6 py-2 flex items-center space-x-2 group"
@@ -379,6 +382,7 @@ const DemosPage = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-6 justify-center">
                 <motion.button
+                  transition={{ duration: 0.2, ease: "easeOut" }}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   className="btn-primary text-lg px-12 py-4 flex items-center space-x-3 group"
@@ -387,6 +391,7 @@ const DemosPage = () => {
                   <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
                 </motion.button>
                 <motion.button
+                  transition={{ duration: 0.2, ease: "easeOut" }}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   className="btn-secondary text-lg px-12 py-4"

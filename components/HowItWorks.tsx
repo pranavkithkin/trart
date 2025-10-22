@@ -84,7 +84,7 @@ const HowItWorks = () => {
               key={step.number}
               initial={{ opacity: 0, y: 50 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.8, delay: index * 0.2 }}
+              transition={{ duration: 0.2, ease: "easeOut" }}
               whileHover={{ scale: 1.05 }}
               className="relative group"
             >
@@ -97,6 +97,7 @@ const HowItWorks = () => {
                 {/* Step Number */}
                 <div className="flex items-center justify-between mb-6">
                   <motion.div
+                    transition={{ duration: 0.2, ease: "easeOut" }}
                     whileHover={{ scale: 1.1 }}
                     className={`w-16 h-16 bg-gradient-to-r ${step.color} rounded-2xl flex items-center justify-center shadow-lg shadow-gold/40`}
                   >
@@ -153,6 +154,7 @@ const HowItWorks = () => {
               for intelligent automation in your organization.
             </p>
             <motion.button
+              transition={{ duration: 0.2, ease: "easeOut" }}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="btn-primary text-lg px-12 py-4 flex items-center space-x-3 mx-auto group"

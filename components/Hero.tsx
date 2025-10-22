@@ -102,6 +102,7 @@ const Hero = () => {
           >
             <Link href="/audit" className="w-full sm:w-auto">
               <motion.button
+                transition={{ duration: 0.2, ease: "easeOut" }}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="btn-primary text-base sm:text-lg px-8 sm:px-12 py-3 sm:py-4 flex items-center justify-center space-x-2 sm:space-x-3 group w-full sm:w-auto"
@@ -113,6 +114,7 @@ const Hero = () => {
             </Link>
             <Link href="/demos" className="w-full sm:w-auto">
               <motion.button
+                transition={{ duration: 0.2, ease: "easeOut" }}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="btn-secondary text-base sm:text-lg px-8 sm:px-12 py-3 sm:py-4 flex items-center justify-center space-x-2 sm:space-x-3 group w-full sm:w-auto"
@@ -139,13 +141,13 @@ const Hero = () => {
                 key={feature.title}
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.8 + index * 0.2 }}
+                transition={{ duration: 0.2, ease: "easeOut" }}
                 whileHover={{ scale: 1.05 }}
                 className="glass rounded-xl sm:rounded-2xl p-4 sm:p-6 text-center group hover:bg-teal/60 transition-all duration-300 border-2 border-gold/20 hover:border-gold/60"
               >
                 <motion.div
+                  transition={{ duration: 0.3, ease: "easeInOut" }}
                   whileHover={{ rotate: 360 }}
-                  transition={{ duration: 0.5 }}
                   className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-r from-burgundy via-burgundy-light to-gold rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4 shadow-lg shadow-gold/30"
                 >
                   <feature.icon className="w-6 h-6 sm:w-8 sm:h-8 text-pearl" />

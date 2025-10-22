@@ -113,6 +113,7 @@ const AuditPage = () => {
           </div>
           
           <motion.button
+            transition={{ duration: 0.2, ease: "easeOut" }}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="btn-primary text-lg px-8 py-4"
@@ -289,6 +290,7 @@ const AuditPage = () => {
                 <motion.button
                   type="submit"
                   disabled={isSubmitting}
+                  transition={{ duration: 0.2, ease: "easeOut" }}
                   whileHover={{ scale: isSubmitting ? 1 : 1.05 }}
                   whileTap={{ scale: isSubmitting ? 1 : 0.95 }}
                   className="w-full btn-primary text-lg py-4 flex items-center justify-center space-x-3 disabled:opacity-50 disabled:cursor-not-allowed"
