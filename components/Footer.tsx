@@ -64,18 +64,20 @@ const Footer = () => {
               transition={{ duration: 0.6 }}
               className="mb-6"
             >
-              <Link href="/" className="flex items-center mb-4">
+              <Link href="/" className="inline-block mb-6">
                 <motion.div
-                  transition={{ duration: 0.3, ease: "easeInOut" }}
                   whileHover={{ scale: 1.05 }}
-                  className="relative w-32 h-16"
+                  transition={{ duration: 0.3 }}
+                  className="relative w-48 h-24 sm:w-56 sm:h-28"
+                  style={{
+                    filter: "brightness(1.2) drop-shadow(0 0 25px rgba(163, 133, 96, 0.6)) drop-shadow(0 0 50px rgba(163, 133, 96, 0.4))",
+                  }}
                 >
                   <Image 
                     src="/trart-logo.png" 
-                    alt="TRART Logo" 
-                    width={128}
-                    height={64}
-                    className="w-full h-full object-contain"
+                    alt="TRART Ai Logo" 
+                    fill
+                    className="object-contain"
                   />
                 </motion.div>
               </Link>
@@ -165,7 +167,6 @@ const Footer = () => {
                 className="flex-1 px-4 py-3 bg-teal/50 border border-gold/30 rounded-lg text-pearl placeholder-pearl/50 focus:outline-none focus:ring-2 focus:ring-gold focus:border-gold transition-all"
               />
               <motion.button
-                transition={{ duration: 0.2, ease: "easeOut" }}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="btn-primary px-6 py-3 flex items-center justify-center space-x-2"
@@ -207,7 +208,7 @@ const Footer = () => {
                   rel="noopener noreferrer"
                   initial={{ opacity: 0, scale: 0 }}
                   whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.2, ease: "easeOut" }}
+                  transition={{ duration: 0.4, delay: 0.2 + index * 0.1 }}
                   whileHover={{ scale: 1.2 }}
                   whileTap={{ scale: 0.9 }}
                   className="text-pearl/60 hover:text-gold transition-all duration-300"

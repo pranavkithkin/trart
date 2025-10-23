@@ -37,18 +37,20 @@ const Navbar = () => {
       <div className="container-custom">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-3">
+          <Link href="/" className="flex items-center">
             <motion.div
-              transition={{ duration: 0.3, ease: "easeInOut" }}
               whileHover={{ scale: 1.05 }}
-              className="relative w-12 h-12 sm:w-14 sm:h-14"
+              transition={{ duration: 0.3 }}
+              className="relative w-16 h-16 sm:w-20 sm:h-20"
+              style={{
+                filter: "brightness(1.2) drop-shadow(0 0 20px rgba(163, 133, 96, 0.5)) drop-shadow(0 0 40px rgba(163, 133, 96, 0.3))",
+              }}
             >
               <Image 
                 src="/trart-logo.png" 
-                alt="TRART Logo" 
-                width={56}
-                height={56}
-                className="w-full h-full object-contain"
+                alt="TRART Ai Logo" 
+                fill
+                className="object-contain"
                 priority
               />
             </motion.div>
@@ -72,7 +74,7 @@ const Navbar = () => {
             ))}
             <Link
               href="/audit"
-              className="btn-primary text-xs sm:text-sm px-4 sm:px-6 py-2 whitespace-nowrap"
+              className="btn-primary text-sm px-6 py-2"
             >
               Get Free AI Audit
             </Link>

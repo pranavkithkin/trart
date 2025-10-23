@@ -76,7 +76,7 @@ const AboutPage = () => {
     {
       year: "2024",
       title: "AI Innovation Award",
-      description: "Recognized as 'Best AI Innovation Award' by TechCrunch and AI Industry Awards."
+      description: "Recognized as 'Best AI Consultancy' by TechCrunch and AI Industry Awards."
     }
   ]
 
@@ -225,13 +225,13 @@ const AboutPage = () => {
                 key={value.title}
                 initial={{ opacity: 0, y: 50 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.2, ease: "easeOut" }}
+                transition={{ duration: 0.8, delay: index * 0.2 }}
                 whileHover={{ scale: 1.05 }}
                 className="glass rounded-2xl p-6 text-center group hover:bg-teal/60 border-2 border-gold/20 hover:border-gold/60 transition-all duration-300"
               >
                 <motion.div
-                  transition={{ duration: 0.3, ease: "easeInOut" }}
                   whileHover={{ rotate: 360 }}
+                  transition={{ duration: 0.5 }}
                   className="w-16 h-16 bg-gradient-to-r from-burgundy via-burgundy-light to-gold rounded-full flex items-center justify-center mx-auto mb-6"
                 >
                   <value.icon className="w-8 h-8 text-pearl" />
@@ -268,12 +268,11 @@ const AboutPage = () => {
                 key={member.name}
                 initial={{ opacity: 0, y: 50 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.2, ease: "easeOut" }}
+                transition={{ duration: 0.8, delay: index * 0.1 }}
                 whileHover={{ scale: 1.05 }}
                 className="glass rounded-3xl p-6 text-center group hover:bg-teal/60 border-2 border-gold/20 hover:border-gold/60 transition-all duration-300"
               >
                 <motion.div
-                  transition={{ duration: 0.2, ease: "easeOut" }}
                   whileHover={{ scale: 1.1 }}
                   className="w-24 h-24 bg-gradient-to-r from-burgundy via-burgundy-light to-gold rounded-full mx-auto mb-6 overflow-hidden"
                 >
@@ -368,7 +367,6 @@ const AboutPage = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-6 justify-center">
                 <motion.button
-                  transition={{ duration: 0.2, ease: "easeOut" }}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   className="btn-primary text-lg px-12 py-4 flex items-center space-x-3 group"
@@ -377,7 +375,6 @@ const AboutPage = () => {
                   <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
                 </motion.button>
                 <motion.button
-                  transition={{ duration: 0.2, ease: "easeOut" }}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   className="btn-secondary text-lg px-12 py-4"

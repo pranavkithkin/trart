@@ -12,23 +12,16 @@ export const metadata: Metadata = {
   description: 'TRART Ai specializes in intelligent automation solutions. Get your free AI audit and discover how AI agents can transform your business operations.',
   keywords: 'AI agents, business automation, intelligent automation, TRART Ai, digital transformation',
   authors: [{ name: 'TRART Ai' }],
-  icons: {
-    icon: '/trart-logo.png',
-    shortcut: '/trart-logo.png',
-    apple: '/trart-logo.png',
-  },
   openGraph: {
     title: 'TRART Ai - Transform Your Business with Intelligent Automation',
     description: 'TRART Ai specializes in intelligent automation solutions.',
     type: 'website',
     locale: 'en_US',
-    images: ['/trart-logo.png'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'TRART Ai - Transform Your Business with Intelligent Automation',
     description: 'TRART Ai specializes in intelligent automation solutions.',
-    images: ['/trart-logo.png'],
   },
   robots: {
     index: true,

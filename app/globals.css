@@ -21,11 +21,11 @@
 
 @layer components {
   .glass {
-    @apply bg-teal/40 backdrop-blur-md border border-gold/20;
+    @apply bg-teal/40 backdrop-blur-sm border border-gold/20;
   }
   
   .glass-dark {
-    @apply bg-noir/90 backdrop-blur-md border border-gold/30;
+    @apply bg-noir/95 backdrop-blur-sm border border-gold/30;
   }
   
   .gradient-text {
@@ -79,7 +79,7 @@
   }
   
   .container-custom {
-    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+    @apply max-w-7xl mx-auto;
   }
 }
 
