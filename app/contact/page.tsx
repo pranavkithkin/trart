@@ -3,15 +3,14 @@
 import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-import { 
-  Mail, 
-  Phone, 
-  MapPin, 
+import {
+  Mail,
+  Phone,
+  MapPin,
   MessageCircle,
   Send,
   CheckCircle,
   ArrowRight,
-  Clock,
   Globe,
   Zap
 } from 'lucide-react'
@@ -296,7 +295,7 @@ const ContactPage = () => {
                       onChange={handleInputChange}
                       required
                       className="w-full px-4 py-3 bg-teal/60 border border-gold/30 rounded-lg text-pearl placeholder-pearl/50 focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent"
-                      placeholder="John Doe"
+                      placeholder="Enter your full name"
                     />
                   </div>
                   <div>
@@ -308,7 +307,7 @@ const ContactPage = () => {
                       onChange={handleInputChange}
                       required
                       className="w-full px-4 py-3 bg-teal/60 border border-gold/30 rounded-lg text-pearl placeholder-pearl/50 focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent"
-                      placeholder="john@company.com"
+                      placeholder="Enter your email address"
                     />
                   </div>
                 </div>
@@ -322,7 +321,7 @@ const ContactPage = () => {
                       value={formData.company}
                       onChange={handleInputChange}
                       className="w-full px-4 py-3 bg-teal/60 border border-gold/30 rounded-lg text-pearl placeholder-pearl/50 focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent"
-                      placeholder="Acme Corporation"
+                      placeholder="Enter your company name"
                     />
                   </div>
                   <div>
@@ -405,27 +404,6 @@ const ContactPage = () => {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="space-y-8"
             >
-              {/* Office Hours */}
-              <div className="glass rounded-2xl p-6">
-                <div className="flex items-center space-x-3 mb-4">
-                  <Clock className="w-6 h-6 text-gold" />
-                  <h3 className="text-xl font-bold text-pearl">Office Hours</h3>
-                </div>
-                <div className="space-y-2 text-pearl/80">
-                  <div className="flex justify-between">
-                    <span>Monday - Friday</span>
-                    <span>9:00 AM - 6:00 PM PST</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span>Saturday</span>
-                    <span>10:00 AM - 4:00 PM PST</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span>Sunday</span>
-                    <span>Closed</span>
-                  </div>
-                </div>
-              </div>
 
               {/* Response Time */}
               <div className="glass rounded-2xl p-6">

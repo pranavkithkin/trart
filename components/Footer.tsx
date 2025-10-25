@@ -96,19 +96,19 @@ const Footer = () => {
             >
               <div className="flex items-center space-x-3 text-pearl/70">
                 <Mail className="w-5 h-5 text-gold" />
-                <a href="mailto:hello@trart.uk" className="hover:text-gold transition-colors">
-                  hello@trart.uk
+                <a href="mailto:pranvkithkin11@gmail.com" className="hover:text-gold transition-colors">
+                  pranvkithkin11@gmail.com
                 </a>
               </div>
               <div className="flex items-center space-x-3 text-pearl/70">
                 <Phone className="w-5 h-5 text-gold" />
-                <a href="tel:+15551234567" className="hover:text-gold transition-colors">
-                  +1 (555) 123-4567
+                <a href="tel:+971566272141" className="hover:text-gold transition-colors">
+                  +971 (56) 627-2141
                 </a>
               </div>
               <div className="flex items-center space-x-3 text-pearl/70">
                 <MapPin className="w-5 h-5 text-gold" />
-                <span>San Francisco, CA</span>
+                <span>Dubai, UAE</span>
               </div>
             </motion.div>
           </div>
