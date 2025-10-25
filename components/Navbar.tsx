@@ -46,11 +46,12 @@ const Navbar = () => {
                 filter: "brightness(1.2) drop-shadow(0 0 20px rgba(163, 133, 96, 0.5)) drop-shadow(0 0 40px rgba(163, 133, 96, 0.3))",
               }}
             >
-              <Image 
-                src="/trart-logo.png" 
-                alt="TRART Ai Logo" 
-                fill
-                className="object-contain"
+              <Image
+                src="/trart-logo.png"
+                alt="TRART Ai Logo"
+                width={80}
+                height={80}
+                className="object-contain w-full h-full"
                 priority
               />
             </motion.div>

@@ -73,11 +73,12 @@ const Footer = () => {
                     filter: "brightness(1.2) drop-shadow(0 0 25px rgba(163, 133, 96, 0.6)) drop-shadow(0 0 50px rgba(163, 133, 96, 0.4))",
                   }}
                 >
-                  <Image 
-                    src="/trart-logo.png" 
-                    alt="TRART Ai Logo" 
-                    fill
-                    className="object-contain"
+                  <Image
+                    src="/trart-logo.png"
+                    alt="TRART Ai Logo"
+                    width={224}
+                    height={112}
+                    className="object-contain w-full h-full"
                   />
                 </motion.div>
               </Link>
