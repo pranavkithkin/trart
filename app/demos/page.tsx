@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useState } from 'react'
+import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import { 
@@ -372,33 +373,25 @@ const DemosPage = () => {
             transition={{ duration: 0.8 }}
             className="text-center"
           >
-            <div className="glass rounded-3xl p-12 max-w-4xl mx-auto">
+            <div className="glass rounded-3xl p-12 max-w-4xl mx-auto border-2 border-gold/30">
               <h2 className="text-4xl font-bold text-pearl mb-6">
                 Ready to Build Your Own?
               </h2>
               <p className="text-xl text-pearl/80 mb-8">
                 These demos and templates are just the beginning. Let's create a 
-                custom AI agent solution tailored specifically to your business needs.
+                custom AI agent solution tailored to your business. Get your free audit today.
               </p>
-              <div className="flex flex-col sm:flex-row gap-6 justify-center">
+              <Link href="/audit">
                 <motion.button
                   transition={{ duration: 0.2, ease: "easeOut" }}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="btn-primary text-lg px-12 py-4 flex items-center space-x-3 group"
+                  className="btn-primary text-lg px-12 py-4 flex items-center space-x-3 mx-auto group shadow-lg shadow-gold/30 hover:shadow-gold/50"
                 >
-                  <span>Start Custom Project</span>
+                  <span>Get Free AI Audit</span>
                   <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
                 </motion.button>
-                <motion.button
-                  transition={{ duration: 0.2, ease: "easeOut" }}
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="btn-secondary text-lg px-12 py-4"
-                >
-                  Download Templates
-                </motion.button>
-              </div>
+              </Link>
             </div>
           </motion.div>
         </div>

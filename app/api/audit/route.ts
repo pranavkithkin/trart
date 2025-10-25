@@ -20,35 +20,38 @@ export async function POST(request: NextRequest) {
     // 3. Send confirmation email
     // 4. Add to CRM
 
-    // Example webhook call (uncomment when ready)
-    /*
+    // Send data to n8n webhook
     const webhookUrl = process.env.NEXT_PUBLIC_WEBHOOK_URL
     if (webhookUrl) {
-      await fetch(webhookUrl, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          type: 'audit_request',
-          data: {
-            name,
-            email,
-            company,
-            challenges,
-            currentAutomation: data.currentAutomation || '',
-            budget: data.budget || '',
-            timeline: data.timeline || '',
-            phone: data.phone || '',
-            timestamp: new Date().toISOString(),
-            source: 'website'
-          }
+      try {
+        await fetch(webhookUrl, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            type: 'audit_request',
+            data: {
+              name,
+              email,
+              company,
+              challenges,
+              currentAutomation: data.currentAutomation || '',
+              budget: data.budget || '',
+              timeline: data.timeline || '',
+              phone: data.phone || '',
+              timestamp: new Date().toISOString(),
+              source: 'website'
+            }
+          })
         })
-      })
+      } catch (error) {
+        console.error('Error sending webhook:', error)
+        // Continue with success response even if webhook fails
+      }
     }
-    */
 
-    // For now, just log the data (remove in production)
+    // Log the data for debugging (remove in production)
     console.log('Audit form submission:', data)
 
     return NextResponse.json({ 

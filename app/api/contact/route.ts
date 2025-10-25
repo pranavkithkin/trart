@@ -20,33 +20,36 @@ export async function POST(request: NextRequest) {
     // 3. Send confirmation email
     // 4. Notify team members
 
-    // Example webhook call (uncomment when ready)
-    /*
+    // Send data to n8n webhook
     const webhookUrl = process.env.NEXT_PUBLIC_CONTACT_WEBHOOK_URL
     if (webhookUrl) {
-      await fetch(webhookUrl, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          type: 'contact_form',
-          data: {
-            name,
-            email,
-            company: data.company || '',
-            subject,
-            message,
-            inquiryType: data.inquiryType || '',
-            timestamp: new Date().toISOString(),
-            source: 'website'
-          }
+      try {
+        await fetch(webhookUrl, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            type: 'contact_form',
+            data: {
+              name,
+              email,
+              company: data.company || '',
+              subject,
+              message,
+              inquiryType: data.inquiryType || '',
+              timestamp: new Date().toISOString(),
+              source: 'website'
+            }
+          })
         })
-      })
+      } catch (error) {
+        console.error('Error sending webhook:', error)
+        // Continue with success response even if webhook fails
+      }
     }
-    */
 
-    // For now, just log the data (remove in production)
+    // Log the data for debugging (remove in production)
     console.log('Contact form submission:', data)
 
     return NextResponse.json({ 

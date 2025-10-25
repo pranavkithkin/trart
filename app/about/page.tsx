@@ -1,6 +1,7 @@
 'use client'
 
 import React from 'react'
+import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import { 
@@ -357,31 +358,25 @@ const AboutPage = () => {
             transition={{ duration: 0.8 }}
             className="text-center"
           >
-            <div className="glass rounded-3xl p-12 max-w-4xl mx-auto">
+            <div className="glass rounded-3xl p-12 max-w-4xl mx-auto border-2 border-gold/30">
               <h2 className="text-4xl font-bold text-pearl mb-6">
                 Ready to Work With Us?
               </h2>
               <p className="text-xl text-pearl/80 mb-8">
                 Join the growing number of businesses that have transformed their 
-                operations with our AI agents. Let's build the future together.
+                operations with our AI agents. Get your free audit today.
               </p>
-              <div className="flex flex-col sm:flex-row gap-6 justify-center">
+              <Link href="/audit">
                 <motion.button
+                  transition={{ duration: 0.2, ease: "easeOut" }}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="btn-primary text-lg px-12 py-4 flex items-center space-x-3 group"
+                  className="btn-primary text-lg px-12 py-4 flex items-center space-x-3 mx-auto group shadow-lg shadow-gold/30 hover:shadow-gold/50"
                 >
-                  <span>Get Your Free Audit</span>
+                  <span>Get Free AI Audit</span>
                   <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
                 </motion.button>
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="btn-secondary text-lg px-12 py-4"
-                >
-                  View Our Services
-                </motion.button>
-              </div>
+              </Link>
             </div>
           </motion.div>
         </div>

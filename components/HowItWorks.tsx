@@ -1,5 +1,6 @@
 'use client'
 
+import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import { Search, Wrench, Play, ArrowRight } from 'lucide-react'
@@ -153,15 +154,17 @@ const HowItWorks = () => {
               Start your AI journey today with our free audit and discover the potential 
               for intelligent automation in your organization.
             </p>
-            <motion.button
-              transition={{ duration: 0.2, ease: "easeOut" }}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="btn-primary text-lg px-12 py-4 flex items-center space-x-3 mx-auto group"
-            >
-              <span>Get Started Now</span>
-              <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
-            </motion.button>
+            <Link href="/audit">
+              <motion.button
+                transition={{ duration: 0.2, ease: "easeOut" }}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="btn-primary text-lg px-12 py-4 flex items-center space-x-3 mx-auto group shadow-lg shadow-gold/30 hover:shadow-gold/50"
+              >
+                <span>Get Free AI Audit</span>
+                <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
+              </motion.button>
+            </Link>
           </div>
         </motion.div>
       </div>

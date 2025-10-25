@@ -146,35 +146,31 @@ const Footer = () => {
           ))}
         </div>
 
-        {/* Newsletter Signup */}
+        {/* CTA Section */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
           className="mt-12 pt-8 border-t border-gold/20"
         >
-          <div className="max-w-2xl mx-auto text-center">
-            <h3 className="text-2xl font-bold text-pearl mb-4">
-              Stay Updated with AI Insights
+          <div className="max-w-3xl mx-auto text-center">
+            <h3 className="text-3xl md:text-4xl font-bold text-pearl mb-4">
+              Ready to Transform Your Business?
             </h3>
-            <p className="text-pearl/70 mb-6">
-              Get the latest news, tips, and insights about AI automation delivered to your inbox.
+            <p className="text-lg md:text-xl text-pearl/80 mb-8">
+              Discover how AI agents can revolutionize your operations. Get your free audit today and unlock unprecedented efficiency.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="flex-1 px-4 py-3 bg-teal/50 border border-gold/30 rounded-lg text-pearl placeholder-pearl/50 focus:outline-none focus:ring-2 focus:ring-gold focus:border-gold transition-all"
-              />
+            <Link href="/audit">
               <motion.button
+                transition={{ duration: 0.2, ease: "easeOut" }}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="btn-primary px-6 py-3 flex items-center justify-center space-x-2"
+                className="btn-primary text-lg px-10 py-4 flex items-center justify-center space-x-3 mx-auto group shadow-lg shadow-gold/20 hover:shadow-gold/40"
               >
-                <span>Subscribe</span>
-                <ArrowRight className="w-4 h-4" />
+                <span>Get Free AI Audit</span>
+                <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
               </motion.button>
-            </div>
+            </Link>
           </div>
         </motion.div>
       </div>

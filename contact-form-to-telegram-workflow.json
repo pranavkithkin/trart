@@ -1,0 +1,99 @@
+{
+  "name": "Contact Form to Telegram",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "contact",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "5g6h7i8j-9k0l-1m2n-3o4p-5q6r7s8t9u0v",
+      "name": "Contact Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [240, 300]
+    },
+    {
+      "parameters": {
+        "values": {
+          "string": [
+            {
+              "name": "message",
+              "value": "=📬 **NEW CONTACT FORM MESSAGE** 📬\n\n👤 **Name:** {{$json[\"data\"][\"name\"]}}\n📧 **Email:** {{$json[\"data\"][\"email\"]}}\n🏢 **Company:** {{$json[\"data\"][\"company\"] || \"Not provided\"}}\n\n📝 **Subject:** {{$json[\"data\"][\"subject\"]}}\n\n💬 **Message:**\n{{$json[\"data\"][\"message\"]}}\n\n{{#if $json[\"data\"][\"inquiryType\"]}}🏷️ **Inquiry Type:** {{$json[\"data\"][\"inquiryType\"]}}\n{{/if}}\n\n🕒 **Received:** {{$json[\"data\"][\"timestamp\"]}}\n🌐 **Source:** {{$json[\"data\"][\"source\"]}}\n\n---\n✨ **Ready for response!**"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "6h7i8j9k-0l1m-2n3o-4p5q-6r7s8t9u0v1w",
+      "name": "Format Contact Message",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.2,
+      "position": [460, 300]
+    },
+    {
+      "parameters": {
+        "chatId": "YOUR_TELEGRAM_CHAT_ID",
+        "text": "={{$json[\"message\"]}}",
+        "options": {
+          "parse_mode": "Markdown"
+        }
+      },
+      "id": "7i8j9k0l-1m2n-3o4p-5q6r-7s8t9u0v1w2x",
+      "name": "Send Contact to Telegram",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1,
+      "position": [680, 300]
+    },
+    {
+      "parameters": {
+        "respondWith": "text",
+        "responseBody": "={{{\"status\": \"success\", \"message\": \"Contact form received and forwarded to Telegram\"}}}",
+        "options": {}
+      },
+      "id": "8j9k0l1m-2n3o-4p5q-6r7s-8t9u0v1w2x3y",
+      "name": "Respond to Contact Webhook",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [900, 300]
+    }
+  ],
+  "connections": {
+    "Contact Webhook": {
+      "main": [
+        [
+          {
+            "node": "Format Contact Message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Format Contact Message": {
+      "main": [
+        [
+          {
+            "node": "Send Contact to Telegram",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send Contact to Telegram": {
+      "main": [
+        [
+          {
+            "node": "Respond to Contact Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {},
+  "staticData": null
+}
