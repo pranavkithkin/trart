@@ -39,8 +39,8 @@ const Navbar = () => {
           {/* Logo */}
           <Link href="/" className="flex items-center">
             <motion.div
+              transition={{ duration: 0.3, ease: "easeInOut" }}
               whileHover={{ scale: 1.05 }}
-              transition={{ duration: 0.3 }}
               className="relative w-16 h-16 sm:w-20 sm:h-20"
               style={{
                 filter: "brightness(1.2) drop-shadow(0 0 20px rgba(163, 133, 96, 0.5)) drop-shadow(0 0 40px rgba(163, 133, 96, 0.3))",

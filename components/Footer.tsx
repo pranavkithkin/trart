@@ -66,8 +66,8 @@ const Footer = () => {
             >
               <Link href="/" className="inline-block mb-6">
                 <motion.div
+                  transition={{ duration: 0.3, ease: "easeInOut" }}
                   whileHover={{ scale: 1.05 }}
-                  transition={{ duration: 0.3 }}
                   className="relative w-48 h-24 sm:w-56 sm:h-28"
                   style={{
                     filter: "brightness(1.2) drop-shadow(0 0 25px rgba(163, 133, 96, 0.6)) drop-shadow(0 0 50px rgba(163, 133, 96, 0.4))",
@@ -204,7 +204,7 @@ const Footer = () => {
                   rel="noopener noreferrer"
                   initial={{ opacity: 0, scale: 0 }}
                   whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.4, delay: 0.2 + index * 0.1 }}
+                  transition={{ duration: 0.2, ease: "easeOut" }}
                   whileHover={{ scale: 1.2 }}
                   whileTap={{ scale: 0.9 }}
                   className="text-pearl/60 hover:text-gold transition-all duration-300"

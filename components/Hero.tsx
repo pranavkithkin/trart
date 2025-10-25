@@ -139,13 +139,13 @@ const Hero = () => {
                 key={feature.title}
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.8 + index * 0.2 }}
+                transition={{ duration: 0.2, ease: "easeOut" }}
                 whileHover={{ scale: 1.05 }}
                 className="glass rounded-2xl p-6 text-center group hover:bg-teal/60 transition-all duration-300 border-2 border-gold/20 hover:border-gold/60"
               >
                 <motion.div
+                  transition={{ duration: 0.3, ease: "easeInOut" }}
                   whileHover={{ rotate: 360 }}
-                  transition={{ duration: 0.5 }}
                   className="w-16 h-16 bg-gradient-to-r from-burgundy via-burgundy-light to-gold rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg shadow-gold/30"
                 >
                   <feature.icon className="w-8 h-8 text-pearl" />

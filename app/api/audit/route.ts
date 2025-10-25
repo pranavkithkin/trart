@@ -36,9 +36,8 @@ export async function POST(request: NextRequest) {
               email,
               company,
               challenges,
-              currentAutomation: data.currentAutomation || '',
-              budget: data.budget || '',
-              timeline: data.timeline || '',
+            currentAutomation: data.currentAutomation || '',
+            timeline: data.timeline || '',
               phone: data.phone || '',
               timestamp: new Date().toISOString(),
               source: 'website'

@@ -27,7 +27,6 @@ const AuditPage = () => {
     phone: '',
     challenges: '',
     currentAutomation: '',
-    budget: '',
     timeline: ''
   })
 
@@ -181,7 +180,7 @@ const AuditPage = () => {
                       onChange={handleInputChange}
                       required
                       className="w-full px-4 py-3 bg-teal/60 border border-gold/30 rounded-lg text-pearl placeholder-pearl/50 focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent"
-                      placeholder="John Doe"
+                      placeholder="Enter your full name"
                     />
                   </div>
                   <div>
@@ -193,7 +192,7 @@ const AuditPage = () => {
                       onChange={handleInputChange}
                       required
                       className="w-full px-4 py-3 bg-teal/60 border border-gold/30 rounded-lg text-pearl placeholder-pearl/50 focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent"
-                      placeholder="john@company.com"
+                      placeholder="Enter your email address"
                     />
                   </div>
                 </div>
@@ -208,7 +207,7 @@ const AuditPage = () => {
                       onChange={handleInputChange}
                       required
                       className="w-full px-4 py-3 bg-teal/60 border border-gold/30 rounded-lg text-pearl placeholder-pearl/50 focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent"
-                      placeholder="Acme Corporation"
+                      placeholder="Enter your company name"
                     />
                   </div>
                   <div>
@@ -219,7 +218,7 @@ const AuditPage = () => {
                       value={formData.phone}
                       onChange={handleInputChange}
                       className="w-full px-4 py-3 bg-teal/60 border border-gold/30 rounded-lg text-pearl placeholder-pearl/50 focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent"
-                      placeholder="+1 (555) 123-4567"
+                      placeholder="Enter your phone number"
                     />
                   </div>
                 </div>
@@ -253,38 +252,21 @@ const AuditPage = () => {
                   </select>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <label className="block text-pearl font-semibold mb-2">Budget Range</label>
-                    <select
-                      name="budget"
-                      value={formData.budget}
-                      onChange={handleInputChange}
-                      className="w-full px-4 py-3 bg-teal/60 border border-gold/30 rounded-lg text-pearl focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent"
-                    >
-                      <option value="">Select budget range</option>
-                      <option value="under-5k">Under $5,000/month</option>
-                      <option value="5k-10k">$5,000 - $10,000/month</option>
-                      <option value="10k-25k">$10,000 - $25,000/month</option>
-                      <option value="25k-plus">$25,000+/month</option>
-                    </select>
-                  </div>
-                  <div>
-                    <label className="block text-pearl font-semibold mb-2">Timeline</label>
-                    <select
-                      name="timeline"
-                      value={formData.timeline}
-                      onChange={handleInputChange}
-                      className="w-full px-4 py-3 bg-teal/60 border border-gold/30 rounded-lg text-pearl focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent"
-                    >
-                      <option value="">Select timeline</option>
-                      <option value="asap">ASAP</option>
-                      <option value="1-month">Within 1 month</option>
-                      <option value="3-months">Within 3 months</option>
-                      <option value="6-months">Within 6 months</option>
-                      <option value="planning">Just planning ahead</option>
-                    </select>
-                  </div>
+                <div>
+                  <label className="block text-pearl font-semibold mb-2">Timeline</label>
+                  <select
+                    name="timeline"
+                    value={formData.timeline}
+                    onChange={handleInputChange}
+                    className="w-full px-4 py-3 bg-teal/60 border border-gold/30 rounded-lg text-pearl focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent"
+                  >
+                    <option value="">Select timeline</option>
+                    <option value="asap">ASAP</option>
+                    <option value="1-month">Within 1 month</option>
+                    <option value="3-months">Within 3 months</option>
+                    <option value="6-months">Within 6 months</option>
+                    <option value="planning">Just planning ahead</option>
+                  </select>
                 </div>
 
                 <motion.button
