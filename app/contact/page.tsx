@@ -71,30 +71,22 @@ const ContactPage = () => {
     {
       icon: Mail,
       title: 'Email Us',
-      details: 'hello@trart.uk',
+      details: 'pranvkithkin11@gmail.com',
       description: 'Send us an email anytime',
-      action: 'mailto:hello@trart.uk'
+      action: 'mailto:pranvkithkin11@gmail.com'
     },
     {
       icon: Phone,
       title: 'Call Us',
-      details: '+1 (555) 123-4567',
+      details: '+971 (56) 627-2141',
       description: 'Mon-Fri 9AM-6PM PST',
-      action: 'tel:+15551234567'
-    },
-    {
-      icon: MapPin,
-      title: 'Visit Us',
-      details: 'San Francisco, CA',
-      description: 'Schedule an in-person meeting',
-      action: '#'
     },
     {
       icon: MessageCircle,
       title: 'WhatsApp',
-      details: '+1 (555) 123-4567',
+      details: '+971 (56) 627-2141',
       description: 'Quick chat support',
-      action: 'https://wa.me/15551234567'
+      action: 'https://wa.me/971566272141'
     }
   ]
 
@@ -154,6 +146,7 @@ const ContactPage = () => {
           
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <motion.button
+              transition={{ duration: 0.2, ease: "easeOut" }}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="btn-primary text-lg px-8 py-4"
@@ -162,6 +155,7 @@ const ContactPage = () => {
               Return to Home
             </motion.button>
             <motion.button
+              transition={{ duration: 0.2, ease: "easeOut" }}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="btn-secondary text-lg px-8 py-4"
@@ -219,20 +213,20 @@ const ContactPage = () => {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16 max-w-6xl mx-auto">
             {contactInfo.map((info, index) => (
               <motion.a
                 key={info.title}
                 href={info.action}
                 initial={{ opacity: 0, y: 50 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.8, delay: index * 0.1 }}
+                transition={{ duration: 0.2, ease: "easeOut" }}
                 whileHover={{ scale: 1.05 }}
                 className="glass rounded-2xl p-6 text-center group hover:bg-teal/60 border-2 border-gold/20 hover:border-gold/60 transition-all duration-300"
               >
                 <motion.div
+                  transition={{ duration: 0.3, ease: "easeInOut" }}
                   whileHover={{ rotate: 360 }}
-                  transition={{ duration: 0.5 }}
                   className="w-16 h-16 bg-gradient-to-r from-burgundy via-burgundy-light to-gold rounded-full flex items-center justify-center mx-auto mb-4"
                 >
                   <info.icon className="w-8 h-8 text-pearl" />
@@ -378,6 +372,7 @@ const ContactPage = () => {
                 <motion.button
                   type="submit"
                   disabled={isSubmitting}
+                  transition={{ duration: 0.2, ease: "easeOut" }}
                   whileHover={{ scale: isSubmitting ? 1 : 1.05 }}
                   whileTap={{ scale: isSubmitting ? 1 : 0.95 }}
                   className="w-full btn-primary text-lg py-4 flex items-center justify-center space-x-3 disabled:opacity-50 disabled:cursor-not-allowed"
