@@ -49,9 +49,8 @@ const Navbar = () => {
               <Image
                 src="/trart-logo.png"
                 alt="TRART Ai Logo"
-                width={80}
-                height={80}
-                className="object-contain w-full h-full"
+                fill
+                className="object-contain"
                 priority
               />
             </motion.div>

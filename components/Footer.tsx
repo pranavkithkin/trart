@@ -76,9 +76,8 @@ const Footer = () => {
                   <Image
                     src="/trart-logo.png"
                     alt="TRART Ai Logo"
-                    width={224}
-                    height={112}
-                    className="object-contain w-full h-full"
+                    fill
+                    className="object-contain"
                   />
                 </motion.div>
               </Link>

@@ -35,9 +35,7 @@ COPY --from=builder /app/next.config.js ./
 COPY --from=builder /app/package.json ./package.json
 COPY --from=builder --chown=nextjs:nodejs /app/.next ./.next
 COPY --from=builder /app/node_modules ./node_modules
-
-# Create public directory
-RUN mkdir -p ./public
+COPY --from=builder --chown=nextjs:nodejs /app/public ./public
 
 USER nextjs
 
