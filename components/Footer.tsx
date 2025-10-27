@@ -70,7 +70,7 @@ const Footer = () => {
                   whileHover={{ scale: 1.05 }}
                   className="relative w-48 h-24 sm:w-56 sm:h-28"
                   style={{
-                    filter: "brightness(1.2) drop-shadow(0 0 25px rgba(234, 230, 224, 0.6)) drop-shadow(0 0 50px rgba(234, 230, 224, 0.4))",
+                    filter: "drop-shadow(0 2px 8px rgba(234, 230, 224, 0.2))",
                   }}
                 >
                   <Image
