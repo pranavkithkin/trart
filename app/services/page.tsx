@@ -241,41 +241,151 @@ const ServicesPage = () => {
       </section>
 
       {/* Benefits Section */}
-      <section className="section-padding bg-charcoal">
-        <div className="container-custom">
+      <section className="section-padding bg-gradient-to-br from-charcoal via-teal to-charcoal relative overflow-hidden">
+        {/* Subtle Background Pattern */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute inset-0" style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23A38560' fill-opacity='0.2'%3E%3Ccircle cx='30' cy='30' r='1.5'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
+          }} />
+        </div>
+
+        {/* Elegant Floating Elements */}
+        <div className="absolute inset-0 overflow-hidden">
+          <motion.div
+            animate={{
+              x: [0, 50, 0],
+              y: [0, -30, 0],
+              opacity: [0.1, 0.2, 0.1]
+            }}
+            transition={{
+              duration: 20,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+            className="absolute top-20 right-20 w-24 h-24 bg-gradient-to-r from-gold/10 to-burgundy/10 rounded-full blur-sm"
+          />
+          <motion.div
+            animate={{
+              x: [0, -40, 0],
+              y: [0, 40, 0],
+              opacity: [0.05, 0.15, 0.05]
+            }}
+            transition={{
+              duration: 25,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+            className="absolute bottom-20 left-20 w-32 h-32 bg-gradient-to-r from-burgundy/10 to-gold/10 rounded-full blur-sm"
+          />
+        </div>
+
+        <div className="container-custom relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8 }}
-            className="text-center mb-16"
+            className="text-center mb-20"
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
-              Why Choose Our AI Agents
-            </h2>
-            <p className="text-xl max-w-3xl mx-auto" style={{ color: 'rgba(234, 230, 224, 0.8)' }}>
+            <motion.h2
+              className="text-5xl md:text-6xl font-bold mb-8"
+              style={{ color: '#EAE6E0' }}
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={inView ? { opacity: 1, scale: 1 } : {}}
+              transition={{ duration: 1, delay: 0.2 }}
+            >
+              <span className="bg-gradient-to-r from-gold via-gold-light to-burgundy bg-clip-text text-transparent">
+                Why Choose Our AI Agents
+              </span>
+            </motion.h2>
+            <motion.p
+              className="text-2xl max-w-4xl mx-auto leading-relaxed"
+              style={{ color: 'rgba(234, 230, 224, 0.9)' }}
+              initial={{ opacity: 0, y: 30 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.8, delay: 0.4 }}
+            >
               Built with cutting-edge technology and designed for enterprise-grade performance
-            </p>
+            </motion.p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {benefits.map((benefit, index) => (
               <motion.div
                 key={benefit.title}
-                initial={{ opacity: 0, y: 50 }}
-                animate={inView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.2, ease: "easeOut" }}
-                whileHover={{ scale: 1.05 }}
-                className="glass rounded-2xl p-8 text-center group hover:bg-slate/10 border-2 border-slate/20 hover:border-slate/40 transition-all duration-300"
+                initial={{ opacity: 0, y: 50, scale: 0.9 }}
+                animate={inView ? { opacity: 1, y: 0, scale: 1 } : {}}
+                transition={{
+                  duration: 0.6,
+                  delay: 0.6 + index * 0.1,
+                  type: "spring",
+                  stiffness: 100
+                }}
+                whileHover={{
+                  scale: 1.05,
+                  y: -8,
+                  transition: { duration: 0.3, ease: "easeOut" }
+                }}
+                className="relative group"
               >
-                <motion.div
-                  transition={{ duration: 0.3, ease: "easeInOut" }}
-                  whileHover={{ rotate: 360 }}
-                  className="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-6"
-                >
-                  <benefit.icon className="w-8 h-8 text-charcoal" />
-                </motion.div>
-                <h3 className="text-2xl font-bold mb-4" style={{ color: '#EAE6E0' }}>{benefit.title}</h3>
-                <p style={{ color: 'rgba(234, 230, 224, 0.8)' }}>{benefit.description}</p>
+                {/* Enhanced Glass Card */}
+                <div className="absolute inset-0 bg-gradient-to-br from-pearl/5 via-transparent to-transparent rounded-3xl blur-lg transform group-hover:blur-xl transition-all duration-500" />
+
+                <div className="relative glass-dark rounded-3xl p-10 text-center border border-gold/20 hover:border-gold/40 transition-all duration-500 backdrop-blur-xl overflow-hidden">
+                  {/* Subtle gradient overlay on hover */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-gold/5 via-transparent to-burgundy/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl" />
+
+                  {/* Professional Icon Container */}
+                  <motion.div
+                    initial={{ scale: 0, rotate: -180 }}
+                    animate={inView ? { scale: 1, rotate: 0 } : {}}
+                    transition={{
+                      duration: 0.8,
+                      delay: 0.8 + index * 0.1,
+                      type: "spring",
+                      stiffness: 200
+                    }}
+                    whileHover={{
+                      rotate: 360,
+                      scale: 1.1,
+                      transition: { duration: 0.6, ease: "easeInOut" }
+                    }}
+                    className="relative w-20 h-20 mx-auto mb-8"
+                  >
+                    {/* Sophisticated icon background */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-gold via-gold-light to-burgundy rounded-2xl shadow-lg shadow-gold/20 transform rotate-3 group-hover:rotate-6 transition-transform duration-500" />
+                    <div className="absolute inset-1 bg-gradient-to-br from-burgundy via-gold to-gold-light rounded-2xl flex items-center justify-center shadow-inner">
+                      <benefit.icon className="w-10 h-10 text-pearl drop-shadow-sm" />
+                    </div>
+
+                    {/* Elegant accent dots */}
+                    <div className="absolute -top-1 -right-1 w-2 h-2 bg-gold rounded-full opacity-0 group-hover:opacity-100 animate-pulse transition-opacity duration-300" />
+                    <div className="absolute -bottom-1 -left-1 w-1.5 h-1.5 bg-burgundy rounded-full opacity-0 group-hover:opacity-100 animate-pulse delay-150 transition-opacity duration-300" />
+                  </motion.div>
+
+                  {/* Enhanced Typography with Better Hierarchy */}
+                  <motion.h3
+                    className="text-3xl font-bold mb-6 text-pearl relative"
+                    initial={{ opacity: 0 }}
+                    animate={inView ? { opacity: 1 } : {}}
+                    transition={{ duration: 0.8, delay: 1 + index * 0.1 }}
+                  >
+                    {benefit.title}
+                    {/* Subtle underline effect */}
+                    <div className="absolute left-1/2 bottom-0 w-0 h-0.5 bg-gradient-to-r from-gold to-burgundy group-hover:w-1/2 left-1/4 transition-all duration-500" />
+                  </motion.h3>
+
+                  <motion.p
+                    className="text-xl text-pearl/90 leading-relaxed relative z-10"
+                    initial={{ opacity: 0 }}
+                    animate={inView ? { opacity: 1 } : {}}
+                    transition={{ duration: 0.8, delay: 1.2 + index * 0.1 }}
+                  >
+                    {benefit.description}
+                  </motion.p>
+
+                  {/* Professional glow effect */}
+                  <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-gold/0 via-gold/3 to-burgundy/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+                </div>
               </motion.div>
             ))}
           </div>
