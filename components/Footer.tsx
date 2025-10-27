@@ -19,10 +19,10 @@ const Footer = () => {
 
   const footerLinks = {
     services: [
-      { name: 'Sales Agent', href: '/services#sales' },
-      { name: 'Support Agent', href: '/services#support' },
-      { name: 'Finance Ops', href: '/services#finance' },
-      { name: 'HR Agent', href: '/services#hr' }
+      { name: 'Sales Agent', href: '/services' },
+      { name: 'Operations Agent', href: '/services' },
+      { name: 'Customer Success Agent', href: '/services' },
+      { name: 'Custom AI Agents', href: '/services' }
     ],
     company: [
       { name: 'About Us', href: '/about' },
@@ -31,8 +31,8 @@ const Footer = () => {
       { name: 'Contact', href: '/contact' }
     ],
     resources: [
-      { name: 'Demos', href: '/demos' },
-      { name: 'Templates', href: '/demos#templates' },
+      { name: 'Resources', href: '/resources' },
+      { name: 'Case Studies', href: '/resources#case-studies' },
       { name: 'Documentation', href: '/docs' },
       { name: 'Blog', href: '/blog' }
     ],

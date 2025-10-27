@@ -95,10 +95,10 @@ const Testimonials = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-charcoal">
-            Trusted by Industry Leaders
+            Client Success Stories
           </h2>
           <p className="text-xl md:text-2xl max-w-3xl mx-auto leading-relaxed" style={{ color: '#535366' }}>
-            Real results from B2B companies who chose to lead, not follow
+            Real results from B2B companies transforming with AI
           </p>
         </motion.div>
 

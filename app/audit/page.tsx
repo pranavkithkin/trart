@@ -32,8 +32,7 @@ const AuditPage = () => {
     revenue: '',
     challenges: '',
     currentAutomation: '',
-    timeline: '',
-    budget: ''
+    timeline: ''
   })
 
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -132,11 +131,11 @@ const AuditPage = () => {
   }
 
   return (
-    <div className="min-h-screen bg-canvas pt-20">
+    <div className="min-h-screen bg-canvas">
       {/* Hero Section */}
-      <section className="section-padding bg-canvas relative overflow-hidden">
-        <div className="absolute inset-0 opacity-50" style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23A38560' fill-opacity='0.15'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
+      <section className="section-padding bg-charcoal relative overflow-hidden">
+        <div className="absolute inset-0 opacity-5" style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23FFFFFF' fill-opacity='0.05'%3E%3Ccircle cx='30' cy='30' r='1'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
         }} />
         
         <div className="container-custom relative z-10">
@@ -146,10 +145,10 @@ const AuditPage = () => {
             transition={{ duration: 0.8 }}
             className="text-center max-w-4xl mx-auto"
           >
-            <h1 className="text-5xl md:text-7xl font-bold mb-6">
-              Get Your <span className="text-charcoal">Free AI Growth Audit</span>
+            <h1 className="text-5xl md:text-7xl font-bold mb-6" style={{ color: '#FFFFFF' }}>
+              Get Your <span style={{ color: '#EAE6E0' }}>Free AI Growth Audit</span>
             </h1>
-            <p className="text-xl md:text-2xl mb-12 leading-relaxed" style={{ color: '#535366' }}>
+            <p className="text-xl md:text-2xl mb-12 leading-relaxed" style={{ color: 'rgba(234, 230, 224, 0.9)' }}>
               In 60 seconds, discover exactly where AI can drive revenue, cut costs, 
               and give you an unfair competitive advantage. $12M+ generated for our clients.
             </p>
@@ -373,23 +372,6 @@ const AuditPage = () => {
                         <option value="3-months">Within 3 months</option>
                         <option value="6-months">Within 6 months</option>
                         <option value="planning">Just exploring options</option>
-                      </select>
-                    </div>
-                    <div>
-                      <label className="block font-semibold mb-2" style={{ color: '#1C1C1C' }}>Budget Range (Optional)</label>
-                      <select
-                        name="budget"
-                        value={formData.budget}
-                        onChange={handleInputChange}
-                        className="w-full px-4 py-4 bg-canvas border-2 border-slate/30 rounded-xl focus:outline-none focus:ring-2 focus:ring-charcoal focus:border-charcoal text-lg"
-                        style={{ color: '#1C1C1C' }}
-                      >
-                        <option value="">Select budget range</option>
-                        <option value="<5k">Less than $5K/month</option>
-                        <option value="5-10k">$5K - $10K/month</option>
-                        <option value="10-25k">$10K - $25K/month</option>
-                        <option value="25k+">$25K+/month</option>
-                        <option value="flexible">Flexible based on ROI</option>
                       </select>
                     </div>
                   </motion.div>

@@ -42,34 +42,6 @@ const AboutPage = () => {
     }
   ]
 
-  const milestones = [
-    {
-      year: "2020",
-      title: "Company Founded",
-      description: "Started with a vision to democratize AI automation for businesses of all sizes."
-    },
-    {
-      year: "2021",
-      title: "First AI Agent Deployed",
-      description: "Successfully deployed our first customer service AI agent, achieving 95% satisfaction."
-    },
-    {
-      year: "2022",
-      title: "Series A Funding",
-      description: "Raised $10M to accelerate product development and expand our team."
-    },
-    {
-      year: "2023",
-      title: "100+ Clients Served",
-      description: "Reached milestone of serving over 100 enterprise clients across various industries."
-    },
-    {
-      year: "2024",
-      title: "AI Innovation Award",
-      description: "Recognized as 'Best AI Consultancy' by TechCrunch and AI Industry Awards."
-    }
-  ]
-
   const values = [
     {
       icon: Lightbulb,
@@ -94,11 +66,11 @@ const AboutPage = () => {
   ]
 
   return (
-    <div className="min-h-screen bg-canvas pt-20">
+    <div className="min-h-screen bg-canvas">
       {/* Hero Section */}
-      <section className="section-padding bg-canvas relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10" style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23A38560' fill-opacity='0.15'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
+      <section className="section-padding bg-charcoal relative overflow-hidden">
+        <div className="absolute inset-0 opacity-5" style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23FFFFFF' fill-opacity='0.05'%3E%3Ccircle cx='30' cy='30' r='1'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
         }} />
         
         <div className="container-custom relative z-10">
@@ -108,13 +80,13 @@ const AboutPage = () => {
             transition={{ duration: 0.8 }}
             className="text-center max-w-4xl mx-auto"
           >
-            <div className="inline-block px-6 py-2 bg-charcoal/10 rounded-full mb-6">
-              <span className="text-lg font-bold text-charcoal">AI-Native Since 2020</span>
+            <div className="inline-block px-6 py-2 bg-white/10 rounded-full mb-6">
+              <span className="text-lg font-bold" style={{ color: '#EAE6E0' }}>AI-Native Since 2020</span>
             </div>
-            <h1 className="text-5xl md:text-7xl font-bold mb-6">
-              Built by AI Experts, <span className="text-charcoal">For Growth-Obsessed Leaders</span>
+            <h1 className="text-5xl md:text-7xl font-bold mb-6" style={{ color: '#FFFFFF' }}>
+              Built by AI Experts, <span style={{ color: '#EAE6E0' }}>For Growth-Obsessed Leaders</span>
             </h1>
-            <p className="text-xl md:text-2xl mb-12 leading-relaxed" style={{ color: '#535366' }}>
+            <p className="text-xl md:text-2xl mb-12 leading-relaxed" style={{ color: 'rgba(234, 230, 224, 0.9)' }}>
               We're not consultants who jumped on the AI bandwagon. We've been building 
               production AI systems since 2020, before ChatGPT made it trendy.
             </p>
@@ -299,7 +271,7 @@ const AboutPage = () => {
       </section>
 
       {/* Values Section */}
-      <section className="section-padding bg-gradient-to-br from-charcoal via-charcoal to-teal relative overflow-hidden">
+      <section className="section-padding bg-charcoal relative overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-5">
           <div className="absolute inset-0" style={{
@@ -511,53 +483,6 @@ const AboutPage = () => {
                 </div>
               </motion.div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Timeline Section */}
-      <section className="section-padding bg-charcoal">
-        <div className="container-custom">
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Our <span className="text-charcoal">Journey</span>
-            </h2>
-            <p className="text-xl max-w-3xl mx-auto" style={{ color: 'rgba(234, 230, 224, 0.8)' }}>
-              Key milestones in our mission to democratize AI automation
-            </p>
-          </motion.div>
-
-          <div className="relative">
-            {/* Timeline Line */}
-            <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-charcoal" />
-            
-            <div className="space-y-12">
-              {milestones.map((milestone, index) => (
-                <motion.div
-                  key={milestone.year}
-                  initial={{ opacity: 0, x: -50 }}
-                  animate={inView ? { opacity: 1, x: 0 } : {}}
-                  transition={{ duration: 0.8, delay: index * 0.2 }}
-                  className="relative flex items-start space-x-8"
-                >
-                  {/* Timeline Dot */}
-                  <div className="relative z-10 w-16 h-16 bg-canvas rounded-full flex items-center justify-center flex-shrink-0">
-                    <span className="font-bold text-sm" style={{ color: '#1C1C1C' }}>{milestone.year}</span>
-                  </div>
-
-                  {/* Content */}
-                  <div className="glass rounded-2xl p-6 flex-1">
-                    <h3 className="text-2xl font-bold mb-2" style={{ color: '#EAE6E0' }}>{milestone.title}</h3>
-                    <p style={{ color: 'rgba(234, 230, 224, 0.8)' }}>{milestone.description}</p>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
           </div>
         </div>
       </section>

@@ -3,7 +3,6 @@
 import React from 'react'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { useInView } from 'react-intersection-observer'
 import { 
   TrendingUp, 
   Users, 
@@ -22,10 +21,6 @@ import {
 } from 'lucide-react'
 
 const ServicesPage = () => {
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.1
-  })
 
   const pillars = [
     {
@@ -46,7 +41,6 @@ const ServicesPage = () => {
             "Real-time deal insights and coaching"
           ],
           results: "41% higher conversion rates, 62% faster sales cycles",
-          price: "From $4,999/month",
           popular: true
         },
         {
@@ -60,8 +54,7 @@ const ServicesPage = () => {
             "Automated onboarding and training",
             "Customer health scoring and alerts"
           ],
-          results: "38% reduction in churn, 96% CSAT scores",
-          price: "From $3,999/month"
+          results: "38% reduction in churn, 96% CSAT scores"
         },
         {
           title: "Revenue Intelligence Dashboard",
@@ -74,8 +67,7 @@ const ServicesPage = () => {
             "Rep performance analytics",
             "Market opportunity identification"
           ],
-          results: "22% increase in forecast accuracy, $2.4M+ revenue identified",
-          price: "From $2,999/month"
+          results: "22% increase in forecast accuracy, $2.4M+ revenue identified"
         }
       ]
     },
@@ -97,7 +89,6 @@ const ServicesPage = () => {
             "Custom integrations and APIs"
           ],
           results: "1,200+ hours saved monthly, 99.7% accuracy",
-          price: "From $3,499/month",
           popular: true
         },
         {
@@ -111,8 +102,7 @@ const ServicesPage = () => {
             "Email and calendar management",
             "Document processing and data entry"
           ],
-          results: "400% efficiency improvement, $180K annual savings",
-          price: "From $2,999/month"
+          results: "400% efficiency improvement, $180K annual savings"
         },
         {
           title: "Content Generation Engine",
@@ -125,8 +115,7 @@ const ServicesPage = () => {
             "Email campaign copywriting",
             "Technical documentation"
           ],
-          results: "50x faster content production, 284% SEO traffic increase",
-          price: "From $2,499/month"
+          results: "50x faster content production, 284% SEO traffic increase"
         }
       ]
     },
@@ -148,7 +137,6 @@ const ServicesPage = () => {
             "Continuous learning and improvement"
           ],
           results: "Tailored solutions with 500%+ ROI",
-          price: "Custom pricing",
           popular: true
         },
         {
@@ -162,8 +150,7 @@ const ServicesPage = () => {
             "API development and management",
             "Legacy system modernization"
           ],
-          results: "99.9% data consistency, 2min search time (from 45min)",
-          price: "From $5,999/month"
+          results: "99.9% data consistency, 2min search time (from 45min)"
         },
         {
           title: "Continuous Optimization Program",
@@ -176,8 +163,7 @@ const ServicesPage = () => {
             "Quarterly strategy reviews",
             "Priority support and maintenance"
           ],
-          results: "25% performance improvement quarterly",
-          price: "From $1,999/month"
+          results: "25% performance improvement quarterly"
         }
       ]
     }
@@ -202,11 +188,11 @@ const ServicesPage = () => {
   ]
 
   return (
-    <div className="min-h-screen bg-canvas pt-20">
+    <div className="min-h-screen bg-canvas">
       {/* Hero Section */}
-      <section className="section-padding bg-canvas relative overflow-hidden">
-        <div className="absolute inset-0 opacity-50" style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23A38560' fill-opacity='0.15'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
+      <section className="section-padding bg-charcoal relative overflow-hidden">
+        <div className="absolute inset-0 opacity-5" style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23FFFFFF' fill-opacity='0.05'%3E%3Ccircle cx='30' cy='30' r='1'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
         }} />
         
         <div className="container-custom relative z-10">
@@ -216,10 +202,10 @@ const ServicesPage = () => {
             transition={{ duration: 0.8 }}
             className="text-center max-w-4xl mx-auto"
           >
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 text-charcoal">
+            <h1 className="text-5xl md:text-7xl font-bold mb-6" style={{ color: '#FFFFFF' }}>
               AI Solutions That Actually Drive Revenue
             </h1>
-            <p className="text-xl md:text-2xl mb-12 leading-relaxed" style={{ color: '#535366' }}>
+            <p className="text-xl md:text-2xl mb-12 leading-relaxed" style={{ color: 'rgba(234, 230, 224, 0.9)' }}>
               Three core pillars. Nine proven solutions. Unlimited growth potential.
               Built for B2B companies ready to dominate their market.
             </p>
@@ -232,9 +218,9 @@ const ServicesPage = () => {
         <section key={pillarIndex} className={`section-padding ${pillarIndex % 2 === 0 ? 'bg-canvas' : 'bg-white'}`}>
           <div className="container-custom">
             <motion.div
-              ref={ref}
               initial={{ opacity: 0, y: 50 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.1 }}
               transition={{ duration: 0.8 }}
               className="text-center mb-16"
             >
@@ -256,7 +242,8 @@ const ServicesPage = () => {
                 <motion.div
                   key={serviceIndex}
                   initial={{ opacity: 0, y: 50 }}
-                  animate={inView ? { opacity: 1, y: 0 } : {}}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.1 }}
                   transition={{ duration: 0.6, delay: serviceIndex * 0.2 }}
                   whileHover={{ scale: 1.02, y: -5 }}
                   className={`glass rounded-3xl p-8 relative group hover:bg-slate/5 border-2 ${
@@ -304,11 +291,6 @@ const ServicesPage = () => {
                     <div className="text-sm font-bold" style={{ color: '#1C1C1C' }}>{service.results}</div>
                   </div>
 
-                  {/* Pricing */}
-                  <div className="mb-6">
-                    <div className="text-2xl font-bold" style={{ color: '#1C1C1C' }}>{service.price}</div>
-                  </div>
-
                   {/* CTA */}
                   <Link href="/audit">
                     <motion.button
@@ -342,7 +324,8 @@ const ServicesPage = () => {
         <div className="container-custom relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.1 }}
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
@@ -356,7 +339,8 @@ const ServicesPage = () => {
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 50 }}
-                animate={inView ? { opacity: 1, y: 0 } : {}}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.1 }}
                 transition={{ duration: 0.6, delay: index * 0.2 }}
                 whileHover={{ scale: 1.05, y: -5 }}
                 className="glass-dark rounded-3xl p-8 text-center border border-white/10"
@@ -381,7 +365,8 @@ const ServicesPage = () => {
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.1 }}
             transition={{ duration: 0.8 }}
             className="text-center"
           >

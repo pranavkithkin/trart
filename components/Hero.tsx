@@ -71,17 +71,6 @@ const Hero = () => {
                   <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
                 </motion.button>
               </Link>
-              <Link href="/demos">
-                <motion.button
-                  transition={{ duration: 0.2, ease: "easeOut" }}
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="btn-secondary text-lg px-12 py-5 flex items-center space-x-3 group"
-                >
-                  <Zap className="w-6 h-6" />
-                  <span>See Demos</span>
-                </motion.button>
-              </Link>
             </motion.div>
 
             {/* Trust Indicators */}
