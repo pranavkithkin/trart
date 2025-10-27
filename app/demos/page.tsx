@@ -35,7 +35,7 @@ const DemosPage = () => {
       title: 'Sales Agent Demo',
       description: 'Watch our AI sales agent qualify leads, schedule meetings, and close deals automatically',
       icon: MessageSquare,
-      color: 'from-burgundy via-burgundy-light to-gold',
+      color: 'from-charcoal to-slate',
       video: 'https://via.placeholder.com/800x450/0ea5e9/ffffff?text=Sales+Agent+Demo',
       duration: '2:30',
       features: [
@@ -50,7 +50,7 @@ const DemosPage = () => {
       title: 'Support Agent Demo',
       description: 'See how our AI support agent handles customer inquiries and resolves issues instantly',
       icon: Headphones,
-      color: 'from-gold via-gold-light to-burgundy',
+      color: 'from-slate to-charcoal',
       video: 'https://via.placeholder.com/800x450/8b5cf6/ffffff?text=Support+Agent+Demo',
       duration: '3:15',
       features: [
@@ -65,7 +65,7 @@ const DemosPage = () => {
       title: 'Finance Ops Demo',
       description: 'Discover how our AI handles invoicing, expense tracking, and financial reporting',
       icon: Calculator,
-      color: 'from-burgundy via-gold to-burgundy',
+      color: 'from-charcoal via-slate to-charcoal',
       video: 'https://via.placeholder.com/800x450/f472b6/ffffff?text=Finance+Ops+Demo',
       duration: '2:45',
       features: [
@@ -80,7 +80,7 @@ const DemosPage = () => {
       title: 'HR Agent Demo',
       description: 'Watch our AI streamline recruitment, onboarding, and employee management processes',
       icon: Users,
-      color: 'from-gold via-burgundy-light to-gold',
+      color: 'from-slate via-charcoal to-slate',
       video: 'https://via.placeholder.com/800x450/10b981/ffffff?text=HR+Agent+Demo',
       duration: '3:00',
       features: [
@@ -124,9 +124,9 @@ const DemosPage = () => {
   ]
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-noir via-teal to-noir pt-20">
+    <div className="min-h-screen bg-canvas pt-20">
       {/* Hero Section */}
-      <section className="section-padding bg-gradient-to-br from-noir via-teal to-noir relative overflow-hidden">
+      <section className="section-padding bg-canvas relative overflow-hidden">
         <div className="absolute inset-0 opacity-50" style={{
           backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23A38560' fill-opacity='0.15'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
         }} />
@@ -139,10 +139,10 @@ const DemosPage = () => {
             className="text-center max-w-4xl mx-auto"
           >
             <h1 className="text-5xl md:text-7xl font-bold mb-6">
-              See AI Agents <span className="gradient-text">In Action</span>
+              See AI Agents <span className="text-charcoal">In Action</span>
             </h1>
-            <p className="text-xl md:text-2xl text-pearl/80 mb-12 leading-relaxed">
-              Watch our AI agents in action and explore ready-to-use templates 
+            <p className="text-xl md:text-2xl mb-12 leading-relaxed" style={{ color: '#535366' }}>
+              Watch our AI agents in action and explore ready-to-use templates
               for your business automation needs.
             </p>
           </motion.div>
@@ -160,9 +160,9 @@ const DemosPage = () => {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Interactive <span className="gradient-text">Demos</span>
+              Interactive <span className="text-charcoal">Demos</span>
             </h2>
-            <p className="text-xl text-pearl/80 max-w-3xl mx-auto">
+            <p className="text-xl max-w-3xl mx-auto" style={{ color: '#535366' }}>
               Experience our AI agents firsthand with these interactive demonstrations
             </p>
           </motion.div>
@@ -182,19 +182,19 @@ const DemosPage = () => {
                   className={`w-full p-6 rounded-2xl text-left transition-all duration-300 ${
                     activeDemo === index
                       ? 'glass bg-white/20'
-                      : 'glass hover:bg-teal/50'
+                      : 'glass hover:bg-slate/10'
                   }`}
                 >
                   <div className="flex items-center space-x-4 mb-3">
-                    <div className={`w-12 h-12 bg-gradient-to-r ${demo.color} rounded-xl flex items-center justify-center`}>
-                      <demo.icon className="w-6 h-6 text-pearl" />
+                    <div className="w-12 h-12 bg-charcoal rounded-xl flex items-center justify-center">
+                      <demo.icon className="w-6 h-6" style={{ color: '#FFFFFF' }} />
                     </div>
                     <div>
-                      <h3 className="text-lg font-bold text-pearl">{demo.title}</h3>
-                      <p className="text-sm text-pearl/70">{demo.duration}</p>
+                      <h3 className="text-lg font-bold" style={{ color: '#1C1C1C' }}>{demo.title}</h3>
+                      <p className="text-sm" style={{ color: '#535366' }}>{demo.duration}</p>
                     </div>
                   </div>
-                  <p className="text-pearl/80 text-sm">{demo.description}</p>
+                  <p className="text-sm" style={{ color: '#535366' }}>{demo.description}</p>
                 </motion.button>
               ))}
             </div>
@@ -208,13 +208,13 @@ const DemosPage = () => {
                 transition={{ duration: 0.5 }}
                 className="glass rounded-3xl overflow-hidden"
               >
-                <div className="relative aspect-video bg-teal/60">
+                <div className="relative aspect-video bg-slate/20">
                   <img
                     src={demos[activeDemo].video}
                     alt={demos[activeDemo].title}
                     className="w-full h-full object-cover"
                   />
-                  
+
                   {/* Video Overlay */}
                   <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
                     <motion.button
@@ -225,9 +225,9 @@ const DemosPage = () => {
                       className="w-20 h-20 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white/30 transition-all duration-300"
                     >
                       {isPlaying ? (
-                        <Pause className="w-8 h-8 text-pearl" />
+                        <Pause className="w-8 h-8" style={{ color: '#FFFFFF' }} />
                       ) : (
-                        <Play className="w-8 h-8 text-pearl ml-1" />
+                        <Play className="w-8 h-8 ml-1" style={{ color: '#FFFFFF' }} />
                       )}
                     </motion.button>
                   </div>
@@ -240,34 +240,34 @@ const DemosPage = () => {
                         className="p-2 bg-black/50 rounded-full hover:bg-black/70 transition-colors"
                       >
                         {isMuted ? (
-                          <VolumeX className="w-5 h-5 text-pearl" />
+                          <VolumeX className="w-5 h-5" style={{ color: '#FFFFFF' }} />
                         ) : (
-                          <Volume2 className="w-5 h-5 text-pearl" />
+                          <Volume2 className="w-5 h-5" style={{ color: '#FFFFFF' }} />
                         )}
                       </button>
-                      <span className="text-pearl text-sm font-medium">
+                      <span className="text-sm font-medium" style={{ color: '#FFFFFF' }}>
                         {demos[activeDemo].duration}
                       </span>
                     </div>
                     <div className="flex items-center space-x-2">
-                      <span className="text-pearl text-sm">0:00</span>
+                      <span className="text-sm" style={{ color: '#FFFFFF' }}>0:00</span>
                       <div className="w-32 h-1 bg-white/30 rounded-full">
                         <div className="w-1/3 h-full bg-white rounded-full" />
                       </div>
-                      <span className="text-pearl text-sm">{demos[activeDemo].duration}</span>
+                      <span className="text-sm" style={{ color: '#FFFFFF' }}>{demos[activeDemo].duration}</span>
                     </div>
                   </div>
                 </div>
 
                 {/* Video Info */}
                 <div className="p-6">
-                  <h3 className="text-2xl font-bold text-pearl mb-2">
+                  <h3 className="text-2xl font-bold mb-2" style={{ color: '#1C1C1C' }}>
                     {demos[activeDemo].title}
                   </h3>
-                  <p className="text-pearl/80 mb-6">
+                  <p className="mb-6" style={{ color: '#535366' }}>
                     {demos[activeDemo].description}
                   </p>
-                  
+
                   <div className="grid grid-cols-2 gap-4">
                     {demos[activeDemo].features.map((feature, index) => (
                       <motion.div
@@ -277,8 +277,8 @@ const DemosPage = () => {
                         transition={{ duration: 0.5, delay: index * 0.1 }}
                         className="flex items-center space-x-3"
                       >
-                        <CheckCircle className="w-5 h-5 text-gold flex-shrink-0" />
-                        <span className="text-pearl/80 text-sm">{feature}</span>
+                        <CheckCircle className="w-5 h-5 flex-shrink-0" style={{ color: '#535366' }} />
+                        <span className="text-sm" style={{ color: '#535366' }}>{feature}</span>
                       </motion.div>
                     ))}
                   </div>
@@ -290,7 +290,7 @@ const DemosPage = () => {
       </section>
 
       {/* Templates Section */}
-      <section className="section-padding bg-gradient-to-b from-teal via-noir to-teal">
+      <section className="section-padding bg-charcoal">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -299,10 +299,10 @@ const DemosPage = () => {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Ready-to-Use <span className="gradient-text">Templates</span>
+              Ready-to-Use <span className="text-charcoal">Templates</span>
             </h2>
-            <p className="text-xl text-pearl/80 max-w-3xl mx-auto">
-              Jumpstart your AI automation with our pre-built templates designed 
+            <p className="text-xl max-w-3xl mx-auto" style={{ color: 'rgba(234, 230, 224, 0.8)' }}>
+              Jumpstart your AI automation with our pre-built templates designed
               for specific industries and use cases
             </p>
           </motion.div>
@@ -315,36 +315,44 @@ const DemosPage = () => {
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.2, ease: "easeOut" }}
                 whileHover={{ scale: 1.02 }}
-                className="glass rounded-2xl p-6 group hover:bg-teal/60 border-2 border-gold/20 hover:border-gold/60 transition-all duration-300"
+                className="glass rounded-2xl p-6 group hover:bg-slate/10 border-2 border-slate/20 hover:border-slate/40 transition-all duration-300"
               >
                 <div className="flex items-start justify-between mb-4">
                   <div>
-                    <h3 className="text-xl font-bold text-pearl mb-2">{template.title}</h3>
-                    <p className="text-pearl/80 text-sm">{template.description}</p>
+                    <h3 className="text-xl font-bold mb-2" style={{ color: '#1C1C1C' }}>{template.title}</h3>
+                    <p className="text-sm" style={{ color: '#535366' }}>{template.description}</p>
                   </div>
                   <motion.button
                     transition={{ duration: 0.2, ease: "easeOut" }}
                     whileHover={{ scale: 1.1 }}
-                    className="p-2 glass rounded-lg hover:bg-teal/60 border-2 border-gold/20 hover:border-gold/60 transition-colors"
+                    className="p-2 glass rounded-lg hover:bg-slate/10 border-2 border-slate/20 hover:border-slate/40 transition-colors"
                   >
-                    <ExternalLink className="w-5 h-5 text-pearl/70" />
+                    <ExternalLink className="w-5 h-5" style={{ color: '#535366' }} />
                   </motion.button>
                 </div>
 
                 <div className="flex items-center justify-between mb-6">
                   <div className="flex space-x-4">
-                    <span className="px-3 py-1 bg-gold/20 text-gold text-xs rounded-full">
+                    <span className="px-3 py-1 text-xs rounded-full" style={{
+                      backgroundColor: 'rgba(83, 83, 102, 0.1)',
+                      color: '#535366',
+                      border: '1px solid rgba(83, 83, 102, 0.2)'
+                    }}>
                       {template.category}
                     </span>
-                    <span className="px-3 py-1 bg-teal/50 text-pearl/80 text-xs rounded-full">
+                    <span className="px-3 py-1 text-xs rounded-full" style={{
+                      backgroundColor: 'rgba(83, 83, 102, 0.1)',
+                      color: '#535366',
+                      border: '1px solid rgba(83, 83, 102, 0.2)'
+                    }}>
                       {template.complexity}
                     </span>
                   </div>
-                  <span className="text-pearl/70 text-sm">{template.setupTime}</span>
+                  <span className="text-sm" style={{ color: '#535366' }}>{template.setupTime}</span>
                 </div>
 
                 <div className="flex items-center justify-between">
-                  <div className="flex items-center space-x-2 text-pearl/70 text-sm">
+                  <div className="flex items-center space-x-2 text-sm" style={{ color: '#535366' }}>
                     <Zap className="w-4 h-4" />
                     <span>Pre-configured</span>
                   </div>
@@ -373,12 +381,12 @@ const DemosPage = () => {
             transition={{ duration: 0.8 }}
             className="text-center"
           >
-            <div className="glass rounded-3xl p-12 max-w-4xl mx-auto border-2 border-gold/30">
-              <h2 className="text-4xl font-bold text-pearl mb-6">
+            <div className="glass rounded-3xl p-12 max-w-4xl mx-auto border-2 border-slate/30">
+              <h2 className="text-4xl font-bold mb-6" style={{ color: '#1C1C1C' }}>
                 Ready to Build Your Own?
               </h2>
-              <p className="text-xl text-pearl/80 mb-8">
-                These demos and templates are just the beginning. Let's create a 
+              <p className="text-xl mb-8" style={{ color: '#535366' }}>
+                These demos and templates are just the beginning. Let's create a
                 custom AI agent solution tailored to your business. Get your free audit today.
               </p>
               <Link href="/audit">
@@ -386,7 +394,7 @@ const DemosPage = () => {
                   transition={{ duration: 0.2, ease: "easeOut" }}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="btn-primary text-lg px-12 py-4 flex items-center space-x-3 mx-auto group shadow-lg shadow-gold/30 hover:shadow-gold/50"
+                  className="btn-primary text-lg px-12 py-4 flex items-center space-x-3 mx-auto group shadow-lg"
                 >
                   <span>Get Free AI Audit</span>
                   <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />

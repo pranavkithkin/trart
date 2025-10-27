@@ -4,6 +4,7 @@ import React from 'react'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
+import Image from 'next/image'
 import { 
   MessageSquare, 
   Headphones, 
@@ -27,7 +28,8 @@ const ServicesPage = () => {
       title: "Sales Agent",
       description: "AI-powered sales assistant that qualifies leads, schedules meetings, and closes deals 24/7",
       icon: MessageSquare,
-      color: "from-burgundy via-burgundy-light to-gold",
+      color: "from-charcoal to-slate",
+      image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop",
       features: [
         "Lead qualification & scoring",
         "Automated follow-ups",
@@ -39,10 +41,11 @@ const ServicesPage = () => {
       popular: true
     },
     {
-      title: "Support Agent", 
+      title: "Support Agent",
       description: "Intelligent customer support that resolves issues instantly and escalates when needed",
       icon: Headphones,
-      color: "from-gold via-gold-light to-burgundy",
+      color: "from-slate to-charcoal",
+      image: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=600&h=400&fit=crop",
       features: [
         "24/7 customer support",
         "Multi-language support",
@@ -56,7 +59,8 @@ const ServicesPage = () => {
       title: "Finance Ops",
       description: "Automated financial operations including invoicing, expense tracking, and reporting",
       icon: Calculator,
-      color: "from-burgundy via-gold to-burgundy",
+      color: "from-charcoal via-slate to-charcoal",
+      image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=600&h=400&fit=crop",
       features: [
         "Automated invoicing",
         "Expense categorization",
@@ -70,7 +74,8 @@ const ServicesPage = () => {
       title: "HR Agent",
       description: "Streamlined HR operations with automated recruitment, onboarding, and employee management",
       icon: Users,
-      color: "from-gold via-burgundy-light to-gold",
+      color: "from-slate via-charcoal to-slate",
+      image: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=600&h=400&fit=crop",
       features: [
         "Resume screening",
         "Interview scheduling",
@@ -101,9 +106,9 @@ const ServicesPage = () => {
   ]
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-noir via-teal to-noir pt-20">
+    <div className="min-h-screen bg-canvas pt-20">
       {/* Hero Section */}
-      <section className="section-padding bg-gradient-to-br from-noir via-teal to-noir relative overflow-hidden">
+      <section className="section-padding bg-canvas relative overflow-hidden">
         <div className="absolute inset-0 opacity-50" style={{
           backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23A38560' fill-opacity='0.15'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
         }} />
@@ -115,11 +120,11 @@ const ServicesPage = () => {
             transition={{ duration: 0.8 }}
             className="text-center max-w-4xl mx-auto"
           >
-            <h1 className="text-5xl md:text-7xl font-bold mb-6">
-              AI Agent <span className="gradient-text">Services</span>
+            <h1 className="text-5xl md:text-7xl font-bold mb-6 text-charcoal">
+              AI Agent Services
             </h1>
-            <p className="text-xl md:text-2xl text-pearl/80 mb-12 leading-relaxed">
-              Transform your business operations with our comprehensive suite of 
+            <p className="text-xl md:text-2xl mb-12 leading-relaxed" style={{ color: '#535366' }}>
+              Transform your business operations with our comprehensive suite of
               intelligent AI agents designed for modern enterprises.
             </p>
           </motion.div>
@@ -136,11 +141,11 @@ const ServicesPage = () => {
             transition={{ duration: 0.8 }}
             className="text-center mb-20"
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Choose Your <span className="gradient-text">AI Solution</span>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-charcoal">
+              Choose Your AI Solution
             </h2>
-            <p className="text-xl text-pearl/80 max-w-3xl mx-auto">
-              Each AI agent is specifically designed to handle complex business processes 
+            <p className="text-xl max-w-3xl mx-auto" style={{ color: '#535366' }}>
+              Each AI agent is specifically designed to handle complex business processes
               with intelligence, efficiency, and scalability.
             </p>
           </motion.div>
@@ -153,60 +158,82 @@ const ServicesPage = () => {
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.2, ease: "easeOut" }}
                 whileHover={{ scale: 1.02 }}
-                className={`glass rounded-3xl p-8 relative group hover:bg-teal/60 border-2 border-gold/20 hover:border-gold/60 transition-all duration-300 ${
-                  service.popular ? 'ring-2 ring-gold/50' : ''
+                className={`glass rounded-3xl overflow-hidden relative group hover:bg-slate/10 border-2 border-slate/20 hover:border-slate/40 transition-all duration-300 ${
+                  service.popular ? 'ring-2 ring-slate/50' : ''
                 }`}
               >
                 {service.popular && (
-                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                    <span className="bg-gradient-to-r from-burgundy via-burgundy-light to-gold text-pearl px-6 py-2 rounded-full text-sm font-semibold">
+                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-10">
+                    <span className="bg-charcoal text-white px-6 py-2 rounded-full text-sm font-semibold shadow-lg">
                       Most Popular
                     </span>
                   </div>
                 )}
 
-                <div className="flex items-start justify-between mb-6">
+                {/* Image Section */}
+                <div className="relative h-48 overflow-hidden">
+                  <Image
+                    src={service.image}
+                    alt={service.title}
+                    fill
+                    className="object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-charcoal/30" />
+                  
+                  {/* Icon Overlay */}
                   <motion.div
                     transition={{ duration: 0.3, ease: "easeInOut" }}
                     whileHover={{ rotate: 360 }}
-                    className={`w-16 h-16 bg-gradient-to-r ${service.color} rounded-2xl flex items-center justify-center`}
+                    className="absolute bottom-4 left-4 w-16 h-16 bg-charcoal rounded-2xl flex items-center justify-center shadow-lg"
                   >
-                    <service.icon className="w-8 h-8 text-pearl" />
+                    <service.icon className="w-8 h-8 text-white" />
                   </motion.div>
-                  <span className="text-2xl font-bold text-pearl/70">{service.price}</span>
+
+                  {/* Price Tag */}
+                  <div className="absolute top-4 right-4">
+                    <span className="glass px-4 py-2 rounded-full font-bold text-sm border border-slate/30" style={{ color: '#1C1C1C' }}>
+                      {service.price}
+                    </span>
+                  </div>
                 </div>
 
-                <h3 className="text-2xl font-bold text-pearl mb-4">{service.title}</h3>
-                <p className="text-pearl/80 mb-6 leading-relaxed">{service.description}</p>
+                {/* Content Section */}
+                <div className="p-8">
+                  <h3 className="text-2xl font-bold mb-4" style={{ color: '#1C1C1C' }}>{service.title}</h3>
+                  <p className="mb-6 leading-relaxed" style={{ color: '#535366' }}>{service.description}</p>
 
-                <ul className="space-y-3 mb-8">
-                  {service.features.map((feature, featureIndex) => (
-                    <motion.li
-                      key={feature}
-                      initial={{ opacity: 0, x: -20 }}
-                      animate={inView ? { opacity: 1, x: 0 } : {}}
-                      transition={{ duration: 0.5, delay: (index * 0.2) + (featureIndex * 0.1) }}
-                      className="flex items-center space-x-3"
+                  <ul className="space-y-3 mb-8">
+                    {service.features.map((feature, featureIndex) => (
+                      <motion.li
+                        key={feature}
+                        initial={{ opacity: 0, x: -20 }}
+                        animate={inView ? { opacity: 1, x: 0 } : {}}
+                        transition={{ duration: 0.5, delay: (index * 0.2) + (featureIndex * 0.1) }}
+                        className="flex items-center space-x-3"
+                      >
+                        <CheckCircle className="w-5 h-5 flex-shrink-0" style={{ color: '#535366' }} />
+                        <span style={{ color: '#535366' }}>{feature}</span>
+                      </motion.li>
+                    ))}
+                  </ul>
+
+                  <Link href="/audit">
+                    <motion.button
+                      transition={{ duration: 0.2, ease: "easeOut" }}
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      className={`w-full py-4 rounded-xl font-semibold transition-all duration-300 flex items-center justify-center space-x-2 group min-h-[56px] ${
+                        service.popular
+                          ? 'bg-charcoal text-white hover:shadow-lg'
+                          : 'glass border-2 border-slate/20 hover:border-slate/40'
+                      }`}
+                      style={service.popular ? {} : { color: '#1C1C1C' }}
                     >
-                      <CheckCircle className="w-5 h-5 text-gold flex-shrink-0" />
-                      <span className="text-pearl/80">{feature}</span>
-                    </motion.li>
-                  ))}
-                </ul>
-
-                <motion.button
-                  transition={{ duration: 0.2, ease: "easeOut" }}
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className={`w-full py-4 rounded-xl font-semibold transition-all duration-300 flex items-center justify-center space-x-2 group ${
-                    service.popular
-                      ? 'bg-gradient-to-r from-burgundy via-burgundy-light to-gold text-pearl hover:shadow-lg hover:shadow-gold/30'
-                      : 'glass text-pearl hover:bg-teal/60 border-2 border-gold/20 hover:border-gold/60'
-                  }`}
-                >
-                  <span>Get Started</span>
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </motion.button>
+                      <span>Get Started</span>
+                      <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                    </motion.button>
+                  </Link>
+                </div>
               </motion.div>
             ))}
           </div>
@@ -214,7 +241,7 @@ const ServicesPage = () => {
       </section>
 
       {/* Benefits Section */}
-      <section className="section-padding bg-gradient-to-b from-teal via-noir to-teal">
+      <section className="section-padding bg-charcoal">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -222,10 +249,10 @@ const ServicesPage = () => {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Why Choose <span className="gradient-text">Our AI Agents</span>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
+              Why Choose Our AI Agents
             </h2>
-            <p className="text-xl text-pearl/80 max-w-3xl mx-auto">
+            <p className="text-xl max-w-3xl mx-auto" style={{ color: 'rgba(234, 230, 224, 0.8)' }}>
               Built with cutting-edge technology and designed for enterprise-grade performance
             </p>
           </motion.div>
@@ -238,17 +265,17 @@ const ServicesPage = () => {
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.2, ease: "easeOut" }}
                 whileHover={{ scale: 1.05 }}
-                className="glass rounded-2xl p-8 text-center group hover:bg-teal/60 border-2 border-gold/20 hover:border-gold/60 transition-all duration-300"
+                className="glass rounded-2xl p-8 text-center group hover:bg-slate/10 border-2 border-slate/20 hover:border-slate/40 transition-all duration-300"
               >
                 <motion.div
                   transition={{ duration: 0.3, ease: "easeInOut" }}
                   whileHover={{ rotate: 360 }}
-                  className="w-16 h-16 bg-gradient-to-r from-burgundy via-burgundy-light to-gold rounded-full flex items-center justify-center mx-auto mb-6"
+                  className="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-6"
                 >
-                  <benefit.icon className="w-8 h-8 text-pearl" />
+                  <benefit.icon className="w-8 h-8 text-charcoal" />
                 </motion.div>
-                <h3 className="text-2xl font-bold text-pearl mb-4">{benefit.title}</h3>
-                <p className="text-pearl/80">{benefit.description}</p>
+                <h3 className="text-2xl font-bold mb-4" style={{ color: '#EAE6E0' }}>{benefit.title}</h3>
+                <p style={{ color: 'rgba(234, 230, 224, 0.8)' }}>{benefit.description}</p>
               </motion.div>
             ))}
           </div>
@@ -264,12 +291,12 @@ const ServicesPage = () => {
             transition={{ duration: 0.8 }}
             className="text-center"
           >
-            <div className="glass rounded-3xl p-12 max-w-4xl mx-auto border-2 border-gold/30">
-              <h2 className="text-4xl font-bold text-pearl mb-6">
+            <div className="glass rounded-3xl p-12 max-w-4xl mx-auto border-2 border-slate/30">
+              <h2 className="text-4xl font-bold mb-6" style={{ color: '#1C1C1C' }}>
                 Ready to Get Started?
               </h2>
-              <p className="text-xl text-pearl/80 mb-8">
-                Discover how our AI agents can transform your business operations. 
+              <p className="text-xl mb-8" style={{ color: '#535366' }}>
+                Discover how our AI agents can transform your business operations.
                 Get your free audit today and unlock unprecedented efficiency.
               </p>
               <Link href="/audit">
@@ -277,7 +304,7 @@ const ServicesPage = () => {
                   transition={{ duration: 0.2, ease: "easeOut" }}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="btn-primary text-lg px-12 py-4 flex items-center space-x-3 mx-auto group shadow-lg shadow-gold/30 hover:shadow-gold/50"
+                  className="btn-primary text-lg px-12 py-4 flex items-center space-x-3 mx-auto group shadow-lg"
                 >
                   <span>Get Free AI Audit</span>
                   <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />

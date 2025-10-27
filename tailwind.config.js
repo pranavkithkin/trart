@@ -8,21 +8,54 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        // Custom sophisticated palette
-        noir: '#03110D',        // Almost black - primary background
-        teal: '#16302B',        // Dark teal - secondary background
-        burgundy: '#390517',    // Deep burgundy - accents
-        gold: '#A38560',        // Elegant gold - highlights
-        pearl: '#E0E0E0',       // Light gray - text
+        // B2B AI Premium Palette (From Brand Guidelines)
+        'charcoal': '#1C1C1C',      // Primary - Authority & Sophistication
+        'canvas': '#EAE6E0',        // Background - Clean & Professional
+        'slate': '#535366',         // Secondary - Trust & Stability
+        'white': '#FFFFFF',         // Contrast - Clarity
         
-        // Gradient variations for smooth transitions
-        'burgundy-light': '#4D0A1F',
-        'gold-light': '#B59970',
-        'teal-light': '#1F4039',
+        // Semantic color mapping for component usage
+        'primary': '#1C1C1C',       // Charcoal for headers, primary elements
+        'secondary': '#535366',     // Slate for secondary elements, icons
+        'accent': '#535366',        // Slate for CTAs (can be adjusted for more pop)
+        'bg-light': '#EAE6E0',      // Canvas for main backgrounds
+        'bg-lighter': '#F5F3F0',    // Slightly lighter canvas variation
+        'text-base': '#1C1C1C',     // Charcoal for primary text
+        'text-muted': '#535366',    // Slate for secondary text
+        'text-subtle': '#8A8A9D',   // Lighter slate for captions
+        
+        // Legacy color mappings (for gradual migration)
+        'noir': '#1C1C1C',
+        'teal': '#EAE6E0',
+        'burgundy': '#535366',
+        'gold': '#535366',
+        'pearl': '#FFFFFF',
+        
+        // Functional variations
+        'primary-light': '#2D2D2D',
+        'primary-lighter': '#404040',
+        'secondary-light': '#646478',
+        'secondary-lighter': '#757589',
+        'mist-light': '#EAE6E0',
       },
       fontFamily: {
-        'display': ['Inter', 'system-ui', 'sans-serif'],
-        'body': ['Inter', 'system-ui', 'sans-serif'],
+        'heading': ['Poppins', 'Manrope', 'system-ui', 'sans-serif'],
+        'body': ['Inter', 'Open Sans', 'system-ui', 'sans-serif'],
+        'accent': ['Space Grotesk', 'system-ui', 'sans-serif'],
+        'display': ['Poppins', 'Manrope', 'system-ui', 'sans-serif'], // Legacy
+      },
+      fontSize: {
+        'heading-1': ['3.5rem', { lineHeight: '1.1', fontWeight: '700' }], // 56-64px
+        'heading-2': ['2.25rem', { lineHeight: '1.1', fontWeight: '600' }], // 36-40px
+        'heading-3': ['1.75rem', { lineHeight: '1.1', fontWeight: '600' }], // 28px
+        'body-large': ['1.25rem', { lineHeight: '1.7', fontWeight: '400' }], // 20px - increased for readability
+        'body-base': ['1.125rem', { lineHeight: '1.6', fontWeight: '400' }], // 18px - increased for readability
+        'body-small': ['1rem', { lineHeight: '1.5', fontWeight: '400' }], // 16px - for less important text
+      },
+      screens: {
+        'xs': '475px',
+        '3xl': '1600px',    // Ultrawide support
+        '4xl': '1920px',    // Full ultrawide support
       },
       animation: {
         'gradient': 'gradient 8s ease infinite',

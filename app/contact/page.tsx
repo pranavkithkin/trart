@@ -93,32 +93,28 @@ const ContactPage = () => {
     {
       name: 'LinkedIn',
       icon: '💼',
-      url: 'https://linkedin.com/company/trart',
-      color: 'hover:bg-blue-600'
+      url: 'https://linkedin.com/company/trart'
     },
     {
       name: 'Twitter',
       icon: '🐦',
-      url: 'https://twitter.com/trart',
-      color: 'hover:bg-blue-400'
+      url: 'https://twitter.com/trart'
     },
     {
       name: 'GitHub',
       icon: '🐙',
-      url: 'https://github.com/trart',
-      color: 'hover:bg-gray-600'
+      url: 'https://github.com/trart'
     },
     {
       name: 'YouTube',
       icon: '📺',
-      url: 'https://youtube.com/trart',
-      color: 'hover:bg-red-600'
+      url: 'https://youtube.com/trart'
     }
   ]
 
   if (isSubmitted) {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-noir via-teal to-noir pt-20 flex items-center justify-center">
+      <div className="min-h-screen bg-canvas pt-20 flex items-center justify-center">
         <motion.div
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -129,17 +125,17 @@ const ContactPage = () => {
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="w-24 h-24 bg-gradient-to-r from-burgundy via-burgundy-light to-gold rounded-full flex items-center justify-center mx-auto mb-8"
+            className="w-24 h-24 bg-canvas rounded-full flex items-center justify-center mx-auto mb-8"
           >
-            <CheckCircle className="w-12 h-12 text-pearl" />
+            <CheckCircle className="w-12 h-12" style={{ color: '#1C1C1C' }} />
           </motion.div>
           
           <h1 className="text-4xl md:text-6xl font-bold mb-6">
-            <span className="gradient-text">Message Sent!</span>
+            <span className="text-charcoal">Message Sent!</span>
           </h1>
           
-          <p className="text-xl text-pearl/80 mb-8">
-            Thank you for reaching out! We've received your message and will get back to you 
+          <p className="text-xl mb-8" style={{ color: '#535366' }}>
+            Thank you for reaching out! We've received your message and will get back to you
             within 24 hours. In the meantime, feel free to explore our demos and services.
           </p>
           
@@ -169,11 +165,11 @@ const ContactPage = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-noir via-teal to-noir pt-20">
+    <div className="min-h-screen bg-canvas pt-20">
       {/* Hero Section */}
-      <section className="section-padding bg-gradient-to-br from-noir via-teal to-noir relative overflow-hidden">
-        <div className="absolute inset-0 opacity-50" style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23A38560' fill-opacity='0.15'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
+      <section className="section-padding bg-canvas relative overflow-hidden">
+        <div className="absolute inset-0 opacity-30" style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23535366' fill-opacity='0.1'%3E%3Ccircle cx='30' cy='30' r='1'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
         }} />
         
         <div className="container-custom relative z-10">
@@ -184,10 +180,10 @@ const ContactPage = () => {
             className="text-center max-w-4xl mx-auto"
           >
             <h1 className="text-5xl md:text-7xl font-bold mb-6">
-              Get In <span className="gradient-text">Touch</span>
+              Get In <span className="text-charcoal">Touch</span>
             </h1>
-            <p className="text-xl md:text-2xl text-pearl/80 mb-12 leading-relaxed">
-              Ready to transform your business with AI? Let's discuss your needs 
+            <p className="text-xl md:text-2xl mb-12 leading-relaxed" style={{ color: '#535366' }}>
+              Ready to transform your business with AI? Let's discuss your needs
               and explore how we can help you achieve your goals.
             </p>
           </motion.div>
@@ -205,9 +201,9 @@ const ContactPage = () => {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Multiple Ways to <span className="gradient-text">Connect</span>
+              Multiple Ways to <span className="text-charcoal">Connect</span>
             </h2>
-            <p className="text-xl text-pearl/80 max-w-3xl mx-auto">
+            <p className="text-xl max-w-3xl mx-auto" style={{ color: '#535366' }}>
               Choose the communication method that works best for you
             </p>
           </motion.div>
@@ -221,18 +217,18 @@ const ContactPage = () => {
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.2, ease: "easeOut" }}
                 whileHover={{ scale: 1.05 }}
-                className="glass rounded-2xl p-6 text-center group hover:bg-teal/60 border-2 border-gold/20 hover:border-gold/60 transition-all duration-300"
+                className="glass rounded-2xl p-6 text-center group hover:bg-slate/10 border-2 border-slate/20 hover:border-slate/40 transition-all duration-300"
               >
                 <motion.div
                   transition={{ duration: 0.3, ease: "easeInOut" }}
                   whileHover={{ rotate: 360 }}
-                  className="w-16 h-16 bg-gradient-to-r from-burgundy via-burgundy-light to-gold rounded-full flex items-center justify-center mx-auto mb-4"
+                  className="w-16 h-16 bg-canvas rounded-full flex items-center justify-center mx-auto mb-4"
                 >
-                  <info.icon className="w-8 h-8 text-pearl" />
+                  <info.icon className="w-8 h-8" style={{ color: '#1C1C1C' }} />
                 </motion.div>
-                <h3 className="text-xl font-bold text-pearl mb-2">{info.title}</h3>
-                <p className="text-gold font-semibold mb-2">{info.details}</p>
-                <p className="text-pearl/70 text-sm">{info.description}</p>
+                <h3 className="text-xl font-bold mb-2" style={{ color: '#1C1C1C' }}>{info.title}</h3>
+                <p className="font-semibold mb-2" style={{ color: '#535366' }}>{info.details}</p>
+                <p className="text-sm" style={{ color: '#535366' }}>{info.description}</p>
               </motion.a>
             ))}
           </div>
@@ -244,7 +240,7 @@ const ContactPage = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-center mb-16"
           >
-            <h3 className="text-2xl font-bold text-pearl mb-6">Follow Us</h3>
+            <h3 className="text-2xl font-bold mb-6" style={{ color: '#1C1C1C' }}>Follow Us</h3>
             <div className="flex justify-center space-x-4">
               {socialLinks.map((social, index) => (
                 <motion.a
@@ -257,7 +253,8 @@ const ContactPage = () => {
                   transition={{ duration: 0.5, delay: 0.6 + index * 0.1 }}
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
-                  className={`w-12 h-12 glass rounded-full flex items-center justify-center text-2xl hover:scale-110 transition-all duration-300 ${social.color}`}
+                  className="w-12 h-12 glass rounded-full flex items-center justify-center text-2xl hover:scale-110 transition-all duration-300 hover:bg-slate/10"
+                  style={{ color: '#535366' }}
                 >
                   {social.icon}
                 </motion.a>
@@ -268,7 +265,7 @@ const ContactPage = () => {
       </section>
 
       {/* Contact Form Section */}
-      <section className="section-padding bg-gradient-to-b from-teal via-noir to-teal">
+      <section className="section-padding bg-canvas">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             {/* Form */}
@@ -278,35 +275,37 @@ const ContactPage = () => {
               transition={{ duration: 0.8 }}
               className="glass rounded-3xl p-8"
             >
-              <h2 className="text-3xl font-bold text-pearl mb-6">Send Us a Message</h2>
-              <p className="text-pearl/80 mb-8">
-                Have a question or want to discuss your AI automation needs? 
+              <h2 className="text-3xl font-bold mb-6" style={{ color: '#1C1C1C' }}>Send Us a Message</h2>
+              <p className="mb-8" style={{ color: '#535366' }}>
+                Have a question or want to discuss your AI automation needs?
                 Fill out the form below and we'll get back to you within 24 hours.
               </p>
 
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-pearl font-semibold mb-2">Full Name *</label>
+                    <label className="block font-semibold mb-2" style={{ color: '#1C1C1C' }}>Full Name *</label>
                     <input
                       type="text"
                       name="name"
                       value={formData.name}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-3 bg-teal/60 border border-gold/30 rounded-lg text-pearl placeholder-pearl/50 focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent"
+                      className="w-full px-4 py-3 bg-canvas border border-slate/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-slate focus:border-slate"
+                      style={{ color: '#1C1C1C' }}
                       placeholder="Enter your full name"
                     />
                   </div>
                   <div>
-                    <label className="block text-pearl font-semibold mb-2">Email Address *</label>
+                    <label className="block font-semibold mb-2" style={{ color: '#1C1C1C' }}>Email Address *</label>
                     <input
                       type="email"
                       name="email"
                       value={formData.email}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-3 bg-teal/60 border border-gold/30 rounded-lg text-pearl placeholder-pearl/50 focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent"
+                      className="w-full px-4 py-3 bg-canvas border border-slate/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-slate focus:border-slate"
+                      style={{ color: '#1C1C1C' }}
                       placeholder="Enter your email address"
                     />
                   </div>
@@ -314,23 +313,25 @@ const ContactPage = () => {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-pearl font-semibold mb-2">Company Name</label>
+                    <label className="block font-semibold mb-2" style={{ color: '#1C1C1C' }}>Company Name</label>
                     <input
                       type="text"
                       name="company"
                       value={formData.company}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 bg-teal/60 border border-gold/30 rounded-lg text-pearl placeholder-pearl/50 focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent"
+                      className="w-full px-4 py-3 bg-canvas border border-slate/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-slate focus:border-slate"
+                      style={{ color: '#1C1C1C' }}
                       placeholder="Enter your company name"
                     />
                   </div>
                   <div>
-                    <label className="block text-pearl font-semibold mb-2">Inquiry Type</label>
+                    <label className="block font-semibold mb-2" style={{ color: '#1C1C1C' }}>Inquiry Type</label>
                     <select
                       name="inquiryType"
                       value={formData.inquiryType}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 bg-teal/60 border border-gold/30 rounded-lg text-pearl focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent"
+                      className="w-full px-4 py-3 bg-canvas border border-slate/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-slate focus:border-slate"
+                      style={{ color: '#1C1C1C' }}
                     >
                       <option value="">Select inquiry type</option>
                       <option value="general">General Question</option>
@@ -343,27 +344,29 @@ const ContactPage = () => {
                 </div>
 
                 <div>
-                  <label className="block text-pearl font-semibold mb-2">Subject *</label>
+                  <label className="block font-semibold mb-2" style={{ color: '#1C1C1C' }}>Subject *</label>
                   <input
                     type="text"
                     name="subject"
                     value={formData.subject}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 bg-teal/60 border border-gold/30 rounded-lg text-pearl placeholder-pearl/50 focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent"
+                    className="w-full px-4 py-3 bg-canvas border border-slate/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-slate focus:border-slate"
+                    style={{ color: '#1C1C1C' }}
                     placeholder="What's this about?"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-pearl font-semibold mb-2">Message *</label>
+                  <label className="block font-semibold mb-2" style={{ color: '#1C1C1C' }}>Message *</label>
                   <textarea
                     name="message"
                     value={formData.message}
                     onChange={handleInputChange}
                     required
                     rows={6}
-                    className="w-full px-4 py-3 bg-teal/60 border border-gold/30 rounded-lg text-pearl placeholder-pearl/50 focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent"
+                    className="w-full px-4 py-3 bg-canvas border border-slate/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-slate focus:border-slate"
+                    style={{ color: '#1C1C1C' }}
                     placeholder="Tell us about your project, questions, or how we can help..."
                   />
                 </div>
@@ -408,44 +411,44 @@ const ContactPage = () => {
               {/* Response Time */}
               <div className="glass rounded-2xl p-6">
                 <div className="flex items-center space-x-3 mb-4">
-                  <Zap className="w-6 h-6 text-gold" />
-                  <h3 className="text-xl font-bold text-pearl">Response Time</h3>
+                  <Zap className="w-6 h-6" style={{ color: '#535366' }} />
+                  <h3 className="text-xl font-bold" style={{ color: '#1C1C1C' }}>Response Time</h3>
                 </div>
                 <div className="space-y-3">
                   <div className="flex items-center space-x-3">
-                    <CheckCircle className="w-5 h-5 text-gold" />
-                    <span className="text-pearl/80">Email: Within 24 hours</span>
+                    <CheckCircle className="w-5 h-5" style={{ color: '#535366' }} />
+                    <span style={{ color: '#535366' }}>Email: Within 24 hours</span>
                   </div>
                   <div className="flex items-center space-x-3">
-                    <CheckCircle className="w-5 h-5 text-gold" />
-                    <span className="text-pearl/80">Phone: Immediate during business hours</span>
+                    <CheckCircle className="w-5 h-5" style={{ color: '#535366' }} />
+                    <span style={{ color: '#535366' }}>Phone: Immediate during business hours</span>
                   </div>
                   <div className="flex items-center space-x-3">
-                    <CheckCircle className="w-5 h-5 text-gold" />
-                    <span className="text-pearl/80">WhatsApp: Within 2 hours</span>
+                    <CheckCircle className="w-5 h-5" style={{ color: '#535366' }} />
+                    <span style={{ color: '#535366' }}>WhatsApp: Within 2 hours</span>
                   </div>
                 </div>
               </div>
 
               {/* FAQ */}
               <div className="glass rounded-2xl p-6">
-                <h3 className="text-xl font-bold text-pearl mb-4">Frequently Asked Questions</h3>
+                <h3 className="text-xl font-bold mb-4" style={{ color: '#1C1C1C' }}>Frequently Asked Questions</h3>
                 <div className="space-y-4">
                   <div>
-                    <h4 className="text-pearl font-semibold mb-2">How long does implementation take?</h4>
-                    <p className="text-pearl/80 text-sm">
+                    <h4 className="font-semibold mb-2" style={{ color: '#1C1C1C' }}>How long does implementation take?</h4>
+                    <p className="text-sm" style={{ color: '#535366' }}>
                       Most AI agents can be deployed within 2-4 weeks, depending on complexity.
                     </p>
                   </div>
                   <div>
-                    <h4 className="text-pearl font-semibold mb-2">Do you offer ongoing support?</h4>
-                    <p className="text-pearl/80 text-sm">
+                    <h4 className="font-semibold mb-2" style={{ color: '#1C1C1C' }}>Do you offer ongoing support?</h4>
+                    <p className="text-sm" style={{ color: '#535366' }}>
                       Yes, we provide 24/7 monitoring and support for all our AI agents.
                     </p>
                   </div>
                   <div>
-                    <h4 className="text-pearl font-semibold mb-2">Can I customize the AI agents?</h4>
-                    <p className="text-pearl/80 text-sm">
+                    <h4 className="font-semibold mb-2" style={{ color: '#1C1C1C' }}>Can I customize the AI agents?</h4>
+                    <p className="text-sm" style={{ color: '#535366' }}>
                       Absolutely! All our solutions are fully customizable to your specific needs.
                     </p>
                   </div>

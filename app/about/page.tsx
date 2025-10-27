@@ -4,6 +4,7 @@ import React from 'react'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
+import Image from 'next/image'
 import { 
   Users, 
   Award, 
@@ -105,9 +106,9 @@ const AboutPage = () => {
   ]
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-noir via-teal to-noir pt-20">
+    <div className="min-h-screen bg-canvas pt-20">
       {/* Hero Section */}
-      <section className="section-padding bg-gradient-to-br from-noir via-teal to-noir relative overflow-hidden">
+      <section className="section-padding bg-canvas relative overflow-hidden">
         <div className="absolute inset-0 opacity-10" style={{
           backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23A38560' fill-opacity='0.15'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
         }} />
@@ -120,13 +121,109 @@ const AboutPage = () => {
             className="text-center max-w-4xl mx-auto"
           >
             <h1 className="text-5xl md:text-7xl font-bold mb-6">
-              About <span className="gradient-text">Our Mission</span>
+              About <span className="text-charcoal">Our Mission</span>
             </h1>
-            <p className="text-xl md:text-2xl text-pearl/80 mb-12 leading-relaxed">
-              We're on a mission to democratize AI automation and help businesses 
+            <p className="text-xl md:text-2xl mb-12 leading-relaxed" style={{ color: '#535366' }}>
+              We're on a mission to democratize AI automation and help businesses
               of all sizes harness the power of intelligent agents.
             </p>
           </motion.div>
+        </div>
+      </section>
+
+      {/* Founder Story Section */}
+      <section className="section-padding bg-canvas">
+        <div className="container-custom">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <motion.div
+              ref={ref}
+              initial={{ opacity: 0, x: -50 }}
+              animate={inView ? { opacity: 1, x: 0 } : {}}
+              transition={{ duration: 0.8 }}
+              className="relative"
+            >
+              <div className="glass rounded-3xl overflow-hidden border-2 border-slate/30">
+                <div className="relative h-[500px]">
+                  <Image
+                    src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=1000&fit=crop"
+                    alt="TRART Ai Team collaborating"
+                    fill
+                    className="object-cover"
+                  />
+                  <div className="absolute inset-0 bg-charcoal/30" />
+
+                  {/* Floating Quote Card */}
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={inView ? { opacity: 1, scale: 1 } : {}}
+                    transition={{ duration: 0.6, delay: 0.6 }}
+                    className="absolute bottom-6 left-6 right-6 glass rounded-2xl p-6 border border-slate/30"
+                  >
+                    <p className="italic text-sm mb-3" style={{ color: 'rgba(28, 28, 28, 0.9)' }}>
+                      "Every business deserves the power of AI automation, not just tech giants."
+                    </p>
+                    <div className="flex items-center space-x-3">
+                      <div className="w-10 h-10 bg-charcoal rounded-full" />
+                      <div>
+                        <div className="font-semibold text-sm" style={{ color: '#1C1C1C' }}>Founder & CEO</div>
+                        <div style={{ color: '#535366' }}>TRART Ai</div>
+                      </div>
+                    </div>
+                  </motion.div>
+                </div>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              animate={inView ? { opacity: 1, x: 0 } : {}}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
+              <h2 className="font-bold mb-6">
+                The Story Behind <span className="text-charcoal">TRART Ai</span>
+              </h2>
+              <div className="space-y-6">
+                <p className="text-xl leading-relaxed" style={{ color: '#1C1C1C' }}>
+                  It started with a simple observation: while working with Fortune 500 companies,
+                  our founders noticed that powerful AI automation was only accessible to those
+                  with deep pockets and technical expertise.
+                </p>
+                <p className="text-lg leading-relaxed" style={{ color: '#535366' }}>
+                  We saw countless small and medium businesses struggling with repetitive tasks,
+                  drowning in customer inquiries, and missing opportunities because they lacked
+                  the resources for automation. That's when we decided to build TRART Ai.
+                </p>
+                <p className="text-lg leading-relaxed" style={{ color: '#535366' }}>
+                  Founded in 2020 during the pandemic, when businesses needed efficiency more
+                  than ever, we set out on a mission: make enterprise-grade AI automation
+                  accessible, affordable, and easy to implement for every business.
+                </p>
+                
+                <div className="glass rounded-2xl p-6 border border-slate/30">
+                  <h4 className="text-xl font-bold mb-4" style={{ color: '#1C1C1C' }}>Our Founding Principles</h4>
+                  <ul className="space-y-3">
+                    {[
+                      "Democratize AI technology for all businesses",
+                      "Focus on real ROI, not buzzwords",
+                      "Build solutions that actually work",
+                      "Support our clients every step of the way"
+                    ].map((principle, index) => (
+                      <motion.li
+                        key={principle}
+                        initial={{ opacity: 0, x: -20 }}
+                        animate={inView ? { opacity: 1, x: 0 } : {}}
+                        transition={{ duration: 0.5, delay: 0.4 + index * 0.1 }}
+                        className="flex items-center space-x-3"
+                      >
+                        <div className="w-2 h-2 bg-charcoal rounded-full" />
+                        <span style={{ color: '#535366' }}>{principle}</span>
+                      </motion.li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </motion.div>
+          </div>
         </div>
       </section>
 
@@ -135,32 +232,30 @@ const AboutPage = () => {
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <motion.div
-              ref={ref}
               initial={{ opacity: 0, x: -50 }}
               animate={inView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.8 }}
             >
-              <h2 className="text-4xl md:text-5xl font-bold mb-6">
-                Our <span className="gradient-text">Story</span>
+              <h2 className="font-bold mb-6">
+                Our <span className="text-charcoal">Impact Today</span>
               </h2>
-              <p className="text-xl text-pearl/80 mb-8 leading-relaxed">
-                Founded in 2020 by a team of AI researchers and business automation experts, 
-                we recognized that most businesses were missing out on the transformative 
-                power of AI agents due to complexity and cost barriers.
+              <p className="text-xl mb-8 leading-relaxed" style={{ color: '#535366' }}>
+                What started as a vision has grown into a thriving company serving
+                over 100 businesses worldwide. Every day, our AI agents help companies
+                save time, reduce costs, and focus on what truly matters - growth and innovation.
               </p>
-              <p className="text-lg text-pearl/70 mb-8 leading-relaxed">
-                We set out to change that by creating accessible, powerful AI solutions 
-                that any business can implement and benefit from. Today, we've helped 
-                over 100 companies automate their operations and achieve unprecedented efficiency.
+              <p className="text-lg mb-8 leading-relaxed" style={{ color: '#535366' }}>
+                We're proud to have helped businesses automate over 10 million tasks,
+                save countless hours, and achieve an average ROI of 300% within just 6 months.
               </p>
               <div className="grid grid-cols-2 gap-8">
                 <div className="text-center">
-                  <div className="text-4xl font-bold gradient-text mb-2">100+</div>
-                  <div className="text-pearl/70">Clients Served</div>
+                  <div className="text-4xl font-bold text-charcoal mb-2">100+</div>
+                  <div style={{ color: '#535366' }}>Clients Served</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-4xl font-bold gradient-text mb-2">300%</div>
-                  <div className="text-pearl/70">Average ROI</div>
+                  <div className="text-4xl font-bold text-charcoal mb-2">300%</div>
+                  <div style={{ color: '#535366' }}>Average ROI</div>
                 </div>
               </div>
             </motion.div>
@@ -172,10 +267,10 @@ const AboutPage = () => {
               className="relative"
             >
               <div className="glass rounded-3xl p-8">
-                <h3 className="text-2xl font-bold text-pearl mb-6">Our Vision</h3>
-                <p className="text-pearl/80 mb-6">
-                  To create a world where every business, regardless of size or industry, 
-                  can leverage AI agents to automate their operations and focus on what 
+                <h3 className="text-2xl font-bold mb-6" style={{ color: '#1C1C1C' }}>Our Vision</h3>
+                <p className="mb-6" style={{ color: '#535366' }}>
+                  To create a world where every business, regardless of size or industry,
+                  can leverage AI agents to automate their operations and focus on what
                   truly matters - growth and innovation.
                 </p>
                 <div className="space-y-4">
@@ -192,8 +287,8 @@ const AboutPage = () => {
                       transition={{ duration: 0.5, delay: 0.4 + index * 0.1 }}
                       className="flex items-center space-x-3"
                     >
-                      <CheckCircle className="w-5 h-5 text-gold" />
-                      <span className="text-pearl/80">{item}</span>
+                      <CheckCircle className="w-5 h-5" style={{ color: '#535366' }} />
+                      <span style={{ color: '#535366' }}>{item}</span>
                     </motion.div>
                   ))}
                 </div>
@@ -204,7 +299,7 @@ const AboutPage = () => {
       </section>
 
       {/* Values Section */}
-      <section className="section-padding bg-gradient-to-b from-teal via-noir to-teal">
+      <section className="section-padding bg-charcoal">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -213,9 +308,9 @@ const AboutPage = () => {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Our <span className="gradient-text">Values</span>
+              Our <span className="text-charcoal">Values</span>
             </h2>
-            <p className="text-xl text-pearl/80 max-w-3xl mx-auto">
+            <p className="text-xl max-w-3xl mx-auto" style={{ color: 'rgba(234, 230, 224, 0.8)' }}>
               These core values guide everything we do and shape how we work with our clients
             </p>
           </motion.div>
@@ -228,17 +323,17 @@ const AboutPage = () => {
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.2, ease: "easeOut" }}
                 whileHover={{ scale: 1.05 }}
-                className="glass rounded-2xl p-6 text-center group hover:bg-teal/60 border-2 border-gold/20 hover:border-gold/60 transition-all duration-300"
+                className="glass rounded-2xl p-6 text-center group hover:bg-slate/10 border-2 border-slate/20 hover:border-slate/40 transition-all duration-300"
               >
                 <motion.div
                   transition={{ duration: 0.3, ease: "easeInOut" }}
                   whileHover={{ rotate: 360 }}
-                  className="w-16 h-16 bg-gradient-to-r from-burgundy via-burgundy-light to-gold rounded-full flex items-center justify-center mx-auto mb-6"
+                  className="w-16 h-16 bg-canvas rounded-full flex items-center justify-center mx-auto mb-6"
                 >
-                  <value.icon className="w-8 h-8 text-pearl" />
+                  <value.icon className="w-8 h-8" style={{ color: '#EAE6E0' }} />
                 </motion.div>
-                <h3 className="text-xl font-bold text-pearl mb-4">{value.title}</h3>
-                <p className="text-pearl/80">{value.description}</p>
+                <h3 className="text-xl font-bold mb-4" style={{ color: '#EAE6E0' }}>{value.title}</h3>
+                <p style={{ color: 'rgba(234, 230, 224, 0.8)' }}>{value.description}</p>
               </motion.div>
             ))}
           </div>
@@ -255,10 +350,10 @@ const AboutPage = () => {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Meet Our <span className="gradient-text">Team</span>
+              Meet Our <span className="text-charcoal">Team</span>
             </h2>
-            <p className="text-xl text-pearl/80 max-w-3xl mx-auto">
-              Our diverse team of AI experts, developers, and business strategists 
+            <p className="text-xl max-w-3xl mx-auto" style={{ color: '#535366' }}>
+              Our diverse team of AI experts, developers, and business strategists
               work together to deliver exceptional results
             </p>
           </motion.div>
@@ -271,12 +366,12 @@ const AboutPage = () => {
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.2, ease: "easeOut" }}
                 whileHover={{ scale: 1.05 }}
-                className="glass rounded-3xl p-6 text-center group hover:bg-teal/60 border-2 border-gold/20 hover:border-gold/60 transition-all duration-300"
+                className="glass rounded-3xl p-6 text-center group hover:bg-slate/10 border-2 border-slate/20 hover:border-slate/40 transition-all duration-300"
               >
                 <motion.div
                   transition={{ duration: 0.2, ease: "easeOut" }}
                   whileHover={{ scale: 1.1 }}
-                  className="w-24 h-24 bg-gradient-to-r from-burgundy via-burgundy-light to-gold rounded-full mx-auto mb-6 overflow-hidden"
+                  className="w-24 h-24 bg-canvas rounded-full mx-auto mb-6 overflow-hidden"
                 >
                   <img
                     src={member.image}
@@ -284,14 +379,19 @@ const AboutPage = () => {
                     className="w-full h-full object-cover"
                   />
                 </motion.div>
-                <h3 className="text-xl font-bold text-pearl mb-2">{member.name}</h3>
-                <p className="text-gold font-semibold mb-4">{member.role}</p>
-                <p className="text-pearl/80 text-sm mb-4">{member.bio}</p>
+                <h3 className="text-xl font-bold mb-2" style={{ color: '#1C1C1C' }}>{member.name}</h3>
+                <p className="font-semibold mb-4" style={{ color: '#535366' }}>{member.role}</p>
+                <p className="text-sm mb-4" style={{ color: '#535366' }}>{member.bio}</p>
                 <div className="flex flex-wrap justify-center gap-2">
                   {member.expertise.map((skill) => (
                     <span
                       key={skill}
-                      className="px-3 py-1 bg-teal/60 text-pearl/80 text-xs rounded-full"
+                      className="px-3 py-1 text-xs rounded-full"
+                      style={{
+                        backgroundColor: 'rgba(83, 83, 102, 0.1)',
+                        color: '#535366',
+                        border: '1px solid rgba(83, 83, 102, 0.2)'
+                      }}
                     >
                       {skill}
                     </span>
@@ -304,7 +404,7 @@ const AboutPage = () => {
       </section>
 
       {/* Timeline Section */}
-      <section className="section-padding bg-gradient-to-b from-teal via-noir to-teal">
+      <section className="section-padding bg-charcoal">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -313,16 +413,16 @@ const AboutPage = () => {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Our <span className="gradient-text">Journey</span>
+              Our <span className="text-charcoal">Journey</span>
             </h2>
-            <p className="text-xl text-pearl/80 max-w-3xl mx-auto">
+            <p className="text-xl max-w-3xl mx-auto" style={{ color: 'rgba(234, 230, 224, 0.8)' }}>
               Key milestones in our mission to democratize AI automation
             </p>
           </motion.div>
 
           <div className="relative">
             {/* Timeline Line */}
-            <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-burgundy via-gold to-burgundy" />
+            <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-charcoal" />
             
             <div className="space-y-12">
               {milestones.map((milestone, index) => (
@@ -334,14 +434,14 @@ const AboutPage = () => {
                   className="relative flex items-start space-x-8"
                 >
                   {/* Timeline Dot */}
-                  <div className="relative z-10 w-16 h-16 bg-gradient-to-r from-burgundy via-burgundy-light to-gold rounded-full flex items-center justify-center flex-shrink-0">
-                    <span className="text-pearl font-bold text-sm">{milestone.year}</span>
+                  <div className="relative z-10 w-16 h-16 bg-canvas rounded-full flex items-center justify-center flex-shrink-0">
+                    <span className="font-bold text-sm" style={{ color: '#1C1C1C' }}>{milestone.year}</span>
                   </div>
-                  
+
                   {/* Content */}
                   <div className="glass rounded-2xl p-6 flex-1">
-                    <h3 className="text-2xl font-bold text-pearl mb-2">{milestone.title}</h3>
-                    <p className="text-pearl/80">{milestone.description}</p>
+                    <h3 className="text-2xl font-bold mb-2" style={{ color: '#EAE6E0' }}>{milestone.title}</h3>
+                    <p style={{ color: 'rgba(234, 230, 224, 0.8)' }}>{milestone.description}</p>
                   </div>
                 </motion.div>
               ))}
@@ -359,12 +459,12 @@ const AboutPage = () => {
             transition={{ duration: 0.8 }}
             className="text-center"
           >
-            <div className="glass rounded-3xl p-12 max-w-4xl mx-auto border-2 border-gold/30">
-              <h2 className="text-4xl font-bold text-pearl mb-6">
+            <div className="glass rounded-3xl p-12 max-w-4xl mx-auto border-2 border-slate/30">
+              <h2 className="text-4xl font-bold mb-6" style={{ color: '#1C1C1C' }}>
                 Ready to Work With Us?
               </h2>
-              <p className="text-xl text-pearl/80 mb-8">
-                Join the growing number of businesses that have transformed their 
+              <p className="text-xl mb-8" style={{ color: '#535366' }}>
+                Join the growing number of businesses that have transformed their
                 operations with our AI agents. Get your free audit today.
               </p>
               <Link href="/audit">
@@ -372,7 +472,7 @@ const AboutPage = () => {
                   transition={{ duration: 0.2, ease: "easeOut" }}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="btn-primary text-lg px-12 py-4 flex items-center space-x-3 mx-auto group shadow-lg shadow-gold/30 hover:shadow-gold/50"
+                  className="btn-primary text-lg px-12 py-4 flex items-center space-x-3 mx-auto group shadow-lg"
                 >
                   <span>Get Free AI Audit</span>
                   <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />

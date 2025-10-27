@@ -68,7 +68,7 @@ const AuditPage = () => {
 
   if (isSubmitted) {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-noir via-teal to-noir pt-20 flex items-center justify-center">
+      <div className="min-h-screen bg-canvas pt-20 flex items-center justify-center">
         <motion.div
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -79,34 +79,34 @@ const AuditPage = () => {
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="w-24 h-24 bg-gradient-to-r from-burgundy via-burgundy-light to-gold rounded-full flex items-center justify-center mx-auto mb-8"
+            className="w-24 h-24 bg-canvas rounded-full flex items-center justify-center mx-auto mb-8"
           >
-            <CheckCircle className="w-12 h-12 text-pearl" />
+            <CheckCircle className="w-12 h-12" style={{ color: '#1C1C1C' }} />
           </motion.div>
           
           <h1 className="text-4xl md:text-6xl font-bold mb-6">
-            <span className="gradient-text">Thank You!</span>
+            <span className="text-charcoal">Thank You!</span>
           </h1>
           
-          <p className="text-xl text-pearl/80 mb-8">
-            Your AI audit request has been submitted successfully. Our team will review your 
+          <p className="text-xl mb-8" style={{ color: '#535366' }}>
+            Your AI audit request has been submitted successfully. Our team will review your
             information and contact you within 24 hours to schedule your free consultation.
           </p>
-          
+
           <div className="glass rounded-2xl p-8 mb-8">
-            <h3 className="text-2xl font-bold text-pearl mb-4">What Happens Next?</h3>
+            <h3 className="text-2xl font-bold mb-4" style={{ color: '#1C1C1C' }}>What Happens Next?</h3>
             <div className="space-y-4 text-left">
               <div className="flex items-center space-x-3">
-                <div className="w-8 h-8 bg-gradient-to-r from-burgundy via-burgundy-light to-gold rounded-full flex items-center justify-center text-pearl font-bold">1</div>
-                <span className="text-pearl/80">We'll analyze your current processes and identify automation opportunities</span>
+                <div className="w-8 h-8 bg-canvas rounded-full flex items-center justify-center font-bold" style={{ color: '#1C1C1C' }}>1</div>
+                <span style={{ color: '#535366' }}>We'll analyze your current processes and identify automation opportunities</span>
               </div>
               <div className="flex items-center space-x-3">
-                <div className="w-8 h-8 bg-gradient-to-r from-gold via-gold-light to-burgundy rounded-full flex items-center justify-center text-pearl font-bold">2</div>
-                <span className="text-pearl/80">Our AI experts will prepare a customized audit report</span>
+                <div className="w-8 h-8 bg-canvas rounded-full flex items-center justify-center font-bold" style={{ color: '#1C1C1C' }}>2</div>
+                <span style={{ color: '#535366' }}>Our AI experts will prepare a customized audit report</span>
               </div>
               <div className="flex items-center space-x-3">
-                <div className="w-8 h-8 bg-gradient-to-r from-burgundy via-gold to-burgundy rounded-full flex items-center justify-center text-pearl font-bold">3</div>
-                <span className="text-pearl/80">We'll schedule a free consultation to discuss your results</span>
+                <div className="w-8 h-8 bg-canvas rounded-full flex items-center justify-center font-bold" style={{ color: '#1C1C1C' }}>3</div>
+                <span style={{ color: '#535366' }}>We'll schedule a free consultation to discuss your results</span>
               </div>
             </div>
           </div>
@@ -126,9 +126,9 @@ const AuditPage = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-noir via-teal to-noir pt-20">
+    <div className="min-h-screen bg-canvas pt-20">
       {/* Hero Section */}
-      <section className="section-padding bg-gradient-to-br from-noir via-teal to-noir relative overflow-hidden">
+      <section className="section-padding bg-canvas relative overflow-hidden">
         <div className="absolute inset-0 opacity-50" style={{
           backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23A38560' fill-opacity='0.15'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
         }} />
@@ -141,10 +141,10 @@ const AuditPage = () => {
             className="text-center max-w-4xl mx-auto"
           >
             <h1 className="text-5xl md:text-7xl font-bold mb-6">
-              Get Your <span className="gradient-text">Free AI Audit</span>
+              Get Your <span className="text-charcoal">Free AI Audit</span>
             </h1>
-            <p className="text-xl md:text-2xl text-pearl/80 mb-12 leading-relaxed">
-              Discover how AI agents can transform your business operations. 
+            <p className="text-xl md:text-2xl mb-12 leading-relaxed" style={{ color: '#535366' }}>
+              Discover how AI agents can transform your business operations.
               Get a comprehensive analysis and personalized recommendations.
             </p>
           </motion.div>
@@ -163,35 +163,37 @@ const AuditPage = () => {
               transition={{ duration: 0.8 }}
               className="glass rounded-3xl p-8"
             >
-              <h2 className="text-3xl font-bold text-pearl mb-6">Request Your Free Audit</h2>
-              <p className="text-pearl/80 mb-8">
-                Fill out the form below and our AI experts will analyze your business 
+              <h2 className="text-3xl font-bold mb-6" style={{ color: '#1C1C1C' }}>Request Your Free Audit</h2>
+              <p className="mb-8" style={{ color: '#535366' }}>
+                Fill out the form below and our AI experts will analyze your business
                 processes to identify automation opportunities.
               </p>
 
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-pearl font-semibold mb-2">Full Name *</label>
+                    <label className="block font-semibold mb-2" style={{ color: '#1C1C1C' }}>Full Name *</label>
                     <input
                       type="text"
                       name="name"
                       value={formData.name}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-3 bg-teal/60 border border-gold/30 rounded-lg text-pearl placeholder-pearl/50 focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent"
+                      className="w-full px-4 py-3 bg-canvas border border-slate/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-slate focus:border-slate"
+                      style={{ color: '#1C1C1C' }}
                       placeholder="Enter your full name"
                     />
                   </div>
                   <div>
-                    <label className="block text-pearl font-semibold mb-2">Email Address *</label>
+                    <label className="block font-semibold mb-2" style={{ color: '#1C1C1C' }}>Email Address *</label>
                     <input
                       type="email"
                       name="email"
                       value={formData.email}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-3 bg-teal/60 border border-gold/30 rounded-lg text-pearl placeholder-pearl/50 focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent"
+                      className="w-full px-4 py-3 bg-canvas border border-slate/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-slate focus:border-slate"
+                      style={{ color: '#1C1C1C' }}
                       placeholder="Enter your email address"
                     />
                   </div>
@@ -199,50 +201,54 @@ const AuditPage = () => {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-pearl font-semibold mb-2">Company Name *</label>
+                    <label className="block font-semibold mb-2" style={{ color: '#1C1C1C' }}>Company Name *</label>
                     <input
                       type="text"
                       name="company"
                       value={formData.company}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-3 bg-teal/60 border border-gold/30 rounded-lg text-pearl placeholder-pearl/50 focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent"
+                      className="w-full px-4 py-3 bg-canvas border border-slate/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-slate focus:border-slate"
+                      style={{ color: '#1C1C1C' }}
                       placeholder="Enter your company name"
                     />
                   </div>
                   <div>
-                    <label className="block text-pearl font-semibold mb-2">Phone Number</label>
+                    <label className="block font-semibold mb-2" style={{ color: '#1C1C1C' }}>Phone Number</label>
                     <input
                       type="tel"
                       name="phone"
                       value={formData.phone}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 bg-teal/60 border border-gold/30 rounded-lg text-pearl placeholder-pearl/50 focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent"
+                      className="w-full px-4 py-3 bg-canvas border border-slate/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-slate focus:border-slate"
+                      style={{ color: '#1C1C1C' }}
                       placeholder="Enter your phone number"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-pearl font-semibold mb-2">Current Business Challenges *</label>
+                  <label className="block font-semibold mb-2" style={{ color: '#1C1C1C' }}>Current Business Challenges *</label>
                   <textarea
                     name="challenges"
                     value={formData.challenges}
                     onChange={handleInputChange}
                     required
                     rows={4}
-                    className="w-full px-4 py-3 bg-teal/60 border border-gold/30 rounded-lg text-pearl placeholder-pearl/50 focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent"
+                    className="w-full px-4 py-3 bg-canvas border border-slate/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-slate focus:border-slate"
+                    style={{ color: '#1C1C1C' }}
                     placeholder="Describe your current business challenges and pain points..."
                   />
                 </div>
 
                 <div>
-                  <label className="block text-pearl font-semibold mb-2">Current Automation Level</label>
+                  <label className="block font-semibold mb-2" style={{ color: '#1C1C1C' }}>Current Automation Level</label>
                   <select
                     name="currentAutomation"
                     value={formData.currentAutomation}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 bg-teal/60 border border-gold/30 rounded-lg text-pearl focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent"
+                    className="w-full px-4 py-3 bg-canvas border border-slate/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-slate focus:border-slate"
+                    style={{ color: '#1C1C1C' }}
                   >
                     <option value="">Select current automation level</option>
                     <option value="none">No automation</option>
@@ -253,12 +259,13 @@ const AuditPage = () => {
                 </div>
 
                 <div>
-                  <label className="block text-pearl font-semibold mb-2">Timeline</label>
+                  <label className="block font-semibold mb-2" style={{ color: '#1C1C1C' }}>Timeline</label>
                   <select
                     name="timeline"
                     value={formData.timeline}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 bg-teal/60 border border-gold/30 rounded-lg text-pearl focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent"
+                    className="w-full px-4 py-3 bg-canvas border border-slate/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-slate focus:border-slate"
+                    style={{ color: '#1C1C1C' }}
                   >
                     <option value="">Select timeline</option>
                     <option value="asap">ASAP</option>
@@ -306,7 +313,7 @@ const AuditPage = () => {
               className="space-y-8"
             >
               <div>
-                <h3 className="text-3xl font-bold text-pearl mb-6">What You'll Get</h3>
+                <h3 className="text-3xl font-bold mb-6" style={{ color: '#1C1C1C' }}>What You'll Get</h3>
                 <div className="space-y-6">
                   {[
                     {
@@ -332,12 +339,12 @@ const AuditPage = () => {
                       transition={{ duration: 0.5, delay: 0.4 + index * 0.1 }}
                       className="flex items-start space-x-4"
                     >
-                      <div className="w-12 h-12 bg-gradient-to-r from-burgundy via-burgundy-light to-gold rounded-xl flex items-center justify-center flex-shrink-0">
-                        <benefit.icon className="w-6 h-6 text-pearl" />
+                      <div className="w-12 h-12 bg-canvas rounded-xl flex items-center justify-center flex-shrink-0">
+                        <benefit.icon className="w-6 h-6" style={{ color: '#1C1C1C' }} />
                       </div>
                       <div>
-                        <h4 className="text-xl font-bold text-pearl mb-2">{benefit.title}</h4>
-                        <p className="text-pearl/80">{benefit.description}</p>
+                        <h4 className="text-xl font-bold mb-2" style={{ color: '#1C1C1C' }}>{benefit.title}</h4>
+                        <p style={{ color: '#535366' }}>{benefit.description}</p>
                       </div>
                     </motion.div>
                   ))}
@@ -345,23 +352,23 @@ const AuditPage = () => {
               </div>
 
               <div className="glass rounded-2xl p-6">
-                <h4 className="text-xl font-bold text-pearl mb-4">Why Choose Our Audit?</h4>
+                <h4 className="text-xl font-bold mb-4" style={{ color: '#1C1C1C' }}>Why Choose Our Audit?</h4>
                 <ul className="space-y-3">
                   <li className="flex items-center space-x-3">
-                    <CheckCircle className="w-5 h-5 text-gold" />
-                    <span className="text-pearl/80">100% Free with no obligations</span>
+                    <CheckCircle className="w-5 h-5" style={{ color: '#535366' }} />
+                    <span style={{ color: '#535366' }}>100% Free with no obligations</span>
                   </li>
                   <li className="flex items-center space-x-3">
-                    <CheckCircle className="w-5 h-5 text-gold" />
-                    <span className="text-pearl/80">Conducted by AI experts</span>
+                    <CheckCircle className="w-5 h-5" style={{ color: '#535366' }} />
+                    <span style={{ color: '#535366' }}>Conducted by AI experts</span>
                   </li>
                   <li className="flex items-center space-x-3">
-                    <CheckCircle className="w-5 h-5 text-gold" />
-                    <span className="text-pearl/80">Delivered within 48 hours</span>
+                    <CheckCircle className="w-5 h-5" style={{ color: '#535366' }} />
+                    <span style={{ color: '#535366' }}>Delivered within 48 hours</span>
                   </li>
                   <li className="flex items-center space-x-3">
-                    <CheckCircle className="w-5 h-5 text-gold" />
-                    <span className="text-pearl/80">Confidential and secure</span>
+                    <CheckCircle className="w-5 h-5" style={{ color: '#535366' }} />
+                    <span style={{ color: '#535366' }}>Confidential and secure</span>
                   </li>
                 </ul>
               </div>

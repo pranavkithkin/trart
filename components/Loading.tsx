@@ -15,7 +15,7 @@ const Loading = () => {
         <motion.div
           animate={{ rotate: 360 }}
           transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
-          className="w-16 h-16 bg-gradient-to-r from-neon-blue to-neon-purple rounded-full flex items-center justify-center mx-auto mb-6"
+          className="w-16 h-16 bg-charcoal rounded-full flex items-center justify-center mx-auto mb-6"
         >
           <Zap className="w-8 h-8 text-white" />
         </motion.div>
