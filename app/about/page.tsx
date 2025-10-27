@@ -299,41 +299,148 @@ const AboutPage = () => {
       </section>
 
       {/* Values Section */}
-      <section className="section-padding bg-charcoal">
-        <div className="container-custom">
+      <section className="section-padding bg-gradient-to-br from-charcoal via-charcoal to-teal relative overflow-hidden">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute inset-0" style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23A38560' fill-opacity='0.3'%3E%3Cpath d='M30 30c0-11.046-8.954-20-20-20s-20 8.954-20 20 8.954 20 20 20 20-8.954 20-20zm10 0c0-11.046-8.954-20-20-20s-20 8.954-20 20 8.954 20 20 20 20-8.954 20-20z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
+          }} />
+        </div>
+
+        {/* Floating Elements */}
+        <div className="absolute inset-0 overflow-hidden">
+          <motion.div
+            animate={{
+              x: [0, 100, 0],
+              y: [0, -100, 0],
+              rotate: [0, 180, 360],
+            }}
+            transition={{
+              duration: 25,
+              repeat: Infinity,
+              ease: "linear"
+            }}
+            className="absolute top-20 left-20 w-32 h-32 bg-gradient-to-r from-burgundy/20 to-gold/20 rounded-full blur-xl"
+          />
+          <motion.div
+            animate={{
+              x: [0, -150, 0],
+              y: [0, 100, 0],
+              rotate: [360, 180, 0],
+            }}
+            transition={{
+              duration: 30,
+              repeat: Infinity,
+              ease: "linear"
+            }}
+            className="absolute bottom-20 right-20 w-48 h-48 bg-gradient-to-r from-gold/20 to-burgundy/20 rounded-full blur-xl"
+          />
+        </div>
+
+        <div className="container-custom relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8 }}
-            className="text-center mb-16"
+            className="text-center mb-20"
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Our <span className="text-charcoal">Values</span>
-            </h2>
-            <p className="text-xl max-w-3xl mx-auto" style={{ color: 'rgba(234, 230, 224, 0.8)' }}>
+            <motion.h2
+              className="text-5xl md:text-6xl font-bold mb-8"
+              initial={{ opacity: 0, scale: 0.5 }}
+              animate={inView ? { opacity: 1, scale: 1 } : {}}
+              transition={{ duration: 1, delay: 0.2 }}
+            >
+              <span className="gradient-text gold-glow">Our Values</span>
+            </motion.h2>
+            <motion.p
+              className="text-2xl max-w-4xl mx-auto leading-relaxed"
+              style={{ color: 'rgba(234, 230, 224, 0.9)' }}
+              initial={{ opacity: 0, y: 30 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.8, delay: 0.4 }}
+            >
               These core values guide everything we do and shape how we work with our clients
-            </p>
+            </motion.p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {values.map((value, index) => (
               <motion.div
                 key={value.title}
-                initial={{ opacity: 0, y: 50 }}
-                animate={inView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.2, ease: "easeOut" }}
-                whileHover={{ scale: 1.05 }}
-                className="glass rounded-2xl p-6 text-center group hover:bg-slate/10 border-2 border-slate/20 hover:border-slate/40 transition-all duration-300"
+                initial={{ opacity: 0, y: 50, scale: 0.8 }}
+                animate={inView ? { opacity: 1, y: 0, scale: 1 } : {}}
+                transition={{
+                  duration: 0.6,
+                  delay: 0.6 + index * 0.15,
+                  type: "spring",
+                  stiffness: 100
+                }}
+                whileHover={{
+                  scale: 1.08,
+                  y: -10,
+                  transition: { duration: 0.3, ease: "easeOut" }
+                }}
+                className="relative group"
               >
-                <motion.div
-                  transition={{ duration: 0.3, ease: "easeInOut" }}
-                  whileHover={{ rotate: 360 }}
-                  className="w-16 h-16 bg-canvas rounded-full flex items-center justify-center mx-auto mb-6"
-                >
-                  <value.icon className="w-8 h-8" style={{ color: '#EAE6E0' }} />
-                </motion.div>
-                <h3 className="text-xl font-bold mb-4" style={{ color: '#EAE6E0' }}>{value.title}</h3>
-                <p style={{ color: 'rgba(234, 230, 224, 0.8)' }}>{value.description}</p>
+                {/* Card Background with Enhanced Glass Effect */}
+                <div className="absolute inset-0 bg-gradient-to-br from-pearl/10 via-pearl/5 to-transparent rounded-3xl blur-xl transform group-hover:blur-2xl transition-all duration-500" />
+
+                <div className="relative glass rounded-3xl p-8 text-center border-2 border-gold/20 hover:border-gold/60 transition-all duration-500 backdrop-blur-xl overflow-hidden">
+                  {/* Subtle gradient overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-gold/5 via-transparent to-burgundy/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+                  {/* Enhanced Icon Container */}
+                  <motion.div
+                    initial={{ scale: 0, rotate: -180 }}
+                    animate={inView ? { scale: 1, rotate: 0 } : {}}
+                    transition={{
+                      duration: 0.8,
+                      delay: 0.8 + index * 0.15,
+                      type: "spring",
+                      stiffness: 200
+                    }}
+                    whileHover={{
+                      rotate: 360,
+                      scale: 1.1,
+                      transition: { duration: 0.6, ease: "easeInOut" }
+                    }}
+                    className="relative w-20 h-20 mx-auto mb-8"
+                  >
+                    {/* Icon background with gradient */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-gold via-gold-light to-burgundy rounded-2xl shadow-lg shadow-gold/30 transform rotate-6 group-hover:rotate-12 transition-transform duration-500" />
+                    <div className="absolute inset-1 bg-gradient-to-br from-burgundy via-gold to-gold-light rounded-2xl flex items-center justify-center">
+                      <value.icon className="w-10 h-10 text-pearl drop-shadow-lg" />
+                    </div>
+
+                    {/* Floating particles effect */}
+                    <div className="absolute -top-1 -right-1 w-3 h-3 bg-gold rounded-full opacity-0 group-hover:opacity-100 animate-pulse" />
+                    <div className="absolute -bottom-1 -left-1 w-2 h-2 bg-burgundy rounded-full opacity-0 group-hover:opacity-100 animate-pulse delay-100" />
+                  </motion.div>
+
+                  {/* Enhanced Typography */}
+                  <motion.h3
+                    className="text-2xl font-bold mb-5 text-pearl relative"
+                    initial={{ opacity: 0 }}
+                    animate={inView ? { opacity: 1 } : {}}
+                    transition={{ duration: 0.8, delay: 1 + index * 0.15 }}
+                  >
+                    {value.title}
+                    {/* Underline effect */}
+                    <div className="absolute left-1/2 bottom-0 w-0 h-0.5 bg-gradient-to-r from-gold to-burgundy group-hover:w-full left-0 transition-all duration-500" />
+                  </motion.h3>
+
+                  <motion.p
+                    className="text-pearl/80 leading-relaxed relative z-10"
+                    initial={{ opacity: 0 }}
+                    animate={inView ? { opacity: 1 } : {}}
+                    transition={{ duration: 0.8, delay: 1.2 + index * 0.15 }}
+                  >
+                    {value.description}
+                  </motion.p>
+
+                  {/* Hover glow effect */}
+                  <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-gold/0 via-gold/5 to-burgundy/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+                </div>
               </motion.div>
             ))}
           </div>

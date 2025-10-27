@@ -128,7 +128,12 @@
     }
 
     .text-gold, .gradient-text, .gold-glow {
-      color: #535366; /* Slate for accents */
+      background: linear-gradient(135deg, #A38560 0%, #B59970 50%, #A38560 100%);
+      background-size: 200% 200%;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: gradient 3s ease-in-out infinite;
     }
 
     .text-primary, .text-charcoal {
@@ -401,6 +406,15 @@
     }
     50% {
       background-position: 100% center;
+    }
+  }
+
+  @keyframes gradient {
+    0%, 100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
     }
   }
 
