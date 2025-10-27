@@ -20,14 +20,20 @@ const AuditPage = () => {
     threshold: 0.1
   })
 
+  const [step, setStep] = useState(1)
+  const totalSteps = 4
+  
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     company: '',
     phone: '',
+    companySize: '',
+    revenue: '',
     challenges: '',
     currentAutomation: '',
-    timeline: ''
+    timeline: '',
+    budget: ''
   })
 
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -141,11 +147,11 @@ const AuditPage = () => {
             className="text-center max-w-4xl mx-auto"
           >
             <h1 className="text-5xl md:text-7xl font-bold mb-6">
-              Get Your <span className="text-charcoal">Free AI Audit</span>
+              Get Your <span className="text-charcoal">Free AI Growth Audit</span>
             </h1>
             <p className="text-xl md:text-2xl mb-12 leading-relaxed" style={{ color: '#535366' }}>
-              Discover how AI agents can transform your business operations.
-              Get a comprehensive analysis and personalized recommendations.
+              In 60 seconds, discover exactly where AI can drive revenue, cut costs, 
+              and give you an unfair competitive advantage. $12M+ generated for our clients.
             </p>
           </motion.div>
         </div>
@@ -163,145 +169,285 @@ const AuditPage = () => {
               transition={{ duration: 0.8 }}
               className="glass rounded-3xl p-8"
             >
-              <h2 className="text-3xl font-bold mb-6" style={{ color: '#1C1C1C' }}>Request Your Free Audit</h2>
-              <p className="mb-8" style={{ color: '#535366' }}>
-                Fill out the form below and our AI experts will analyze your business
-                processes to identify automation opportunities.
-              </p>
-
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <label className="block font-semibold mb-2" style={{ color: '#1C1C1C' }}>Full Name *</label>
-                    <input
-                      type="text"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleInputChange}
-                      required
-                      className="w-full px-4 py-3 bg-canvas border border-slate/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-slate focus:border-slate"
-                      style={{ color: '#1C1C1C' }}
-                      placeholder="Enter your full name"
-                    />
-                  </div>
-                  <div>
-                    <label className="block font-semibold mb-2" style={{ color: '#1C1C1C' }}>Email Address *</label>
-                    <input
-                      type="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleInputChange}
-                      required
-                      className="w-full px-4 py-3 bg-canvas border border-slate/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-slate focus:border-slate"
-                      style={{ color: '#1C1C1C' }}
-                      placeholder="Enter your email address"
-                    />
-                  </div>
+              {/* Progress Bar */}
+              <div className="mb-8">
+                <div className="flex items-center justify-between mb-2">
+                  <span className="text-sm font-semibold" style={{ color: '#535366' }}>
+                    Step {step} of {totalSteps}
+                  </span>
+                  <span className="text-sm font-semibold" style={{ color: '#535366' }}>
+                    {Math.round((step / totalSteps) * 100)}% Complete
+                  </span>
                 </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <label className="block font-semibold mb-2" style={{ color: '#1C1C1C' }}>Company Name *</label>
-                    <input
-                      type="text"
-                      name="company"
-                      value={formData.company}
-                      onChange={handleInputChange}
-                      required
-                      className="w-full px-4 py-3 bg-canvas border border-slate/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-slate focus:border-slate"
-                      style={{ color: '#1C1C1C' }}
-                      placeholder="Enter your company name"
-                    />
-                  </div>
-                  <div>
-                    <label className="block font-semibold mb-2" style={{ color: '#1C1C1C' }}>Phone Number</label>
-                    <input
-                      type="tel"
-                      name="phone"
-                      value={formData.phone}
-                      onChange={handleInputChange}
-                      className="w-full px-4 py-3 bg-canvas border border-slate/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-slate focus:border-slate"
-                      style={{ color: '#1C1C1C' }}
-                      placeholder="Enter your phone number"
-                    />
-                  </div>
-                </div>
-
-                <div>
-                  <label className="block font-semibold mb-2" style={{ color: '#1C1C1C' }}>Current Business Challenges *</label>
-                  <textarea
-                    name="challenges"
-                    value={formData.challenges}
-                    onChange={handleInputChange}
-                    required
-                    rows={4}
-                    className="w-full px-4 py-3 bg-canvas border border-slate/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-slate focus:border-slate"
-                    style={{ color: '#1C1C1C' }}
-                    placeholder="Describe your current business challenges and pain points..."
+                <div className="w-full bg-slate/20 rounded-full h-2">
+                  <div 
+                    className="bg-charcoal h-2 rounded-full transition-all duration-300"
+                    style={{ width: `${(step / totalSteps) * 100}%` }}
                   />
                 </div>
+              </div>
 
-                <div>
-                  <label className="block font-semibold mb-2" style={{ color: '#1C1C1C' }}>Current Automation Level</label>
-                  <select
-                    name="currentAutomation"
-                    value={formData.currentAutomation}
-                    onChange={handleInputChange}
-                    className="w-full px-4 py-3 bg-canvas border border-slate/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-slate focus:border-slate"
-                    style={{ color: '#1C1C1C' }}
+              <h2 className="text-3xl font-bold mb-6" style={{ color: '#1C1C1C' }}>
+                {step === 1 && "Let's start with the basics"}
+                {step === 2 && "Tell us about your company"}
+                {step === 3 && "What challenges are you facing?"}
+                {step === 4 && "Almost there!"}
+              </h2>
+
+              <form onSubmit={handleSubmit} className="space-y-6">
+                {/* Step 1: Contact Info */}
+                {step === 1 && (
+                  <motion.div
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: -20 }}
+                    className="space-y-6"
                   >
-                    <option value="">Select current automation level</option>
-                    <option value="none">No automation</option>
-                    <option value="basic">Basic automation (email, scheduling)</option>
-                    <option value="intermediate">Intermediate automation (CRM, workflows)</option>
-                    <option value="advanced">Advanced automation (AI tools, custom solutions)</option>
-                  </select>
-                </div>
+                    <div>
+                      <label className="block font-semibold mb-2" style={{ color: '#1C1C1C' }}>Full Name *</label>
+                      <input
+                        type="text"
+                        name="name"
+                        value={formData.name}
+                        onChange={handleInputChange}
+                        required
+                        className="w-full px-4 py-4 bg-canvas border-2 border-slate/30 rounded-xl focus:outline-none focus:ring-2 focus:ring-charcoal focus:border-charcoal text-lg"
+                        style={{ color: '#1C1C1C' }}
+                        placeholder="John Smith"
+                      />
+                    </div>
+                    <div>
+                      <label className="block font-semibold mb-2" style={{ color: '#1C1C1C' }}>Work Email *</label>
+                      <input
+                        type="email"
+                        name="email"
+                        value={formData.email}
+                        onChange={handleInputChange}
+                        required
+                        className="w-full px-4 py-4 bg-canvas border-2 border-slate/30 rounded-xl focus:outline-none focus:ring-2 focus:ring-charcoal focus:border-charcoal text-lg"
+                        style={{ color: '#1C1C1C' }}
+                        placeholder="john@company.com"
+                      />
+                    </div>
+                    <div>
+                      <label className="block font-semibold mb-2" style={{ color: '#1C1C1C' }}>Phone Number (Optional)</label>
+                      <input
+                        type="tel"
+                        name="phone"
+                        value={formData.phone}
+                        onChange={handleInputChange}
+                        className="w-full px-4 py-4 bg-canvas border-2 border-slate/30 rounded-xl focus:outline-none focus:ring-2 focus:ring-charcoal focus:border-charcoal text-lg"
+                        style={{ color: '#1C1C1C' }}
+                        placeholder="+1 (555) 123-4567"
+                      />
+                    </div>
+                  </motion.div>
+                )}
 
-                <div>
-                  <label className="block font-semibold mb-2" style={{ color: '#1C1C1C' }}>Timeline</label>
-                  <select
-                    name="timeline"
-                    value={formData.timeline}
-                    onChange={handleInputChange}
-                    className="w-full px-4 py-3 bg-canvas border border-slate/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-slate focus:border-slate"
-                    style={{ color: '#1C1C1C' }}
+                {/* Step 2: Company Info */}
+                {step === 2 && (
+                  <motion.div
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: -20 }}
+                    className="space-y-6"
                   >
-                    <option value="">Select timeline</option>
-                    <option value="asap">ASAP</option>
-                    <option value="1-month">Within 1 month</option>
-                    <option value="3-months">Within 3 months</option>
-                    <option value="6-months">Within 6 months</option>
-                    <option value="planning">Just planning ahead</option>
-                  </select>
-                </div>
+                    <div>
+                      <label className="block font-semibold mb-2" style={{ color: '#1C1C1C' }}>Company Name *</label>
+                      <input
+                        type="text"
+                        name="company"
+                        value={formData.company}
+                        onChange={handleInputChange}
+                        required
+                        className="w-full px-4 py-4 bg-canvas border-2 border-slate/30 rounded-xl focus:outline-none focus:ring-2 focus:ring-charcoal focus:border-charcoal text-lg"
+                        style={{ color: '#1C1C1C' }}
+                        placeholder="Acme Corp"
+                      />
+                    </div>
+                    <div>
+                      <label className="block font-semibold mb-2" style={{ color: '#1C1C1C' }}>Company Size *</label>
+                      <select
+                        name="companySize"
+                        value={formData.companySize}
+                        onChange={handleInputChange}
+                        required
+                        className="w-full px-4 py-4 bg-canvas border-2 border-slate/30 rounded-xl focus:outline-none focus:ring-2 focus:ring-charcoal focus:border-charcoal text-lg"
+                        style={{ color: '#1C1C1C' }}
+                      >
+                        <option value="">Select company size</option>
+                        <option value="1-10">1-10 employees</option>
+                        <option value="11-50">11-50 employees</option>
+                        <option value="51-100">51-100 employees</option>
+                        <option value="101-250">101-250 employees</option>
+                        <option value="251-500">251-500 employees</option>
+                        <option value="500+">500+ employees</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label className="block font-semibold mb-2" style={{ color: '#1C1C1C' }}>Annual Revenue *</label>
+                      <select
+                        name="revenue"
+                        value={formData.revenue}
+                        onChange={handleInputChange}
+                        required
+                        className="w-full px-4 py-4 bg-canvas border-2 border-slate/30 rounded-xl focus:outline-none focus:ring-2 focus:ring-charcoal focus:border-charcoal text-lg"
+                        style={{ color: '#1C1C1C' }}
+                      >
+                        <option value="">Select annual revenue</option>
+                        <option value="<1M">Less than $1M</option>
+                        <option value="1-5M">$1M - $5M</option>
+                        <option value="5-10M">$5M - $10M</option>
+                        <option value="10-25M">$10M - $25M</option>
+                        <option value="25-50M">$25M - $50M</option>
+                        <option value="50M+">$50M+</option>
+                      </select>
+                    </div>
+                  </motion.div>
+                )}
 
-                <motion.button
-                  type="submit"
-                  disabled={isSubmitting}
-                  transition={{ duration: 0.2, ease: "easeOut" }}
-                  whileHover={{ scale: isSubmitting ? 1 : 1.05 }}
-                  whileTap={{ scale: isSubmitting ? 1 : 0.95 }}
-                  className="w-full btn-primary text-lg py-4 flex items-center justify-center space-x-3 disabled:opacity-50 disabled:cursor-not-allowed"
-                >
-                  {isSubmitting ? (
-                    <>
-                      <div className="loading-dots">
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                      </div>
-                      <span>Submitting...</span>
-                    </>
-                  ) : (
-                    <>
-                      <Sparkles className="w-6 h-6" />
-                      <span>Get My Free AI Audit</span>
-                      <ArrowRight className="w-6 h-6" />
-                    </>
+                {/* Step 3: Challenges */}
+                {step === 3 && (
+                  <motion.div
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: -20 }}
+                    className="space-y-6"
+                  >
+                    <div>
+                      <label className="block font-semibold mb-2" style={{ color: '#1C1C1C' }}>
+                        What's your biggest challenge right now? *
+                      </label>
+                      <textarea
+                        name="challenges"
+                        value={formData.challenges}
+                        onChange={handleInputChange}
+                        required
+                        rows={5}
+                        className="w-full px-4 py-4 bg-canvas border-2 border-slate/30 rounded-xl focus:outline-none focus:ring-2 focus:ring-charcoal focus:border-charcoal text-lg"
+                        style={{ color: '#1C1C1C' }}
+                        placeholder="E.g., Sales team spends 60% of time on admin work, customer response times are too slow, manual invoice processing takes 2 weeks..."
+                      />
+                    </div>
+                    <div>
+                      <label className="block font-semibold mb-2" style={{ color: '#1C1C1C' }}>Current Automation Level *</label>
+                      <select
+                        name="currentAutomation"
+                        value={formData.currentAutomation}
+                        onChange={handleInputChange}
+                        required
+                        className="w-full px-4 py-4 bg-canvas border-2 border-slate/30 rounded-xl focus:outline-none focus:ring-2 focus:ring-charcoal focus:border-charcoal text-lg"
+                        style={{ color: '#1C1C1C' }}
+                      >
+                        <option value="">Where are you today?</option>
+                        <option value="none">Mostly manual processes</option>
+                        <option value="basic">Basic tools (email, spreadsheets)</option>
+                        <option value="intermediate">CRM and workflow tools</option>
+                        <option value="advanced">Already using some AI/automation</option>
+                      </select>
+                    </div>
+                  </motion.div>
+                )}
+
+                {/* Step 4: Timeline & Budget */}
+                {step === 4 && (
+                  <motion.div
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: -20 }}
+                    className="space-y-6"
+                  >
+                    <div>
+                      <label className="block font-semibold mb-2" style={{ color: '#1C1C1C' }}>When do you want to get started? *</label>
+                      <select
+                        name="timeline"
+                        value={formData.timeline}
+                        onChange={handleInputChange}
+                        required
+                        className="w-full px-4 py-4 bg-canvas border-2 border-slate/30 rounded-xl focus:outline-none focus:ring-2 focus:ring-charcoal focus:border-charcoal text-lg"
+                        style={{ color: '#1C1C1C' }}
+                      >
+                        <option value="">Select timeline</option>
+                        <option value="asap">ASAP - This is urgent</option>
+                        <option value="1-month">Within 1 month</option>
+                        <option value="3-months">Within 3 months</option>
+                        <option value="6-months">Within 6 months</option>
+                        <option value="planning">Just exploring options</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label className="block font-semibold mb-2" style={{ color: '#1C1C1C' }}>Budget Range (Optional)</label>
+                      <select
+                        name="budget"
+                        value={formData.budget}
+                        onChange={handleInputChange}
+                        className="w-full px-4 py-4 bg-canvas border-2 border-slate/30 rounded-xl focus:outline-none focus:ring-2 focus:ring-charcoal focus:border-charcoal text-lg"
+                        style={{ color: '#1C1C1C' }}
+                      >
+                        <option value="">Select budget range</option>
+                        <option value="<5k">Less than $5K/month</option>
+                        <option value="5-10k">$5K - $10K/month</option>
+                        <option value="10-25k">$10K - $25K/month</option>
+                        <option value="25k+">$25K+/month</option>
+                        <option value="flexible">Flexible based on ROI</option>
+                      </select>
+                    </div>
+                  </motion.div>
+                )}
+
+                {/* Navigation Buttons */}
+                <div className="flex items-center justify-between pt-6 space-x-4">
+                  {step > 1 && (
+                    <motion.button
+                      type="button"
+                      onClick={() => setStep(step - 1)}
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
+                      className="px-8 py-4 rounded-xl font-semibold text-lg border-2 border-charcoal/20 hover:border-charcoal/40 transition-all"
+                      style={{ color: '#1C1C1C' }}
+                    >
+                      Back
+                    </motion.button>
                   )}
-                </motion.button>
+                  
+                  {step < totalSteps ? (
+                    <motion.button
+                      type="button"
+                      onClick={() => setStep(step + 1)}
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      className="flex-1 btn-primary text-lg py-4 flex items-center justify-center space-x-3 group"
+                    >
+                      <span>Continue</span>
+                      <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
+                    </motion.button>
+                  ) : (
+                    <motion.button
+                      type="submit"
+                      disabled={isSubmitting}
+                      whileHover={{ scale: isSubmitting ? 1 : 1.05 }}
+                      whileTap={{ scale: isSubmitting ? 1 : 0.95 }}
+                      className="flex-1 btn-primary text-lg py-4 flex items-center justify-center space-x-3 disabled:opacity-50 disabled:cursor-not-allowed"
+                    >
+                      {isSubmitting ? (
+                        <>
+                          <div className="loading-dots">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                          </div>
+                          <span>Submitting...</span>
+                        </>
+                      ) : (
+                        <>
+                          <Sparkles className="w-6 h-6" />
+                          <span>Get My Free Audit</span>
+                        </>
+                      )}
+                    </motion.button>
+                  )}
+                </div>
               </form>
             </motion.div>
 

@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-import { Quote, Star } from 'lucide-react'
+import { Quote, Star, CheckCircle, TrendingUp, Building2 } from 'lucide-react'
 import Image from 'next/image'
 
 const Testimonials = () => {
@@ -13,40 +13,68 @@ const Testimonials = () => {
 
   const testimonials = [
     {
-      name: "Jennifer Martinez",
-      role: "CEO, TechFlow Solutions",
-      company: "TechFlow Solutions",
+      name: "Sarah Chen",
+      role: "VP of Customer Success",
+      company: "TechVision Global",
+      industry: "Enterprise SaaS",
       image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop&crop=face",
-      quote: "TRART Ai transformed our customer service operations. We've seen a 70% reduction in response times and our customer satisfaction scores have never been higher. The AI agents handle routine inquiries flawlessly, allowing our team to focus on complex issues.",
+      quote: "TRART AI transformed our customer success operations. What used to take our team days now happens in minutes. Our CSAT scores have never been higher, and our team can focus on building relationships instead of answering the same questions repeatedly.",
       rating: 5,
-      results: "70% faster response time"
+      results: "94% reduction in response time",
+      metrics: [
+        { label: "Response Time", value: "6min", before: "48hrs" },
+        { label: "CSAT Score", value: "96%", change: "+38pts" },
+        { label: "Cost Savings", value: "$240K", period: "annually" }
+      ],
+      verified: true
     },
     {
-      name: "David Chen",
-      role: "COO, GlobalCorp",
-      company: "GlobalCorp",
+      name: "Michael Rodriguez",
+      role: "Chief Revenue Officer",
+      company: "Precision Parts Inc.",
+      industry: "B2B Manufacturing",
       image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=400&fit=crop&crop=face",
-      quote: "Implementing TRART's AI agents for our sales process was a game-changer. We've increased our conversion rates by 45% and our sales team can now focus on high-value opportunities. The ROI was evident within the first quarter.",
+      quote: "Our sales team was drowning in administrative work. TRART's AI Sales Orchestration gave them back 60% of their time to actually sell. We've seen our close rates more than double, and our sales cycle is now under 5 weeks.",
       rating: 5,
-      results: "45% increase in conversions"
+      results: "62% faster sales cycles",
+      metrics: [
+        { label: "Sales Cycle", value: "34 days", before: "89 days" },
+        { label: "Conversion Rate", value: "41%", change: "+156%" },
+        { label: "Revenue Impact", value: "$3.2M", period: "annually" }
+      ],
+      verified: true
     },
     {
-      name: "Sarah Williams",
-      role: "CFO, FinanceFirst",
-      company: "FinanceFirst", 
+      name: "Jennifer Park",
+      role: "Chief Financial Officer",
+      company: "Aspire Financial Group",
+      industry: "Financial Services",
       image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop&crop=face",
-      quote: "The Finance Ops AI agent has revolutionized our accounting processes. Automated invoicing and expense tracking have saved us countless hours. We've reduced processing time by 60% and virtually eliminated manual errors.",
+      quote: "The ROI was immediate and undeniable. What took our team two weeks now happens overnight with 99.7% accuracy. We've redirected two FTEs to strategic finance work, and our compliance audit was the smoothest we've ever had.",
       rating: 5,
-      results: "60% time savings"
+      results: "99.7% accuracy achieved",
+      metrics: [
+        { label: "Processing Time", value: "18hrs", before: "12 days" },
+        { label: "Accuracy Rate", value: "99.7%", change: "from 87%" },
+        { label: "Annual Savings", value: "$180K", period: "year 1" }
+      ],
+      verified: true
     },
     {
-      name: "Michael Brown",
-      role: "VP of Operations, RetailMax",
-      company: "RetailMax",
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face",
-      quote: "Working with TRART Ai has been exceptional. Their team understood our unique challenges and delivered a custom AI solution that exceeded our expectations. The support and ongoing optimization they provide is outstanding.",
+      name: "Amanda Sullivan",
+      role: "Chief Marketing Officer",
+      company: "StyleHub Retail",
+      industry: "E-commerce",
+      image: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=400&h=400&fit=crop&crop=face",
+      quote: "Content production went from our biggest bottleneck to our competitive advantage. We can now launch products in days instead of weeks, and our SEO traffic has nearly tripled. The AI nailed our brand voice perfectly.",
       rating: 5,
-      results: "3x ROI in 6 months"
+      results: "50x faster content production",
+      metrics: [
+        { label: "Production Speed", value: "50x", change: "faster" },
+        { label: "SEO Traffic", value: "284%", change: "increase" },
+        { label: "Revenue Impact", value: "$1.8M", period: "additional" }
+      ],
+      verified: true
     }
   ]
 
@@ -67,10 +95,10 @@ const Testimonials = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-charcoal">
-            What Our Clients Say
+            Trusted by Industry Leaders
           </h2>
           <p className="text-xl md:text-2xl max-w-3xl mx-auto leading-relaxed" style={{ color: '#535366' }}>
-            Real stories from businesses that have transformed their operations with AI automation
+            Real results from B2B companies who chose to lead, not follow
           </p>
         </motion.div>
 
@@ -81,6 +109,7 @@ const Testimonials = () => {
               initial={{ opacity: 0, y: 50 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: index * 0.15 }}
+              whileHover={{ scale: 1.02, y: -5 }}
               className="glass rounded-3xl p-8 relative group hover:bg-slate/10 border-2 border-slate/20 hover:border-slate/40 transition-all duration-300"
             >
               {/* Quote Icon */}
@@ -88,10 +117,29 @@ const Testimonials = () => {
                 <Quote className="w-16 h-16" style={{ color: '#535366' }} />
               </div>
 
+              {/* Company Badge */}
+              <div className="flex items-center justify-between mb-6">
+                <div className="flex items-center space-x-3">
+                  <div className="w-12 h-12 bg-charcoal/10 rounded-xl flex items-center justify-center">
+                    <Building2 className="w-6 h-6" style={{ color: '#1C1C1C' }} />
+                  </div>
+                  <div>
+                    <div className="font-bold" style={{ color: '#1C1C1C' }}>{testimonial.company}</div>
+                    <div className="text-xs" style={{ color: '#535366' }}>{testimonial.industry}</div>
+                  </div>
+                </div>
+                {testimonial.verified && (
+                  <div className="flex items-center space-x-1 px-3 py-1 bg-green-100 rounded-full">
+                    <CheckCircle className="w-4 h-4 text-green-600" />
+                    <span className="text-xs font-semibold text-green-700">Verified</span>
+                  </div>
+                )}
+              </div>
+
               {/* Rating */}
               <div className="flex items-center space-x-1 mb-4">
                 {[...Array(testimonial.rating)].map((_, i) => (
-                  <Star key={i} className="w-5 h-5" style={{ color: '#EAE6E0', fill: '#EAE6E0' }} />
+                  <Star key={i} className="w-5 h-5 text-yellow-500 fill-yellow-500" />
                 ))}
               </div>
 
@@ -100,14 +148,33 @@ const Testimonials = () => {
                 "{testimonial.quote}"
               </p>
 
-              {/* Results Badge */}
-              <div className="inline-block mb-6">
-                <span className="px-4 py-2 rounded-full text-sm font-semibold" style={{
-                  backgroundColor: '#1C1C1C',
-                  color: '#EAE6E0'
-                }}>
-                  🎯 {testimonial.results}
-                </span>
+              {/* Metrics Grid */}
+              <div className="grid grid-cols-3 gap-4 mb-6 p-4 bg-slate/5 rounded-xl">
+                {testimonial.metrics.map((metric, metricIndex) => (
+                  <div key={metricIndex} className="text-center">
+                    <div className="text-2xl font-bold mb-1" style={{ color: '#1C1C1C' }}>
+                      {metric.value}
+                    </div>
+                    <div className="text-xs mb-1" style={{ color: '#535366' }}>
+                      {metric.label}
+                    </div>
+                    {metric.change && (
+                      <div className="text-xs font-semibold" style={{ color: '#4ADE80' }}>
+                        {metric.change}
+                      </div>
+                    )}
+                    {metric.before && (
+                      <div className="text-xs" style={{ color: '#535366', opacity: 0.7 }}>
+                        from {metric.before}
+                      </div>
+                    )}
+                    {metric.period && (
+                      <div className="text-xs" style={{ color: '#535366', opacity: 0.7 }}>
+                        {metric.period}
+                      </div>
+                    )}
+                  </div>
+                ))}
               </div>
 
               {/* Author Info */}
@@ -123,7 +190,6 @@ const Testimonials = () => {
                 <div>
                   <h4 className="font-semibold text-lg" style={{ color: '#1C1C1C' }}>{testimonial.name}</h4>
                   <p className="text-sm" style={{ color: '#535366' }}>{testimonial.role}</p>
-                  <p className="text-sm" style={{ color: '#535366', opacity: 0.7 }}>{testimonial.company}</p>
                 </div>
               </div>
             </motion.div>
@@ -137,19 +203,23 @@ const Testimonials = () => {
           transition={{ duration: 0.8, delay: 0.6 }}
           className="mt-16 text-center"
         >
-          <div className="glass rounded-2xl p-8 max-w-4xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div>
-                <div className="text-4xl font-bold mb-2" style={{ color: '#1C1C1C' }}>100+</div>
-                <div style={{ color: '#535366' }}>Satisfied Clients</div>
+          <div className="glass rounded-2xl p-8 max-w-5xl mx-auto">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+              <div className="text-center">
+                <div className="text-4xl font-bold mb-2" style={{ color: '#4ADE80' }}>$12M+</div>
+                <div style={{ color: '#535366' }}>Revenue Generated</div>
               </div>
-              <div>
-                <div className="text-4xl font-bold mb-2" style={{ color: '#1C1C1C' }}>98%</div>
-                <div style={{ color: '#535366' }}>Client Retention</div>
+              <div className="text-center">
+                <div className="text-4xl font-bold mb-2" style={{ color: '#60A5FA' }}>480%</div>
+                <div style={{ color: '#535366' }}>Average ROI</div>
               </div>
-              <div>
-                <div className="text-4xl font-bold mb-2" style={{ color: '#1C1C1C' }}>4.9/5</div>
-                <div style={{ color: '#535366' }}>Average Rating</div>
+              <div className="text-center">
+                <div className="text-4xl font-bold mb-2" style={{ color: '#F59E0B' }}>100+</div>
+                <div style={{ color: '#535366' }}>B2B Companies</div>
+              </div>
+              <div className="text-center">
+                <div className="text-4xl font-bold mb-2" style={{ color: '#EC4899' }}>98%</div>
+                <div style={{ color: '#535366' }}>Retention Rate</div>
               </div>
             </div>
           </div>

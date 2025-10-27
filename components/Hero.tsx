@@ -34,9 +34,9 @@ const Hero = () => {
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 1, delay: 0.2 }}
               >
-                Transform your business with
+                AI-Powered Growth Engine
                 <br />
-                <span style={{ color: '#EAE6E0' }}>intelligent automation</span>
+                <span style={{ color: '#EAE6E0' }}>for Ambitious B2B Companies</span>
               </motion.h1>
             </motion.div>
 
@@ -48,8 +48,8 @@ const Hero = () => {
               className="text-body-large mb-12 leading-relaxed"
               style={{ color: '#EAE6E0' }}
             >
-              Unlock the power of AI agents to automate your workflows,
-              enhance customer experience, and drive unprecedented growth.
+              We don't just implement AI—we transform B2B operations into revenue-generating 
+              machines. Our clients achieve 480% average ROI while their competitors struggle with manual processes.
             </motion.p>
 
             {/* CTA Buttons */}
@@ -91,18 +91,27 @@ const Hero = () => {
               transition={{ duration: 0.8, delay: 0.8 }}
               className="flex flex-wrap justify-center lg:justify-start gap-8 text-center lg:text-left"
             >
-              <div>
-                <div className="text-3xl font-bold font-accent" style={{ color: '#EAE6E0' }}>100+</div>
-                <div style={{ color: 'rgba(234, 230, 224, 0.8)' }}>Active Clients</div>
-              </div>
-              <div>
-                <div className="text-3xl font-bold font-accent" style={{ color: '#EAE6E0' }}>300%</div>
-                <div style={{ color: 'rgba(234, 230, 224, 0.8)' }}>Average ROI</div>
-              </div>
-              <div>
-                <div className="text-3xl font-bold font-accent" style={{ color: '#EAE6E0' }}>24/7</div>
-                <div style={{ color: 'rgba(234, 230, 224, 0.8)' }}>AI Support</div>
-              </div>
+              <motion.div
+                whileHover={{ scale: 1.05, y: -5 }}
+                className="glass-dark px-6 py-4 rounded-xl border border-white/10"
+              >
+                <div className="text-4xl font-bold font-accent" style={{ color: '#4ADE80' }}>$12M+</div>
+                <div style={{ color: 'rgba(234, 230, 224, 0.9)' }} className="text-sm">Revenue Generated</div>
+              </motion.div>
+              <motion.div
+                whileHover={{ scale: 1.05, y: -5 }}
+                className="glass-dark px-6 py-4 rounded-xl border border-white/10"
+              >
+                <div className="text-4xl font-bold font-accent" style={{ color: '#60A5FA' }}>480%</div>
+                <div style={{ color: 'rgba(234, 230, 224, 0.9)' }} className="text-sm">Average ROI</div>
+              </motion.div>
+              <motion.div
+                whileHover={{ scale: 1.05, y: -5 }}
+                className="glass-dark px-6 py-4 rounded-xl border border-white/10"
+              >
+                <div className="text-4xl font-bold font-accent" style={{ color: '#F59E0B' }}>100+</div>
+                <div style={{ color: 'rgba(234, 230, 224, 0.9)' }} className="text-sm">B2B Companies</div>
+              </motion.div>
             </motion.div>
           </div>
 
