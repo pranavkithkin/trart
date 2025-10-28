@@ -7,7 +7,7 @@ import Image from 'next/image'
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center bg-charcoal pb-safe">
+    <section className="relative min-h-screen flex items-center justify-center bg-charcoal pb-safe pt-24 sm:pt-32">
       {/* Clean solid background */}
       <div className="absolute inset-0 bg-charcoal">
         {/* Subtle pattern overlay */}

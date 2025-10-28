@@ -25,20 +25,20 @@ const AboutPage = () => {
 
   const team = [
     {
-      name: "Pranav Kumar",
+      name: "Pranav Satheesan",
       role: "CEO & Strategic Consultant",
-      image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=400&fit=crop&crop=face",
+      image: "",
       bio: "AI educator and community leader who's trained 1,000+ professionals on AI implementation. Former enterprise consultant specializing in digital transformation and revenue operations.",
       expertise: ["AI Strategy", "Revenue Operations", "Community Leadership", "B2B Consulting"],
-      highlight: "Built India's largest AI implementation community"
+      highlight: "Built a large community of AI implementation professionals"
     },
     {
-      name: "Operations Director",
+      name: "Suhail Malayil",
       role: "COO & Systems Architect",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face",
+      image: "",
       bio: "Enterprise systems architect with 12+ years building scalable automation platforms for Fortune 500 companies. Expert in complex integrations and data architecture.",
       expertise: ["System Architecture", "Enterprise Integration", "Data Engineering", "Process Design"],
-      highlight: "Deployed AI systems processing 100M+ transactions"
+      highlight: "Deployed AI systems processing millions of transactions"
     }
   ]
 
