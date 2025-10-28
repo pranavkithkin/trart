@@ -81,6 +81,7 @@ const Hero = () => {
               className="flex flex-wrap justify-center lg:justify-start gap-4 sm:gap-6 md:gap-8 text-center lg:text-left"
             >
               <motion.div
+                transition={{ duration: 0.2, ease: "easeOut" }}
                 whileHover={{ scale: 1.05, y: -5 }}
                 className="glass-dark px-4 py-3 sm:px-6 sm:py-4 rounded-xl border border-white/10 flex-1 min-w-[140px] sm:flex-none"
               >
@@ -88,6 +89,7 @@ const Hero = () => {
                 <div style={{ color: 'rgba(234, 230, 224, 0.9)' }} className="text-xs sm:text-sm">Revenue Generated</div>
               </motion.div>
               <motion.div
+                transition={{ duration: 0.2, ease: "easeOut" }}
                 whileHover={{ scale: 1.05, y: -5 }}
                 className="glass-dark px-4 py-3 sm:px-6 sm:py-4 rounded-xl border border-white/10 flex-1 min-w-[140px] sm:flex-none"
               >
@@ -95,6 +97,7 @@ const Hero = () => {
                 <div style={{ color: 'rgba(234, 230, 224, 0.9)' }} className="text-xs sm:text-sm">Average ROI</div>
               </motion.div>
               <motion.div
+                transition={{ duration: 0.2, ease: "easeOut" }}
                 whileHover={{ scale: 1.05, y: -5 }}
                 className="glass-dark px-4 py-3 sm:px-6 sm:py-4 rounded-xl border border-white/10 flex-1 min-w-[140px] sm:flex-none"
               >
@@ -190,13 +193,12 @@ const Hero = () => {
               key={feature.title}
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.2, ease: "easeOut", delay: 1.2 + index * 0.1 }}
-              whileHover={{ scale: 1.05 }}
+              transition={{ duration: 0.6, delay: 1.2 + index * 0.1 }}
               className="bg-canvas/90 backdrop-blur-sm rounded-2xl p-6 text-center group hover:bg-canvas transition-all duration-300 border border-slate/20 hover:border-slate/40 shadow-xl"
               style={{ backgroundColor: 'rgba(234, 230, 224, 0.9)' }}
             >
               <motion.div
-                transition={{ duration: 0.3, ease: "easeInOut" }}
+                transition={{ duration: 0.2, ease: "easeOut" }}
                 whileHover={{ rotate: 360 }}
                 className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg"
                 style={{ backgroundColor: '#1C1C1C' }}

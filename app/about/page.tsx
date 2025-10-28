@@ -443,11 +443,11 @@ const AboutPage = () => {
                 initial={{ opacity: 0, y: 50 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: index * 0.2 }}
-                whileHover={{ scale: 1.02, y: -5 }}
                 className="glass rounded-3xl p-8 group hover:bg-slate/10 border-2 border-slate/20 hover:border-slate/40 transition-all duration-300"
               >
                 <div className="flex items-start space-x-6">
                   <motion.div
+                    transition={{ duration: 0.2, ease: "easeOut" }}
                     whileHover={{ scale: 1.1 }}
                     className="w-32 h-32 bg-canvas rounded-2xl flex-shrink-0 overflow-hidden"
                   >

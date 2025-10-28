@@ -127,6 +127,7 @@ import {
           </p>
           <Link href="/audit">
             <motion.button
+              transition={{ duration: 0.2, ease: "easeOut" }}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="btn-primary text-lg px-12 py-4 flex items-center space-x-3 mx-auto group shadow-lg"
@@ -156,6 +157,7 @@ import {
           </p>
           <Link href="/audit">
             <motion.button
+              transition={{ duration: 0.2, ease: "easeOut" }}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="bg-white text-charcoal px-12 py-4 rounded-xl font-bold text-lg flex items-center space-x-3 mx-auto shadow-xl"

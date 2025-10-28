@@ -66,7 +66,7 @@ const Footer = () => {
             >
               <Link href="/" className="inline-block mb-6">
                 <motion.div
-                  transition={{ duration: 0.3, ease: "easeInOut" }}
+                  transition={{ duration: 0.2, ease: "easeOut" }}
                   whileHover={{ scale: 1.05 }}
                   className="relative w-48 h-24 sm:w-56 sm:h-28"
                   style={{

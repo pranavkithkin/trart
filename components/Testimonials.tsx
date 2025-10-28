@@ -109,7 +109,6 @@ const Testimonials = () => {
               initial={{ opacity: 0, y: 50 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: index * 0.15 }}
-              whileHover={{ scale: 1.02, y: -5 }}
               className="glass rounded-3xl p-8 relative group hover:bg-slate/10 border-2 border-slate/20 hover:border-slate/40 transition-all duration-300"
             >
               {/* Quote Icon */}

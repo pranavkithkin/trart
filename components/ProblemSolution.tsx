@@ -147,6 +147,7 @@ const ProblemSolution = () => {
             >
               {/* Problem Side */}
               <motion.div
+                transition={{ duration: 0.2, ease: "easeOut" }}
                 whileHover={{ scale: 1.02 }}
                 className="lg:col-span-5 glass rounded-2xl p-8 border-2 border-red-500/20 bg-red-50/50 relative overflow-hidden group"
               >
@@ -198,6 +199,7 @@ const ProblemSolution = () => {
 
               {/* Solution Side */}
               <motion.div
+                transition={{ duration: 0.2, ease: "easeOut" }}
                 whileHover={{ scale: 1.02 }}
                 className="lg:col-span-5 glass rounded-2xl p-8 border-2 border-green-500/20 bg-green-50/50 relative overflow-hidden group"
               >

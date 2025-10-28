@@ -220,7 +220,7 @@ const ContactPage = () => {
                 className="glass rounded-2xl p-6 text-center group hover:bg-slate/10 border-2 border-slate/20 hover:border-slate/40 transition-all duration-300"
               >
                 <motion.div
-                  transition={{ duration: 0.3, ease: "easeInOut" }}
+                  transition={{ duration: 0.2, ease: "easeOut" }}
                   whileHover={{ rotate: 360 }}
                   className="w-16 h-16 bg-canvas rounded-full flex items-center justify-center mx-auto mb-4"
                 >

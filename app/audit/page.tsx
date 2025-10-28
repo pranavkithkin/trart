@@ -383,6 +383,7 @@ const AuditPage = () => {
                     <motion.button
                       type="button"
                       onClick={() => setStep(step - 1)}
+                      transition={{ duration: 0.2, ease: "easeOut" }}
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
                       className="px-8 py-4 rounded-xl font-semibold text-lg border-2 border-charcoal/20 hover:border-charcoal/40 transition-all"
@@ -396,6 +397,7 @@ const AuditPage = () => {
                     <motion.button
                       type="button"
                       onClick={() => setStep(step + 1)}
+                      transition={{ duration: 0.2, ease: "easeOut" }}
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                       className="flex-1 btn-primary text-lg py-4 flex items-center justify-center space-x-3 group"
@@ -407,6 +409,7 @@ const AuditPage = () => {
                     <motion.button
                       type="submit"
                       disabled={isSubmitting}
+                      transition={{ duration: 0.2, ease: "easeOut" }}
                       whileHover={{ scale: isSubmitting ? 1 : 1.05 }}
                       whileTap={{ scale: isSubmitting ? 1 : 0.95 }}
                       className="flex-1 btn-primary text-lg py-4 flex items-center justify-center space-x-3 disabled:opacity-50 disabled:cursor-not-allowed"

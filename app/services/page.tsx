@@ -245,7 +245,6 @@ const ServicesPage = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, amount: 0.1 }}
                   transition={{ duration: 0.6, delay: serviceIndex * 0.2 }}
-                  whileHover={{ scale: 1.02, y: -5 }}
                   className={`glass rounded-3xl p-8 relative group hover:bg-slate/5 border-2 ${
                     service.popular ? 'border-charcoal/30 ring-2 ring-charcoal/20' : 'border-slate/20 hover:border-slate/40'
                   } transition-all duration-300`}
@@ -260,8 +259,8 @@ const ServicesPage = () => {
 
                   {/* Icon */}
                   <motion.div
+                    transition={{ duration: 0.2, ease: "easeOut" }}
                     whileHover={{ rotate: 360, scale: 1.1 }}
-                    transition={{ duration: 0.6 }}
                     className={`w-16 h-16 bg-gradient-to-br ${pillar.color} rounded-2xl flex items-center justify-center mb-6 shadow-lg`}
                   >
                     <service.icon className="w-8 h-8 text-white" />
@@ -294,6 +293,7 @@ const ServicesPage = () => {
                   {/* CTA */}
                   <Link href="/audit">
                     <motion.button
+                      transition={{ duration: 0.2, ease: "easeOut" }}
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                       className={`w-full py-4 rounded-xl font-semibold transition-all duration-300 flex items-center justify-center space-x-2 group ${
@@ -342,7 +342,6 @@ const ServicesPage = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.1 }}
                 transition={{ duration: 0.6, delay: index * 0.2 }}
-                whileHover={{ scale: 1.05, y: -5 }}
                 className="glass-dark rounded-3xl p-8 text-center border border-white/10"
               >
                 <div className="w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center mx-auto mb-6">
@@ -380,6 +379,7 @@ const ServicesPage = () => {
               </p>
               <Link href="/audit">
                 <motion.button
+                  transition={{ duration: 0.2, ease: "easeOut" }}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   className="btn-primary text-lg px-12 py-4 flex items-center space-x-3 mx-auto group shadow-lg"

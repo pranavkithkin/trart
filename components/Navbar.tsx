@@ -52,7 +52,7 @@ const Navbar = () => {
           {/* Logo */}
           <Link href="/" className="flex items-center">
             <motion.div
-              transition={{ duration: 0.3, ease: "easeInOut" }}
+              transition={{ duration: 0.2, ease: "easeOut" }}
               whileHover={{ scale: 1.05 }}
               className="relative"
               style={{
@@ -94,6 +94,7 @@ const Navbar = () => {
               className="relative overflow-hidden group"
             >
               <motion.div
+                transition={{ duration: 0.2, ease: "easeOut" }}
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 className="bg-white px-8 py-3 rounded font-accent font-bold uppercase text-xs tracking-wider transition-all duration-300 relative"
