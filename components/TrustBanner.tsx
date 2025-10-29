@@ -6,17 +6,37 @@ import { useState, useEffect } from 'react'
 
 const TrustBanner = () => {
   const [isVisible, setIsVisible] = useState(false)
+  const [isMobile, setIsMobile] = useState(false)
   const { scrollY } = useScroll()
   const opacity = useTransform(scrollY, [100, 200], [0, 1])
 
   useEffect(() => {
+    // Check if it's mobile on mount and window resize
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768)
+    }
+    
+    checkMobile()
+    window.addEventListener('resize', checkMobile)
+    
     const handleScroll = () => {
-      setIsVisible(window.scrollY > 200)
+      const scrollPosition = window.scrollY
+      
+      if (isMobile) {
+        // On mobile: show between 200px and 600px scroll
+        setIsVisible(scrollPosition > 200 && scrollPosition < 600)
+      } else {
+        // On desktop: show after 200px scroll (stays visible)
+        setIsVisible(scrollPosition > 200)
+      }
     }
     
     window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+      window.removeEventListener('resize', checkMobile)
+    }
+  }, [isMobile])
 
   const metrics = [
     {
