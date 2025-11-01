@@ -1,0 +1,345 @@
+================================================================================
+STANDALONE DOCKER DEPLOYMENT - COMMAND REFERENCE
+================================================================================
+
+This file contains all the commands you need to deploy on your GCP VM.
+Copy and paste these commands in order.
+
+================================================================================
+SECTION 1: INITIAL SETUP (First Time Only)
+================================================================================
+
+# Install Docker
+curl -fsSL https://get.docker.com -o get-docker.sh
+sudo sh get-docker.sh
+sudo usermod -aG docker $USER
+
+# Install Docker Compose
+sudo curl -L "https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+
+# Log out and back in for group changes to take effect
+exit
+
+# After logging back in, verify installation
+docker --version
+docker compose version
+
+================================================================================
+SECTION 2: CLONE/UPLOAD PROJECT
+================================================================================
+
+# Option A: Clone from Git
+git clone <your-repo-url>
+cd trart
+
+# Option B: Upload files via SCP (from your local machine)
+scp -r /path/to/trart user@VM_IP:/home/user/
+
+# Then SSH into VM and navigate to project
+ssh user@VM_IP
+cd trart
+
+================================================================================
+SECTION 3: CONFIGURE GCP FIREWALL
+================================================================================
+
+# Using gcloud CLI
+gcloud compute firewall-rules create allow-nextjs \
+  --allow tcp:3000 \
+  --source-ranges 0.0.0.0/0 \
+  --description "Allow Next.js application traffic"
+
+# Verify firewall rule
+gcloud compute firewall-rules list | grep allow-nextjs
+
+================================================================================
+SECTION 4: STOP AND CLEAN OLD CONTAINERS
+================================================================================
+
+# Stop all containers
+docker compose down
+
+# Remove specific container (if exists)
+docker stop trart-website
+docker rm trart-website
+
+# Clean up old images (frees up space)
+docker system prune -a -f
+
+# Check what's left
+docker ps -a
+docker images
+
+================================================================================
+SECTION 5: DEPLOY NEW SETUP
+================================================================================
+
+# Method 1: Using automated script (RECOMMENDED)
+chmod +x verify-setup.sh deploy.sh
+./verify-setup.sh
+./deploy.sh --clean
+
+# Method 2: Manual commands
+docker compose down
+docker system prune -a -f
+docker compose up --build -d
+
+# Method 3: Step by step
+docker compose build --no-cache
+docker compose up -d
+
+================================================================================
+SECTION 6: VERIFY DEPLOYMENT
+================================================================================
+
+# Check container status
+docker compose ps
+# Expected output: trart-website | Up
+
+# View logs (live)
+docker compose logs -f
+
+# View last 100 lines
+docker compose logs --tail=100
+
+# Test locally
+curl http://localhost:3000
+
+# Test from outside (replace with your VM's external IP)
+curl http://YOUR_VM_EXTERNAL_IP:3000
+
+# Check resource usage
+docker stats trart-website
+
+# Check container health
+docker inspect trart-website --format='{{.State.Status}}'
+
+================================================================================
+SECTION 7: COMMON OPERATIONS
+================================================================================
+
+# Restart application
+docker compose restart
+
+# Stop application
+docker compose down
+
+# Update application (after git pull)
+git pull origin main
+docker compose down
+docker compose up --build -d
+
+# View logs
+docker compose logs -f                    # Live tail
+docker compose logs --tail=50            # Last 50 lines
+docker compose logs --since 30m          # Last 30 minutes
+docker compose logs -f trart-website     # Specific service
+
+# Access container shell (for debugging)
+docker exec -it trart-website sh
+
+# View container files
+docker exec trart-website ls -la
+
+# Check disk usage
+docker system df
+
+# Clean up everything
+docker system prune -a -f --volumes
+
+================================================================================
+SECTION 8: TROUBLESHOOTING COMMANDS
+================================================================================
+
+# Container won't start - check logs
+docker compose logs -f
+
+# Port already in use - find and kill process
+sudo lsof -i :3000
+sudo kill -9 <PID>
+
+# Docker daemon issues
+sudo systemctl status docker
+sudo systemctl restart docker
+
+# Build fails - clear cache and rebuild
+docker builder prune -a -f
+docker compose build --no-cache
+docker compose up -d
+
+# Out of disk space
+df -h
+docker system prune -a -f --volumes
+
+# Check what's using disk
+docker system df -v
+
+# Network issues
+docker network ls
+docker network inspect bridge
+
+# Container keeps restarting
+docker compose logs --tail=200
+docker inspect trart-website
+
+================================================================================
+SECTION 9: ENVIRONMENT VARIABLES (Optional)
+================================================================================
+
+# If you need custom environment variables:
+
+# 1. Create .env.production file
+cat > .env.production << 'EOF'
+NODE_ENV=production
+NEXT_PUBLIC_API_URL=https://api.example.com
+DATABASE_URL=postgresql://user:pass@host:5432/db
+# Add more variables as needed
+EOF
+
+# 2. Edit docker-compose.yml to uncomment env_file section
+nano docker-compose.yml
+# Uncomment these lines:
+#   env_file:
+#     - .env.production
+
+# 3. Rebuild and restart
+docker compose up --build -d
+
+================================================================================
+SECTION 10: BACKUP AND RESTORE
+================================================================================
+
+# Save Docker image to file
+docker save trart-website:latest | gzip > trart-backup-$(date +%Y%m%d).tar.gz
+
+# Load Docker image from file
+docker load < trart-backup-YYYYMMDD.tar.gz
+
+# Backup entire project directory
+tar -czf trart-project-backup-$(date +%Y%m%d).tar.gz /path/to/trart
+
+================================================================================
+SECTION 11: MONITORING AND HEALTH CHECKS
+================================================================================
+
+# Real-time resource monitoring
+docker stats trart-website
+
+# Check if application is responding
+curl -I http://localhost:3000
+
+# Continuous health check (runs every 5 seconds)
+watch -n 5 'curl -s -o /dev/null -w "%{http_code}" http://localhost:3000'
+
+# Check container uptime
+docker ps --format "table {{.Names}}\t{{.Status}}\t{{.Ports}}"
+
+# View container resource limits
+docker inspect trart-website --format='{{.HostConfig.Memory}}'
+
+================================================================================
+SECTION 12: COMPLETE DEPLOYMENT WORKFLOW
+================================================================================
+
+# This is the complete workflow from start to finish:
+
+# 1. Stop old containers
+docker compose down
+
+# 2. Clean up (optional but recommended)
+docker system prune -a -f
+
+# 3. Pull latest code (if using git)
+git pull origin main
+
+# 4. Build new image
+docker compose build --no-cache
+
+# 5. Start container
+docker compose up -d
+
+# 6. Wait a few seconds
+sleep 5
+
+# 7. Check status
+docker compose ps
+
+# 8. View logs
+docker compose logs --tail=50
+
+# 9. Test application
+curl http://localhost:3000
+
+# 10. Monitor logs
+docker compose logs -f
+
+================================================================================
+SECTION 13: ONE-LINE DEPLOYMENT COMMANDS
+================================================================================
+
+# Quick deploy (everything in one line)
+docker compose down && docker system prune -a -f && docker compose up --build -d && sleep 5 && docker compose logs --tail=50
+
+# Quick restart
+docker compose restart && docker compose logs -f
+
+# Quick update from git
+git pull origin main && docker compose down && docker compose up --build -d
+
+# Quick status check
+docker compose ps && docker compose logs --tail=20
+
+================================================================================
+SECTION 14: USEFUL ALIASES (Optional)
+================================================================================
+
+# Add these to your ~/.bashrc or ~/.bash_aliases for convenience:
+
+alias dc='docker compose'
+alias dclogs='docker compose logs -f'
+alias dcps='docker compose ps'
+alias dcrestart='docker compose restart'
+alias dcdown='docker compose down'
+alias dcup='docker compose up -d'
+alias dcbuild='docker compose build'
+alias dcdeploy='docker compose down && docker compose up --build -d'
+alias dcclean='docker system prune -a -f'
+
+# After adding, reload your shell:
+source ~/.bashrc
+
+# Then you can use short commands like:
+# dc ps
+# dclogs
+# dcdeploy
+
+================================================================================
+SECTION 15: GETTING YOUR VM EXTERNAL IP
+================================================================================
+
+# Get external IP using gcloud
+gcloud compute instances list
+
+# Get external IP from within VM
+curl ifconfig.me
+
+# Get external IP using metadata server (from within VM)
+curl -H "Metadata-Flavor: Google" http://metadata.google.internal/computeMetadata/v1/instance/network-interfaces/0/access-configs/0/external-ip
+
+================================================================================
+END OF COMMAND REFERENCE
+================================================================================
+
+For detailed explanations, see:
+- QUICK_START.md - Fast deployment guide
+- DEPLOYMENT.md - Comprehensive manual
+- DOCKER_README.md - Technical details
+- DOCKER_DEPLOYMENT_README.md - Complete overview
+
+Quick help:
+- Logs: docker compose logs -f
+- Status: docker compose ps
+- Restart: docker compose restart
+- Deploy: ./deploy.sh --clean
+

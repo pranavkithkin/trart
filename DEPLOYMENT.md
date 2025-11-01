@@ -1,362 +1,241 @@
-# Google Cloud Platform Deployment Guide
+# GCP VM Deployment Guide
 
-This guide will walk you through deploying the AI Agent Consultancy website to Google Cloud Platform using App Engine.
+This guide provides step-by-step instructions for deploying the Next.js application on a GCP VM instance.
 
 ## Prerequisites
 
-- Google Cloud Platform account
-- Google Cloud SDK installed
-- Node.js 18+ installed locally
-- Git installed
+- GCP VM instance with Docker and Docker Compose installed
+- SSH access to the VM
+- Git installed on the VM (to clone the repository)
 
-## Step 1: Install Dependencies
+## Deployment Commands
 
-```bash
-# Install project dependencies
-npm install
-
-# Build the project for production
-npm run build
-```
-
-## Step 2: Set Up Google Cloud
-
-### 2.1 Create a New Project
-
-1. Go to the [Google Cloud Console](https://console.cloud.google.com/)
-2. Create a new project or select an existing one
-3. Note your project ID
-
-### 2.2 Enable Required APIs
+### 1. Initial Setup (First Time Only)
 
 ```bash
-# Enable App Engine API
-gcloud services enable appengine.googleapis.com
+# Install Docker (if not already installed)
+curl -fsSL https://get.docker.com -o get-docker.sh
+sudo sh get-docker.sh
+sudo usermod -aG docker $USER
 
-# Enable Cloud Build API
-gcloud services enable cloudbuild.googleapis.com
+# Install Docker Compose (if not already installed)
+sudo curl -L "https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+
+# Log out and back in for group changes to take effect
 ```
 
-### 2.3 Initialize App Engine
+### 2. Stop and Clean Up Old Containers
 
 ```bash
-# Initialize App Engine in your project
-gcloud app create --region=us-central
+# Stop all running containers
+docker compose down
 
-# Set your project
-gcloud config set project YOUR_PROJECT_ID
+# Alternative: Stop specific container
+docker stop trart-website
+
+# Remove stopped containers
+docker rm trart-website
+
+# Remove old images (optional - frees up space)
+docker image prune -a -f
+
+# Complete cleanup (removes all unused containers, networks, images)
+docker system prune -a -f
 ```
 
-## Step 3: Configure Environment Variables
+### 3. Build and Start the Application
 
-Create a `.env.local` file in your project root:
+```bash
+# Build and start in detached mode
+docker compose up --build -d
 
-```env
-# Google Analytics
-NEXT_PUBLIC_GA_ID=GA_MEASUREMENT_ID
-
-# Form submission webhook (n8n or other service)
-NEXT_PUBLIC_WEBHOOK_URL=https://your-n8n-instance.com/webhook/audit-form
-
-# Contact form webhook
-NEXT_PUBLIC_CONTACT_WEBHOOK_URL=https://your-n8n-instance.com/webhook/contact-form
-
-# Email service (optional)
-SMTP_HOST=smtp.gmail.com
-SMTP_PORT=587
-SMTP_USER=your-email@gmail.com
-SMTP_PASS=your-app-password
+# Alternative: Build first, then start
+docker compose build
+docker compose up -d
 ```
 
-## Step 4: Create App Engine Configuration
+### 4. Check Status and Logs
 
-Create `app.yaml` in your project root:
+```bash
+# Check container status
+docker compose ps
+
+# View logs (live tail)
+docker compose logs -f
+
+# View last 100 lines of logs
+docker compose logs --tail=100
+
+# View logs for specific service
+docker compose logs -f trart-website
+
+# Check if container is healthy
+docker inspect trart-website --format='{{.State.Status}}'
+```
+
+### 5. Verify Deployment
+
+```bash
+# Check if the application is responding
+curl http://localhost:3000
+
+# Check from outside the VM (replace with your VM's external IP)
+curl http://YOUR_VM_EXTERNAL_IP:3000
+```
+
+## Common Operations
+
+### Restart the Application
+
+```bash
+# Restart without rebuilding
+docker compose restart
+
+# Restart with rebuild
+docker compose down
+docker compose up --build -d
+```
+
+### Update Application (Pull Latest Changes)
+
+```bash
+# Pull latest code
+git pull origin main
+
+# Rebuild and restart
+docker compose down
+docker compose up --build -d
+```
+
+### View Resource Usage
+
+```bash
+# View real-time resource usage
+docker stats trart-website
+
+# View disk usage
+docker system df
+```
+
+### Access Container Shell (for debugging)
+
+```bash
+# Access the running container
+docker exec -it trart-website sh
+
+# View files in the container
+docker exec trart-website ls -la
+```
+
+## Firewall Configuration
+
+Make sure port 3000 is open on your GCP VM:
+
+```bash
+# Using gcloud CLI
+gcloud compute firewall-rules create allow-nextjs \
+  --allow tcp:3000 \
+  --source-ranges 0.0.0.0/0 \
+  --description "Allow Next.js application traffic"
+
+# Or configure in GCP Console:
+# VPC Network > Firewall > Create Firewall Rule
+# - Name: allow-nextjs
+# - Targets: All instances in the network
+# - Source IP ranges: 0.0.0.0/0
+# - Protocols and ports: tcp:3000
+```
+
+## Environment Variables
+
+If you need to add environment variables, create a `.env.production` file in the project root:
+
+```bash
+# Example .env.production
+NODE_ENV=production
+NEXT_PUBLIC_API_URL=https://api.example.com
+DATABASE_URL=postgresql://user:password@host:5432/dbname
+```
+
+Then uncomment the `env_file` section in `docker-compose.yml`:
 
 ```yaml
-runtime: nodejs18
-
-env_variables:
-  NODE_ENV: production
-  NEXT_PUBLIC_GA_ID: "GA_MEASUREMENT_ID"
-  NEXT_PUBLIC_WEBHOOK_URL: "https://your-n8n-instance.com/webhook/audit-form"
-  NEXT_PUBLIC_CONTACT_WEBHOOK_URL: "https://your-n8n-instance.com/webhook/contact-form"
-
-automatic_scaling:
-  min_instances: 1
-  max_instances: 10
-  target_cpu_utilization: 0.6
-
-handlers:
-  - url: /.*
-    script: auto
-    secure: always
-```
-
-## Step 5: Deploy to App Engine
-
-```bash
-# Deploy the application
-gcloud app deploy
-
-# Deploy with specific version
-gcloud app deploy --version=v1
-
-# View the deployed application
-gcloud app browse
-```
-
-## Step 6: Set Up Custom Domain (Optional)
-
-### 6.1 Add Custom Domain
-
-1. Go to App Engine > Settings > Custom Domains
-2. Click "Add Custom Domain"
-3. Follow the verification process
-4. Update your DNS records as instructed
-
-### 6.2 Configure SSL
-
-App Engine automatically provides SSL certificates for custom domains.
-
-## Step 7: Set Up Monitoring and Analytics
-
-### 7.1 Google Analytics
-
-1. Create a Google Analytics 4 property
-2. Get your Measurement ID
-3. Update the `NEXT_PUBLIC_GA_ID` environment variable
-4. Redeploy the application
-
-### 7.2 Cloud Monitoring
-
-```bash
-# Enable Cloud Monitoring
-gcloud services enable monitoring.googleapis.com
-```
-
-## Step 8: Set Up Form Webhooks
-
-### 8.1 Using n8n
-
-1. Deploy n8n on Google Cloud Run or another service
-2. Create webhook nodes for:
-   - Audit form submissions
-   - Contact form submissions
-3. Configure integrations with:
-   - Notion (for lead management)
-   - Google Sheets (for data storage)
-   - Email services (for notifications)
-
-### 8.2 Webhook Endpoints
-
-Create API routes in your Next.js app:
-
-```typescript
-// app/api/audit/route.ts
-export async function POST(request: Request) {
-  const data = await request.json()
-  
-  // Send to n8n webhook
-  const response = await fetch(process.env.NEXT_PUBLIC_WEBHOOK_URL!, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(data)
-  })
-  
-  return Response.json({ success: true })
-}
-```
-
-## Step 9: Performance Optimization
-
-### 9.1 Enable Compression
-
-Add to `next.config.js`:
-
-```javascript
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  compress: true,
-  poweredByHeader: false,
-  // ... other config
-}
-```
-
-### 9.2 Set Up CDN
-
-1. Go to Cloud CDN in Google Cloud Console
-2. Create a new CDN configuration
-3. Point to your App Engine service
-
-## Step 10: Security Configuration
-
-### 10.1 Set Up Security Headers
-
-Create `middleware.ts`:
-
-```typescript
-import { NextResponse } from 'next/server'
-import type { NextRequest } from 'next/server'
-
-export function middleware(request: NextRequest) {
-  const response = NextResponse.next()
-  
-  response.headers.set('X-Frame-Options', 'DENY')
-  response.headers.set('X-Content-Type-Options', 'nosniff')
-  response.headers.set('Referrer-Policy', 'origin-when-cross-origin')
-  
-  return response
-}
-```
-
-### 10.2 Environment Security
-
-```bash
-# Set environment variables securely
-gcloud app versions update v1 --set-env-vars="NODE_ENV=production"
+env_file:
+  - .env.production
 ```
 
 ## Troubleshooting
 
-### Common Issues
-
-1. **Build Failures**
-   ```bash
-   # Check build logs
-   gcloud app logs tail -s default
-   ```
-
-2. **Environment Variables Not Loading**
-   - Ensure variables are set in `app.yaml`
-   - Redeploy after changes
-
-3. **Form Submissions Not Working**
-   - Check webhook URLs are correct
-   - Verify n8n is running and accessible
-   - Check CORS settings
-
-### Useful Commands
+### Container Won't Start
 
 ```bash
-# View logs
-gcloud app logs tail -s default
+# Check logs for errors
+docker compose logs
 
-# Check service status
-gcloud app services list
+# Check Docker daemon status
+sudo systemctl status docker
 
-# View versions
-gcloud app versions list
-
-# Rollback to previous version
-gcloud app versions migrate v1
-
-# Delete old versions
-gcloud app versions delete v1
+# Restart Docker daemon
+sudo systemctl restart docker
 ```
 
-## Cost Optimization
-
-### App Engine Pricing
-
-- **F1 Instance**: Free tier (28 hours/day)
-- **F2 Instance**: $0.05/hour
-- **F4 Instance**: $0.10/hour
-
-### Optimization Tips
-
-1. Use F1 instances for development
-2. Set up automatic scaling
-3. Monitor usage with Cloud Monitoring
-4. Use Cloud CDN for static assets
-
-## Backup and Recovery
-
-### Database Backup
-
-If using Cloud SQL:
+### Port Already in Use
 
 ```bash
-# Create backup
-gcloud sql backups create --instance=INSTANCE_NAME
+# Find what's using port 3000
+sudo lsof -i :3000
+# or
+sudo netstat -tulpn | grep 3000
 
-# Restore from backup
-gcloud sql backups restore BACKUP_ID --instance=INSTANCE_NAME
+# Kill the process using the port
+sudo kill -9 <PID>
 ```
 
-### Application Backup
+### Out of Disk Space
 
 ```bash
-# Download source code
-gcloud source repos clone PROJECT_ID
+# Clean up Docker resources
+docker system prune -a -f --volumes
 
-# Export environment variables
-gcloud app versions describe v1 --format="export" > env-vars.txt
+# Check disk usage
+df -h
 ```
 
-## Monitoring and Alerts
-
-### Set Up Alerts
-
-1. Go to Cloud Monitoring > Alerting
-2. Create policies for:
-   - High error rates
-   - High latency
-   - Low availability
-
-### Performance Monitoring
+### Build Fails
 
 ```bash
-# View performance metrics
-gcloud app metrics list
+# Clear build cache
+docker builder prune -a -f
 
-# Check error rates
-gcloud app logs read --severity=ERROR
+# Rebuild without cache
+docker compose build --no-cache
+docker compose up -d
 ```
 
-## Scaling
+## Production Best Practices
 
-### Automatic Scaling
+1. **Use a reverse proxy (Nginx)** for SSL/TLS termination
+2. **Set up monitoring** (e.g., Google Cloud Monitoring)
+3. **Configure log rotation** to prevent disk space issues
+4. **Regular backups** of any persistent data
+5. **Use secrets management** for sensitive environment variables
+6. **Set up automated deployments** with CI/CD
 
-The `app.yaml` configuration includes automatic scaling settings:
-
-```yaml
-automatic_scaling:
-  min_instances: 1
-  max_instances: 10
-  target_cpu_utilization: 0.6
-```
-
-### Manual Scaling
+## Quick Reference
 
 ```bash
-# Scale to specific number of instances
-gcloud app versions migrate v1 --quiet
+# Complete deployment workflow
+docker compose down                    # Stop old containers
+docker system prune -a -f             # Clean up
+git pull origin main                  # Update code (if using git)
+docker compose up --build -d          # Build and start
+docker compose logs -f                # Watch logs
 ```
-
-## Security Best Practices
-
-1. **Environment Variables**: Never commit sensitive data
-2. **HTTPS**: Always use HTTPS in production
-3. **CORS**: Configure CORS properly
-4. **Rate Limiting**: Implement rate limiting for forms
-5. **Input Validation**: Validate all form inputs
-6. **Error Handling**: Don't expose sensitive information in errors
 
 ## Support
 
-For additional help:
-
-- [Google Cloud Documentation](https://cloud.google.com/docs)
-- [App Engine Documentation](https://cloud.google.com/appengine/docs)
-- [Next.js Deployment Guide](https://nextjs.org/docs/deployment)
-
-## Next Steps
-
-1. Set up monitoring and alerts
-2. Configure custom domain
-3. Set up form webhooks
-4. Implement analytics
-5. Set up backup procedures
-6. Configure security headers
-7. Optimize performance
-8. Set up CI/CD pipeline
+For issues specific to this deployment, check:
+- Container logs: `docker compose logs -f`
+- Docker status: `docker compose ps`
+- System resources: `docker stats`
