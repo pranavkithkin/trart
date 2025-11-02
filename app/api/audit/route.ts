@@ -35,10 +35,12 @@ export async function POST(request: NextRequest) {
               name,
               email,
               company,
-              challenges,
-            currentAutomation: data.currentAutomation || '',
-            timeline: data.timeline || '',
               phone: data.phone || '',
+              companySize: data.companySize || '',
+              revenue: data.revenue || '',
+              challenges,
+              currentAutomation: data.currentAutomation || '',
+              timeline: data.timeline || '',
               timestamp: new Date().toISOString(),
               source: 'website'
             }
