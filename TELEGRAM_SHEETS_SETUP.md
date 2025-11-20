@@ -202,7 +202,7 @@ npm run dev
 
 **Test Audit Form:**
 ```bash
-curl -X POST http://localhost:3000/api/audit \
+curl -X POST http://synopslabs.com/api/audit \
   -H "Content-Type: application/json" \
   -d '{
     "name": "Test User",
