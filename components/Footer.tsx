@@ -45,10 +45,10 @@ const Footer = () => {
   }
 
   const socialLinks = [
-    { name: 'LinkedIn', icon: Linkedin, href: 'https://linkedin.com/company/trart' },
-    { name: 'Twitter', icon: Twitter, href: 'https://twitter.com/trart' },
-    { name: 'GitHub', icon: Github, href: 'https://github.com/trart' },
-    { name: 'YouTube', icon: Youtube, href: 'https://youtube.com/trart' }
+    { name: 'LinkedIn', icon: Linkedin, href: 'https://linkedin.com/company/synopslabs' },
+    { name: 'Twitter', icon: Twitter, href: 'https://twitter.com/synopslabs' },
+    { name: 'GitHub', icon: Github, href: 'https://github.com/synopslabs' },
+    { name: 'YouTube', icon: Youtube, href: 'https://youtube.com/synopslabs' }
   ]
 
   return (
@@ -75,7 +75,7 @@ const Footer = () => {
                 >
                   <Image
                     src="/trart-logo.png"
-                    alt="TRART Ai Logo"
+                    alt="Synopslabs AI Logo"
                     fill
                     className="object-contain"
                   />
@@ -189,7 +189,7 @@ const Footer = () => {
               className="text-sm"
               style={{ color: 'rgba(234, 230, 224, 0.6)' }}
             >
-              © {currentYear} TRART Ai. All rights reserved.
+              © {currentYear} Synopslabs AI. All rights reserved.
             </motion.div>
 
             {/* Social Links */}

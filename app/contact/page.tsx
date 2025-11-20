@@ -93,7 +93,7 @@ const ContactPage = () => {
     {
       name: 'LinkedIn',
       icon: '💼',
-      url: 'https://linkedin.com/company/trart'
+      url: 'https://linkedin.com/company/synopslabs'
     },
     {
       name: 'Twitter',

@@ -56,15 +56,15 @@ const Navbar = () => {
               whileHover={{ scale: 1.05 }}
               className="relative"
               style={{
-                width: scrolled ? '56px' : '64px',
-                height: scrolled ? '56px' : '64px',
+                width: scrolled ? '96px' : '115px',
+                height: scrolled ? '96px' : '115px',
                 transition: 'all 500ms ease',
                 filter: "brightness(1.3) drop-shadow(0 0 12px rgba(255, 255, 255, 0.25))",
               }}
             >
               <Image
                 src="/trart-logo.png"
-                alt="TRART Ai Logo"
+                alt="Synopslabs AI Logo"
                 fill
                 className="object-contain"
                 priority

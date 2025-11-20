@@ -330,7 +330,7 @@ const ServicesPage = () => {
             className="text-center mb-16"
           >
             <h2 className="text-5xl md:text-6xl font-bold mb-8" style={{ color: '#EAE6E0' }}>
-              Why Partner With TRART AI
+              Why Partner With Synopslabs AI
             </h2>
           </motion.div>
 

@@ -36,7 +36,7 @@ const CaseStudies = () => {
         { label: "Cost Savings", value: "$240K", change: "annually", icon: DollarSign },
         { label: "Ticket Resolution", value: "78%", change: "automated", icon: Target }
       ],
-      quote: "TRART AI transformed our customer success operations. What used to take our team days now happens in minutes. Our CSAT scores have never been higher, and our team can focus on building relationships instead of answering the same questions repeatedly.",
+      quote: "Synopslabs AI transformed our customer success operations. What used to take our team days now happens in minutes. Our CSAT scores have never been higher, and our team can focus on building relationships instead of answering the same questions repeatedly.",
       author: "Sarah Chen",
       authorRole: "VP of Customer Success",
       timeline: "3 months",
@@ -55,7 +55,7 @@ const CaseStudies = () => {
         { label: "Revenue Increase", value: "$3.2M", change: "annually", icon: DollarSign },
         { label: "Time Saved", value: "1,200hrs", change: "per month", icon: Target }
       ],
-      quote: "Our sales team was drowning in administrative work. TRART's AI Sales Orchestration gave them back 60% of their time to actually sell. We've seen our close rates more than double, and our sales cycle is now under 5 weeks.",
+      quote: "Our sales team was drowning in administrative work. Synopslabs' AI Sales Orchestration gave them back 60% of their time to actually sell. We've seen our close rates more than double, and our sales cycle is now under 5 weeks.",
       author: "Michael Rodriguez",
       authorRole: "Chief Revenue Officer",
       timeline: "4 months",
@@ -93,7 +93,7 @@ const CaseStudies = () => {
         { label: "Recruitment Cost", value: "$320K", change: "saved annually", icon: DollarSign },
         { label: "HR Capacity", value: "300%", change: "increase", icon: Users }
       ],
-      quote: "Hiring was our biggest bottleneck. TRART's AI HR Agent not only accelerated our process by 76% but actually improved candidate quality. Our recruiters now spend their time on relationship building, not resume screening.",
+      quote: "Hiring was our biggest bottleneck. Synopslabs' AI HR Agent not only accelerated our process by 76% but actually improved candidate quality. Our recruiters now spend their time on relationship building, not resume screening.",
       author: "David Thompson",
       authorRole: "Chief People Officer",
       timeline: "3 months",
@@ -131,7 +131,7 @@ const CaseStudies = () => {
         { label: "Revenue Uplift", value: "$2.4M", change: "from insights", icon: DollarSign },
         { label: "Client Satisfaction", value: "94%", change: "+22 points", icon: Users }
       ],
-      quote: "Data fragmentation was killing our productivity and client experience. TRART's integration solution gave us a single source of truth and AI insights we never had before. It's like turning on the lights in a dark room.",
+      quote: "Data fragmentation was killing our productivity and client experience. Synopslabs' integration solution gave us a single source of truth and AI insights we never had before. It's like turning on the lights in a dark room.",
       author: "Robert Chen",
       authorRole: "Managing Partner",
       timeline: "5 months",
@@ -173,7 +173,7 @@ const CaseStudies = () => {
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            See how ambitious B2B companies are using TRART AI to accelerate growth,
+            See how ambitious B2B companies are using Synopslabs AI to accelerate growth,
             slash costs, and dominate their markets
           </motion.p>
         </motion.div>

@@ -109,7 +109,7 @@ const AboutPage = () => {
                 <div className="relative h-[500px]">
                   <Image
                     src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=1000&fit=crop"
-                    alt="TRART Ai Team collaborating"
+                    alt="Synopslabs Ai Team collaborating"
                     fill
                     className="object-cover"
                   />
@@ -129,7 +129,7 @@ const AboutPage = () => {
                       <div className="w-10 h-10 bg-charcoal rounded-full" />
                       <div>
                         <div className="font-semibold text-sm" style={{ color: '#1C1C1C' }}>Founder & CEO</div>
-                        <div style={{ color: '#535366' }}>TRART Ai</div>
+                        <div style={{ color: '#535366' }}>Synopslabs AI</div>
                       </div>
                     </div>
                   </motion.div>

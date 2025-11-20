@@ -18,7 +18,7 @@ const Testimonials = () => {
       company: "TechVision Global",
       industry: "Enterprise SaaS",
       image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop&crop=face",
-      quote: "TRART AI transformed our customer success operations. What used to take our team days now happens in minutes. Our CSAT scores have never been higher, and our team can focus on building relationships instead of answering the same questions repeatedly.",
+      quote: "Synopslabs AI transformed our customer success operations. What used to take our team days now happens in minutes. Our CSAT scores have never been higher, and our team can focus on building relationships instead of answering the same questions repeatedly.",
       rating: 5,
       results: "94% reduction in response time",
       metrics: [
@@ -34,7 +34,7 @@ const Testimonials = () => {
       company: "Precision Parts Inc.",
       industry: "B2B Manufacturing",
       image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=400&fit=crop&crop=face",
-      quote: "Our sales team was drowning in administrative work. TRART's AI Sales Orchestration gave them back 60% of their time to actually sell. We've seen our close rates more than double, and our sales cycle is now under 5 weeks.",
+      quote: "Our sales team was drowning in administrative work. Synopslabs' AI Sales Orchestration gave them back 60% of their time to actually sell. We've seen our close rates more than double, and our sales cycle is now under 5 weeks.",
       rating: 5,
       results: "62% faster sales cycles",
       metrics: [
