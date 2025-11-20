@@ -40,20 +40,20 @@ const openSans = Open_Sans({
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000'),
-  title: 'TRART Ai - Transform Your Business with Intelligent Automation',
-  description: 'TRART Ai specializes in intelligent automation solutions. Get your free AI audit and discover how AI agents can transform your business operations.',
-  keywords: 'AI agents, business automation, intelligent automation, TRART Ai, digital transformation',
-  authors: [{ name: 'TRART Ai' }],
+  title: 'Synopslabs AI - Transform Your Business with Intelligent Automation',
+  description: 'Synopslabs AI specializes in intelligent automation solutions. Get your free AI audit and discover how AI agents can transform your business operations.',
+  keywords: 'AI agents, business automation, intelligent automation, Synopslabs AI, digital transformation',
+  authors: [{ name: 'Synopslabs AI' }],
   openGraph: {
-    title: 'TRART Ai - Transform Your Business with Intelligent Automation',
-    description: 'TRART Ai specializes in intelligent automation solutions.',
+    title: 'Synopslabs AI - Transform Your Business with Intelligent Automation',
+    description: 'Synopslabs AI specializes in intelligent automation solutions.',
     type: 'website',
     locale: 'en_US',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'TRART Ai - Transform Your Business with Intelligent Automation',
-    description: 'TRART Ai specializes in intelligent automation solutions.',
+    title: 'Synopslabs AI - Transform Your Business with Intelligent Automation',
+    description: 'Synopslabs AI specializes in intelligent automation solutions.',
   },
   robots: {
     index: true,
