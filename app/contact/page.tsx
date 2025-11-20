@@ -70,9 +70,9 @@ const ContactPage = () => {
     {
       icon: Mail,
       title: 'Email Us',
-      details: 'pranvkithkin11@gmail.com',
+      details: 'pranav@synopslabs.com',
       description: 'Send us an email anytime',
-      action: 'mailto:pranvkithkin11@gmail.com'
+      action: 'mailto:pranav@synopslabs.com'
     },
     {
       icon: Phone,
@@ -98,7 +98,7 @@ const ContactPage = () => {
     {
       name: 'Twitter',
       icon: '🐦',
-      url: 'https://twitter.com/trart'
+      url: 'https://twitter.com/synopslabs'
     },
     {
       name: 'GitHub',
