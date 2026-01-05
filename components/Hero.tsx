@@ -48,7 +48,7 @@ const Hero = () => {
               className="text-body-large mb-12 leading-relaxed"
               style={{ color: '#EAE6E0' }}
             >
-              We don't just implement AI—we transform B2B operations into revenue-generating 
+              We don't just implement AI we transform B2B operations into revenue-generating
               machines. Our clients achieve 480% average ROI while their competitors struggle with manual processes.
             </motion.p>
 
@@ -64,7 +64,7 @@ const Hero = () => {
                   transition={{ duration: 0.2, ease: "easeOut" }}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="btn-primary text-base sm:text-lg px-8 sm:px-12 py-4 sm:py-5 flex items-center justify-center space-x-3 group w-full sm:w-auto"
+                  className="btn-premium-light text-base sm:text-lg px-8 sm:px-12 py-4 sm:py-5 flex items-center justify-center space-x-3 group w-full sm:w-auto"
                 >
                   <Sparkles className="w-5 h-5 sm:w-6 sm:h-6" />
                   <span>Get Free AI Audit</span>
@@ -118,13 +118,14 @@ const Hero = () => {
             <div className="relative glass rounded-2xl overflow-hidden border border-primary/20 shadow-xl group">
               <div className="aspect-[4/3] relative">
                 <Image
-                  src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop"
+                  // src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop"
+                  src="/hero-img.jpg"
                   alt="AI Dashboard showing automation analytics"
                   fill
                   className="object-cover"
                   priority
                 />
-                
+
                 {/* Floating Stats Cards */}
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}

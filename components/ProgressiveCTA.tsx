@@ -105,7 +105,7 @@ const ProgressiveCTA = ({
                   transition={{ duration: 0.2, ease: "easeOut" }}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="btn-primary text-lg px-12 py-5 flex items-center space-x-3 group shadow-lg"
+                  className={`${variant === 'secondary' ? 'btn-premium-light' : 'btn-primary'} text-lg px-12 py-5 flex items-center space-x-3 group shadow-lg`}
                 >
                   <Sparkles className="w-6 h-6" />
                   <span>{primaryButtonText}</span>

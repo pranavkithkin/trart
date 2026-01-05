@@ -3,17 +3,20 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import { useState } from 'react'
-import { 
-  ChevronDown, 
-  TrendingUp, 
-  Users, 
-  DollarSign, 
+import {
+  ChevronDown,
+  TrendingUp,
+  Users,
+  DollarSign,
   Clock,
   Building2,
   Target,
   CheckCircle,
   ArrowRight
 } from 'lucide-react'
+
+import { caseStudies } from '@/lib/case-studies-data'
+import Link from 'next/link'
 
 const CaseStudies = () => {
   const [ref, inView] = useInView({
@@ -23,125 +26,8 @@ const CaseStudies = () => {
 
   const [expandedIndex, setExpandedIndex] = useState<number | null>(null)
 
-  const caseStudies = [
-    {
-      industry: "Enterprise SaaS",
-      clientSize: "500+ employees",
-      companyName: "TechVision Global",
-      challenge: "Managing 5,000+ customer inquiries monthly was overwhelming their 12-person support team, leading to 48-hour response times and declining satisfaction scores.",
-      solution: "Deployed AI Customer Success Agents integrated with their existing Zendesk and Salesforce systems. The agents handle tier-1 support, qualification, and routing while escalating complex issues to human experts.",
-      results: [
-        { label: "Response Time", value: "6 min", change: "94% faster", icon: Clock },
-        { label: "Customer Satisfaction", value: "96%", change: "+38 points", icon: Users },
-        { label: "Cost Savings", value: "$240K", change: "annually", icon: DollarSign },
-        { label: "Ticket Resolution", value: "78%", change: "automated", icon: Target }
-      ],
-      quote: "Synopslabs AI transformed our customer success operations. What used to take our team days now happens in minutes. Our CSAT scores have never been higher, and our team can focus on building relationships instead of answering the same questions repeatedly.",
-      author: "Sarah Chen",
-      authorRole: "VP of Customer Success",
-      timeline: "3 months",
-      roi: "480%",
-      color: "from-blue-500 to-cyan-500"
-    },
-    {
-      industry: "B2B Manufacturing",
-      clientSize: "250-500 employees",
-      companyName: "Precision Parts Inc.",
-      challenge: "Sales team spent 60% of their time on manual data entry, quote generation, and follow-ups instead of selling. Deal cycles averaged 89 days with inconsistent follow-through.",
-      solution: "Implemented AI Sales Orchestration system that automates lead qualification, generates custom quotes, schedules meetings, and handles multi-touch follow-up sequences. Integrated with their ERP and CRM systems.",
-      results: [
-        { label: "Sales Cycle", value: "34 days", change: "62% faster", icon: Clock },
-        { label: "Conversion Rate", value: "41%", change: "+156%", icon: TrendingUp },
-        { label: "Revenue Increase", value: "$3.2M", change: "annually", icon: DollarSign },
-        { label: "Time Saved", value: "1,200hrs", change: "per month", icon: Target }
-      ],
-      quote: "Our sales team was drowning in administrative work. Synopslabs' AI Sales Orchestration gave them back 60% of their time to actually sell. We've seen our close rates more than double, and our sales cycle is now under 5 weeks.",
-      author: "Michael Rodriguez",
-      authorRole: "Chief Revenue Officer",
-      timeline: "4 months",
-      roi: "620%",
-      color: "from-purple-500 to-pink-500"
-    },
-    {
-      industry: "Financial Services",
-      clientSize: "100-250 employees",
-      companyName: "Aspire Financial Group",
-      challenge: "Processing 800+ invoices monthly manually led to 12-day processing times, frequent errors, and compliance concerns. Their finance team of 6 was stretched thin.",
-      solution: "Built custom AI Finance Ops suite including automated invoice processing, expense categorization, approval workflows, and real-time financial reporting dashboard with anomaly detection.",
-      results: [
-        { label: "Processing Time", value: "18 hours", change: "from 12 days", icon: Clock },
-        { label: "Error Reduction", value: "99.7%", change: "accuracy", icon: CheckCircle },
-        { label: "Cost Savings", value: "$180K", change: "annually", icon: DollarSign },
-        { label: "Team Efficiency", value: "400%", change: "improvement", icon: TrendingUp }
-      ],
-      quote: "The ROI was immediate and undeniable. What took our team two weeks now happens overnight with 99.7% accuracy. We've redirected two FTEs to strategic finance work, and our compliance audit was the smoothest we've ever had.",
-      author: "Jennifer Park",
-      authorRole: "CFO",
-      timeline: "2 months",
-      roi: "550%",
-      color: "from-green-500 to-emerald-500"
-    },
-    {
-      industry: "Healthcare Technology",
-      clientSize: "500+ employees",
-      companyName: "MedConnect Solutions",
-      challenge: "Recruiting for specialized healthcare IT roles was taking 6+ months per position. HR team manually screened 2,000+ applications monthly with high candidate drop-off rates.",
-      solution: "Deployed AI HR Agent for automated resume screening, interview scheduling, candidate communication, and skills assessment. System integrated with their ATS and included bias detection algorithms.",
-      results: [
-        { label: "Time-to-Hire", value: "28 days", change: "76% reduction", icon: Clock },
-        { label: "Candidate Quality", value: "92%", change: "match score", icon: Target },
-        { label: "Recruitment Cost", value: "$320K", change: "saved annually", icon: DollarSign },
-        { label: "HR Capacity", value: "300%", change: "increase", icon: Users }
-      ],
-      quote: "Hiring was our biggest bottleneck. Synopslabs' AI HR Agent not only accelerated our process by 76% but actually improved candidate quality. Our recruiters now spend their time on relationship building, not resume screening.",
-      author: "David Thompson",
-      authorRole: "Chief People Officer",
-      timeline: "3 months",
-      roi: "425%",
-      color: "from-orange-500 to-red-500"
-    },
-    {
-      industry: "E-commerce",
-      clientSize: "100-250 employees",
-      companyName: "StyleHub Retail",
-      challenge: "Content creation for 5,000+ SKUs was a constant struggle. Product descriptions were inconsistent, SEO was poor, and creating marketing content took weeks, slowing down new product launches.",
-      solution: "Implemented AI Content Generation Engine that creates product descriptions, SEO metadata, social media posts, and email campaigns. System learned brand voice and optimizes for conversion.",
-      results: [
-        { label: "Content Production", value: "50x", change: "faster", icon: TrendingUp },
-        { label: "SEO Traffic", value: "284%", change: "increase", icon: Target },
-        { label: "Revenue Impact", value: "$1.8M", change: "additional", icon: DollarSign },
-        { label: "Time Savings", value: "600hrs", change: "per month", icon: Clock }
-      ],
-      quote: "Content production went from our biggest bottleneck to our competitive advantage. We can now launch products in days instead of weeks, and our SEO traffic has nearly tripled. The AI nailed our brand voice perfectly.",
-      author: "Amanda Sullivan",
-      authorRole: "Chief Marketing Officer",
-      timeline: "2 months",
-      roi: "780%",
-      color: "from-indigo-500 to-purple-500"
-    },
-    {
-      industry: "Professional Services",
-      clientSize: "250-500 employees",
-      companyName: "Apex Consulting Group",
-      challenge: "Managing client data across 6 different systems led to inconsistencies, wasted time searching for information, and missed opportunities. No unified view of client relationships.",
-      solution: "Built custom Integration & Data Architecture solution that unified their CRM, project management, billing, and communication platforms. Real-time data sync with AI-powered insights dashboard.",
-      results: [
-        { label: "Data Consistency", value: "99.9%", change: "accuracy", icon: CheckCircle },
-        { label: "Search Time", value: "2 min", change: "from 45 min", icon: Clock },
-        { label: "Revenue Uplift", value: "$2.4M", change: "from insights", icon: DollarSign },
-        { label: "Client Satisfaction", value: "94%", change: "+22 points", icon: Users }
-      ],
-      quote: "Data fragmentation was killing our productivity and client experience. Synopslabs' integration solution gave us a single source of truth and AI insights we never had before. It's like turning on the lights in a dark room.",
-      author: "Robert Chen",
-      authorRole: "Managing Partner",
-      timeline: "5 months",
-      roi: "390%",
-      color: "from-teal-500 to-cyan-500"
-    }
-  ]
-
   return (
-    <section className="section-padding bg-gradient-to-br from-charcoal via-charcoal to-slate relative overflow-hidden">
+    <section id="case-studies" className="section-padding bg-charcoal relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0" style={{
@@ -189,7 +75,7 @@ const CaseStudies = () => {
             >
               <div className="glass-dark rounded-3xl overflow-hidden border border-white/10 hover:border-white/20 transition-all duration-300">
                 {/* Header - Always Visible */}
-                <div 
+                <div
                   className="p-8 cursor-pointer"
                   onClick={() => setExpandedIndex(expandedIndex === index ? null : index)}
                 >
@@ -248,7 +134,7 @@ const CaseStudies = () => {
                 {/* Expanded Content */}
                 <motion.div
                   initial={false}
-                  animate={{ 
+                  animate={{
                     height: expandedIndex === index ? 'auto' : 0,
                     opacity: expandedIndex === index ? 1 : 0
                   }}
@@ -284,7 +170,7 @@ const CaseStudies = () => {
                     </div>
 
                     {/* Timeline & ROI */}
-                    <div className="flex items-center justify-between pt-4 border-t border-white/10">
+                    <div className="flex flex-col md:flex-row md:items-center justify-between pt-4 border-t border-white/10 gap-6">
                       <div className="flex items-center space-x-6">
                         <div className="flex items-center space-x-2">
                           <Clock className="w-5 h-5" style={{ color: '#EAE6E0' }} />
@@ -299,6 +185,17 @@ const CaseStudies = () => {
                           </span>
                         </div>
                       </div>
+
+                      <Link href={`/case-studies/${study.slug}`}>
+                        <motion.button
+                          whileHover={{ scale: 1.05 }}
+                          whileTap={{ scale: 0.95 }}
+                          className="bg-white/10 hover:bg-white/20 text-white px-6 py-2 rounded-xl text-sm font-bold flex items-center space-x-2 border border-white/10 transition-colors"
+                        >
+                          <span>View Detailed Case Study</span>
+                          <ArrowRight className="w-4 h-4" />
+                        </motion.button>
+                      </Link>
                     </div>
                   </div>
                 </motion.div>

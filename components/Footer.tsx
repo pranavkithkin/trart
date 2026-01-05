@@ -3,10 +3,10 @@
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import Image from 'next/image'
-import { 
-  Mail, 
-  Phone, 
-  MapPin, 
+import {
+  Mail,
+  Phone,
+  MapPin,
   ArrowRight,
   Linkedin,
   Twitter,
@@ -28,13 +28,12 @@ const Footer = () => {
       { name: 'About Us', href: '/about' },
       { name: 'Our Team', href: '/about#team' },
       { name: 'Careers', href: '/careers' },
-      { name: 'Contact', href: '/contact' }
+      { name: 'Blog', href: '/blog' },
+      // { name: 'Industries', href: '/industries' },
+      { name: 'Contact', href: '/contact' },
     ],
     resources: [
-      { name: 'Resources', href: '/resources' },
-      { name: 'Case Studies', href: '/resources#case-studies' },
-      { name: 'Documentation', href: '/docs' },
-      { name: 'Blog', href: '/blog' }
+      { name: 'Case Studies', href: '/case-studies' },
     ],
     support: [
       { name: 'Help Center', href: '/help' },
@@ -45,7 +44,7 @@ const Footer = () => {
   }
 
   const socialLinks = [
-    { name: 'LinkedIn', icon: Linkedin, href: 'https://linkedin.com/company/synopslabs' },
+    { name: 'LinkedIn', icon: Linkedin, href: 'https://www.linkedin.com/company/synops-labs/?viewAsMember=true' },
     { name: 'Twitter', icon: Twitter, href: 'https://twitter.com/synopslabs' },
     { name: 'GitHub', icon: Github, href: 'https://github.com/synopslabs' },
     { name: 'YouTube', icon: Youtube, href: 'https://youtube.com/synopslabs' }
