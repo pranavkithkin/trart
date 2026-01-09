@@ -21,9 +21,11 @@ const Navbar = () => {
 
   const navItems = [
     { name: 'Home', href: '/' },
-    { name: 'Services', href: '/services' },
-    { name: 'Resources', href: '/resources' },
     { name: 'About', href: '/about' },
+    { name: 'Services', href: '/services' },
+    { name: 'Case Studies', href: '/case-studies' },
+    // { name: 'Careers', href: '/careers' },
+    // { name: 'Blog', href: '/blog' },
     { name: 'Contact', href: '/contact' },
   ]
 
@@ -31,9 +33,8 @@ const Navbar = () => {
     <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled ? 'shadow-2xl' : ''
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? 'shadow-2xl' : ''
+        }`}
       style={{
         backgroundColor: scrolled ? '#1C1C1C' : 'rgba(28, 28, 28, 0.85)',
         backdropFilter: scrolled ? 'none' : 'blur(20px)',
@@ -45,7 +46,7 @@ const Navbar = () => {
       }}
     >
       <div className="container-custom">
-        <div className="flex items-center justify-between" style={{ 
+        <div className="flex items-center justify-between" style={{
           height: scrolled ? '72px' : '88px',
           transition: 'height 500ms ease'
         }}>
@@ -98,7 +99,7 @@ const Navbar = () => {
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 className="bg-white px-8 py-3 rounded font-accent font-bold uppercase text-xs tracking-wider transition-all duration-300 relative"
-                style={{ 
+                style={{
                   letterSpacing: '0.1em',
                   boxShadow: '0 4px 16px rgba(255, 255, 255, 0.15)'
                 }}
@@ -163,7 +164,7 @@ const Navbar = () => {
                     <motion.div
                       whileTap={{ scale: 0.98 }}
                       className="bg-white w-full text-center px-6 py-3 rounded font-accent font-bold uppercase text-xs tracking-wider transition-all duration-300 relative"
-                      style={{ 
+                      style={{
                         letterSpacing: '0.1em',
                         boxShadow: '0 4px 16px rgba(255, 255, 255, 0.15)'
                       }}

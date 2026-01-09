@@ -5,16 +5,17 @@ import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import Image from 'next/image'
-import { 
-  Users, 
-  Award, 
-  Target, 
+import {
+  Users,
+  Award,
+  Target,
   Lightbulb,
   CheckCircle,
   ArrowRight,
   Globe,
   Shield,
-  Zap
+  Zap,
+  Linkedin
 } from 'lucide-react'
 
 const AboutPage = () => {
@@ -26,19 +27,30 @@ const AboutPage = () => {
   const team = [
     {
       name: "Pranav Satheesan",
-      role: "CEO & Strategic Consultant",
-      image: "",
+      role: "Founder & CEO",
+      image: "/team/Pranav_Satheesan.jpg",
       bio: "AI educator and community leader who's trained 1,000+ professionals on AI implementation. Former enterprise consultant specializing in digital transformation and revenue operations.",
       expertise: ["AI Strategy", "Revenue Operations", "Community Leadership", "B2B Consulting"],
-      highlight: "Built a large community of AI implementation professionals"
+      highlight: "Built a large community of AI implementation professionals",
+      linkedin: "https://www.linkedin.com/in/fazilfazi/"
     },
     {
-      name: "Suhail Malayil",
-      role: "COO & Systems Architect",
-      image: "",
-      bio: "Enterprise systems architect with 12+ years building scalable automation platforms for Fortune 500 companies. Expert in complex integrations and data architecture.",
-      expertise: ["System Architecture", "Enterprise Integration", "Data Engineering", "Process Design"],
-      highlight: "Deployed AI systems processing millions of transactions"
+      name: "Mohammed Fazil",
+      role: "CMO",
+      image: "/team/Mohammed_Fazil.png",
+      bio: "Marketing strategist with a deep understanding of AI-driven customer acquisition and brand growth. Specializes in scaling B2B operations through automated marketing funnels.",
+      expertise: ["Growth Marketing", "Brand Strategy", "AI Funnels", "Market Analysis"],
+      highlight: "Scaled marketing operations using AI-driven insights",
+      linkedin: "https://www.linkedin.com/in/fazilfazi/"
+    },
+    {
+      name: "Thameem AR",
+      role: "CGO",
+      image: "/team/Thameer_AR.jpg",
+      bio: "Growth specialist focused on expanding business reach and optimizing revenue streams through AI integration and strategic partnerships.",
+      expertise: ["Business Growth", "Strategic Partnerships", "Revenue Optimization", "AI Integration"],
+      highlight: "Driven multi-fold growth for B2B enterprises",
+      linkedin: "https://www.linkedin.com/in/thameemar/"
     }
   ]
 
@@ -72,7 +84,7 @@ const AboutPage = () => {
         <div className="absolute inset-0 opacity-5" style={{
           backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23FFFFFF' fill-opacity='0.05'%3E%3Ccircle cx='30' cy='30' r='1'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
         }} />
-        
+
         <div className="container-custom relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -84,10 +96,10 @@ const AboutPage = () => {
               <span className="text-lg font-bold" style={{ color: '#EAE6E0' }}>AI-Native Since 2020</span>
             </div>
             <h1 className="text-5xl md:text-7xl font-bold mb-6" style={{ color: '#FFFFFF' }}>
-              Built by AI Experts, <span style={{ color: '#EAE6E0' }}>For Growth-Obsessed Leaders</span>
+              Built by AI Experts, <span style={{ color: '#EAE6E0' }}>For Growth Obsessed Leaders</span>
             </h1>
             <p className="text-xl md:text-2xl mb-12 leading-relaxed" style={{ color: 'rgba(234, 230, 224, 0.9)' }}>
-              We're not consultants who jumped on the AI bandwagon. We've been building 
+              We're not consultants who jumped on the AI bandwagon. We've been building
               production AI systems since 2020, before ChatGPT made it trendy.
             </p>
           </motion.div>
@@ -126,7 +138,13 @@ const AboutPage = () => {
                       "Every business deserves the power of AI automation, not just tech giants."
                     </p>
                     <div className="flex items-center space-x-3">
-                      <div className="w-10 h-10 bg-charcoal rounded-full" />
+                      <div className="w-10 h-10 bg-charcoal rounded-full overflow-hidden">
+                        <img
+                          src="/team/Pranav_Satheesan.jpg"
+                          alt="Pranav Satheesan"
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
                       <div>
                         <div className="font-semibold text-sm" style={{ color: '#1C1C1C' }}>Founder & CEO</div>
                         <div style={{ color: '#535366' }}>Synopslabs AI</div>
@@ -155,22 +173,22 @@ const AboutPage = () => {
                   at a fundamental level because we've been living and breathing it for years.
                 </p>
                 <p className="text-lg leading-relaxed" style={{ color: '#535366' }}>
-                  Our CEO isn't just a strategist—he's an educator who's trained over 1,000 professionals
-                  on AI implementation and built India's largest AI community. Our COO isn't just an
-                  operator—he's a systems architect who's deployed AI platforms processing 100M+ transactions.
+                  Our CEO isn't just a strategist he's an educator who's trained over 1,000 professionals
+                  on AI implementation and built India's largest AI community. Our team includes
+                  systems architects and growth specialists who've deployed AI platforms processing 100M+ transactions.
                 </p>
                 <p className="text-lg leading-relaxed" style={{ color: '#535366' }}>
                   We don't do theoretical frameworks. We build systems that generate revenue, cut costs,
-                  and deliver measurable ROI. Our clients don't pay us for advice—they pay us for results.
+                  and deliver measurable ROI. Our clients don't pay us for advice they pay us for results.
                 </p>
-                
+
                 <div className="glass rounded-2xl p-6 border border-slate/30">
                   <h4 className="text-xl font-bold mb-4" style={{ color: '#1C1C1C' }}>Our Operating Principles</h4>
                   <ul className="space-y-3">
                     {[
-                      "Revenue first—every solution must drive measurable business outcomes",
+                      "Revenue first every solution must drive measurable business outcomes",
                       "No BS—we speak in ROI and results, not jargon and buzzwords",
-                      "Speed matters—deploy in weeks, not quarters",
+                      "Speed matters deploy in weeks, not quarters",
                       "Partnership over projects—we succeed when you succeed"
                     ].map((principle, index) => (
                       <motion.li
@@ -206,7 +224,7 @@ const AboutPage = () => {
               </h2>
               <p className="text-xl mb-8 leading-relaxed" style={{ color: '#535366' }}>
                 We've helped 100+ B2B companies generate over $12M in new revenue and achieve
-                an average ROI of 480%. But we're not just about the numbers—we're about transformation.
+                an average ROI of 480%. But we're not just about the numbers we're about transformation.
               </p>
               <p className="text-lg mb-8 leading-relaxed" style={{ color: '#535366' }}>
                 Our clients don't just get AI systems. They get competitive advantages. They get
@@ -436,20 +454,20 @@ const AboutPage = () => {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
             {team.map((member, index) => (
               <motion.div
                 key={member.name}
                 initial={{ opacity: 0, y: 50 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: index * 0.2 }}
-                className="glass rounded-3xl p-8 group hover:bg-slate/10 border-2 border-slate/20 hover:border-slate/40 transition-all duration-300"
+                className="glass rounded-3xl p-8 group hover:bg-slate/10 border-2 border-slate/20 hover:border-slate/40 transition-all duration-300 flex flex-col"
               >
-                <div className="flex items-start space-x-6">
+                <div className="flex items-center space-x-4 mb-4">
                   <motion.div
                     transition={{ duration: 0.2, ease: "easeOut" }}
                     whileHover={{ scale: 1.1 }}
-                    className="w-32 h-32 bg-canvas rounded-2xl flex-shrink-0 overflow-hidden"
+                    className="w-20 h-20 bg-canvas rounded-2xl flex-shrink-0 overflow-hidden border border-slate/20"
                   >
                     <img
                       src={member.image}
@@ -457,24 +475,42 @@ const AboutPage = () => {
                       className="w-full h-full object-cover"
                     />
                   </motion.div>
-                  <div className="flex-1">
-                    <h3 className="text-2xl font-bold mb-2" style={{ color: '#1C1C1C' }}>{member.name}</h3>
-                    <p className="font-semibold mb-3" style={{ color: '#535366' }}>{member.role}</p>
-                    <div className="inline-block px-3 py-1 bg-charcoal/10 rounded-full mb-4">
-                      <span className="text-xs font-bold text-charcoal">{member.highlight}</span>
+                  <div className="flex-1 min-w-0 flex justify-between items-start">
+                    <div>
+                      <h3 className="text-lg font-bold mb-1" style={{ color: '#1C1C1C' }}>{member.name}</h3>
+                      <p className="font-semibold text-sm" style={{ color: '#535366' }}>{member.role}</p>
                     </div>
+                    {member.linkedin && (
+                      <a
+                        href={member.linkedin}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="p-2 rounded-lg bg-charcoal/5 text-charcoal/40 hover:text-blue-600 hover:bg-blue-50 transition-all"
+                        title={`${member.name} LinkedIn`}
+                      >
+                        <Linkedin className="w-5 h-5" />
+                      </a>
+                    )}
                   </div>
                 </div>
-                <p className="text-sm mb-6 mt-4 leading-relaxed" style={{ color: '#535366' }}>{member.bio}</p>
-                <div className="flex flex-wrap gap-2">
+
+                <div className="mb-4">
+                  <div className="inline-block px-3 py-1.5 bg-charcoal/10 rounded-full w-full text-center">
+                    <span className="text-[11px] font-semibold text-charcoal leading-tight">{member.highlight}</span>
+                  </div>
+                </div>
+
+                <p className="text-sm mb-6 leading-relaxed flex-grow" style={{ color: '#535366' }}>{member.bio}</p>
+
+                <div className="flex flex-wrap gap-2 mt-auto">
                   {member.expertise.map((skill) => (
                     <span
                       key={skill}
-                      className="px-3 py-1 text-xs rounded-full font-medium"
+                      className="px-2.5 py-1 text-[10px] rounded-full font-semibold"
                       style={{
-                        backgroundColor: 'rgba(83, 83, 102, 0.1)',
+                        backgroundColor: 'rgba(83, 83, 102, 0.08)',
                         color: '#535366',
-                        border: '1px solid rgba(83, 83, 102, 0.2)'
+                        border: '1px solid rgba(83, 83, 102, 0.15)'
                       }}
                     >
                       {skill}

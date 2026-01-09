@@ -109,7 +109,7 @@ const Testimonials = () => {
               initial={{ opacity: 0, y: 50 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: index * 0.15 }}
-              className="glass rounded-3xl p-8 relative group hover:bg-slate/10 border-2 border-slate/20 hover:border-slate/40 transition-all duration-300"
+              className="glass rounded-3xl p-8 relative group hover:bg-slate/10 border-2 border-slate/20 hover:border-slate/40 transition-all duration-300 flex flex-col h-full"
             >
               {/* Quote Icon */}
               <div className="absolute top-6 right-6 opacity-10 group-hover:opacity-20 transition-opacity">
@@ -143,41 +143,43 @@ const Testimonials = () => {
               </div>
 
               {/* Quote */}
-              <p className="text-lg mb-6 leading-relaxed italic relative z-10" style={{ color: '#1C1C1C' }}>
+              <p className="text-lg mb-6 leading-relaxed italic relative z-10 flex-1" style={{ color: '#1C1C1C' }}>
                 "{testimonial.quote}"
               </p>
 
               {/* Metrics Grid */}
               <div className="grid grid-cols-3 gap-4 mb-6 p-4 bg-slate/5 rounded-xl">
                 {testimonial.metrics.map((metric, metricIndex) => (
-                  <div key={metricIndex} className="text-center">
+                  <div key={metricIndex} className="text-center flex flex-col h-full">
                     <div className="text-2xl font-bold mb-1" style={{ color: '#1C1C1C' }}>
                       {metric.value}
                     </div>
                     <div className="text-xs mb-1" style={{ color: '#535366' }}>
                       {metric.label}
                     </div>
-                    {metric.change && (
-                      <div className="text-xs font-semibold" style={{ color: '#4ADE80' }}>
-                        {metric.change}
-                      </div>
-                    )}
-                    {metric.before && (
-                      <div className="text-xs" style={{ color: '#535366', opacity: 0.7 }}>
-                        from {metric.before}
-                      </div>
-                    )}
-                    {metric.period && (
-                      <div className="text-xs" style={{ color: '#535366', opacity: 0.7 }}>
-                        {metric.period}
-                      </div>
-                    )}
+                    <div className="mt-auto">
+                      {metric.change && (
+                        <div className="text-xs font-semibold" style={{ color: '#4ADE80' }}>
+                          {metric.change}
+                        </div>
+                      )}
+                      {metric.before && (
+                        <div className="text-xs" style={{ color: '#535366', opacity: 0.7 }}>
+                          from {metric.before}
+                        </div>
+                      )}
+                      {metric.period && (
+                        <div className="text-xs" style={{ color: '#535366', opacity: 0.7 }}>
+                          {metric.period}
+                        </div>
+                      )}
+                    </div>
                   </div>
                 ))}
               </div>
 
               {/* Author Info */}
-              <div className="flex items-center space-x-4 pt-6 border-t border-slate/20">
+              <div className="flex items-center space-x-4 pt-6 mt-auto border-t border-slate/20">
                 <div className="relative w-14 h-14 rounded-full overflow-hidden border-2 border-slate/40 flex-shrink-0">
                   <Image
                     src={testimonial.image}

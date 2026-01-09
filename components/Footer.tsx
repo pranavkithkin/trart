@@ -3,10 +3,10 @@
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import Image from 'next/image'
-import { 
-  Mail, 
-  Phone, 
-  MapPin, 
+import {
+  Mail,
+  Phone,
+  MapPin,
   ArrowRight,
   Linkedin,
   Twitter,
@@ -28,24 +28,23 @@ const Footer = () => {
       { name: 'About Us', href: '/about' },
       { name: 'Our Team', href: '/about#team' },
       { name: 'Careers', href: '/careers' },
-      { name: 'Contact', href: '/contact' }
+      { name: 'Blog', href: '/blog' },
+      { name: 'Case Studies', href: '/case-studies' },
+      { name: 'Contact', href: '/contact' },
     ],
-    resources: [
-      { name: 'Resources', href: '/resources' },
-      { name: 'Case Studies', href: '/resources#case-studies' },
-      { name: 'Documentation', href: '/docs' },
-      { name: 'Blog', href: '/blog' }
-    ],
+    // resources: [
+    //   { name: 'Case Studies', href: '/case-studies' },
+    // ],
     support: [
-      { name: 'Help Center', href: '/help' },
-      { name: 'API Docs', href: '/api-docs' },
-      { name: 'Status', href: '/status' },
-      { name: 'Security', href: '/security' }
+      { name: 'Help Center', href: '/coming-soon' },
+      { name: 'API Docs', href: '/coming-soon' },
+      { name: 'Status', href: '/coming-soon' },
+      { name: 'Security', href: '/coming-soon' }
     ]
   }
 
   const socialLinks = [
-    { name: 'LinkedIn', icon: Linkedin, href: 'https://linkedin.com/company/synopslabs' },
+    { name: 'LinkedIn', icon: Linkedin, href: 'https://www.linkedin.com/company/synops-labs/?viewAsMember=true' },
     { name: 'Twitter', icon: Twitter, href: 'https://twitter.com/synopslabs' },
     { name: 'GitHub', icon: Github, href: 'https://github.com/synopslabs' },
     { name: 'YouTube', icon: Youtube, href: 'https://youtube.com/synopslabs' }
@@ -55,7 +54,7 @@ const Footer = () => {
     <footer className="bg-charcoal border-t border-slate/20">
       {/* Main Footer Content */}
       <div className="container-custom py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
           {/* Brand Section */}
           <div className="lg:col-span-2">
             <motion.div
@@ -96,8 +95,8 @@ const Footer = () => {
             >
               <div className="flex items-center space-x-3" style={{ color: 'rgba(234, 230, 224, 0.8)' }}>
                 <Mail className="w-5 h-5" style={{ color: '#EAE6E0' }} />
-                <a href="mailto:pranvkithkin11@gmail.com" style={{ color: 'rgba(234, 230, 224, 0.8)' }} className="hover:text-canvas transition-colors">
-                  pranvkithkin11@gmail.com
+                <a href="mailto:pranav@synopslabs.com" style={{ color: 'rgba(234, 230, 224, 0.8)' }} className="hover:text-canvas transition-colors">
+                  pranav@synopslabs.com
                 </a>
               </div>
               <div className="flex items-center space-x-3" style={{ color: 'rgba(234, 230, 224, 0.8)' }}>

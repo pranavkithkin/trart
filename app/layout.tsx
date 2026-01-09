@@ -55,6 +55,11 @@ export const metadata: Metadata = {
     title: 'Synopslabs AI - Transform Your Business with Intelligent Automation',
     description: 'Synopslabs AI specializes in intelligent automation solutions.',
   },
+  icons: {
+    icon: '/favicon.ico',
+    shortcut: '/favicon.ico',
+    apple: '/favicon.png',
+  },
   robots: {
     index: true,
     follow: true,
