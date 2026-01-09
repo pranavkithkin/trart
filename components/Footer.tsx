@@ -36,10 +36,10 @@ const Footer = () => {
     //   { name: 'Case Studies', href: '/case-studies' },
     // ],
     support: [
-      { name: 'Help Center', href: '/help' },
-      { name: 'API Docs', href: '/api-docs' },
-      { name: 'Status', href: '/status' },
-      { name: 'Security', href: '/security' }
+      { name: 'Help Center', href: '/coming-soon' },
+      { name: 'API Docs', href: '/coming-soon' },
+      { name: 'Status', href: '/coming-soon' },
+      { name: 'Security', href: '/coming-soon' }
     ]
   }
 

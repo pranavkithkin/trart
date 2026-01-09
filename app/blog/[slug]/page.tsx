@@ -177,13 +177,28 @@ const BlogPostPage = ({ params }: { params: { slug: string } }) => {
                             </div>
 
                             <div className="hidden sm:flex items-center space-x-3 pl-6 border-l border-white/10">
-                                <button className="p-3 rounded-full bg-white/5 hover:bg-white/10 text-white transition-all">
+                                <button className="p-3 rounded-full bg-white/5 hover:bg-white/10 text-white transition-all" title="Share on Twitter">
                                     <Twitter className="w-5 h-5" />
                                 </button>
-                                <button className="p-3 rounded-full bg-white/5 hover:bg-white/10 text-white transition-all">
-                                    <Linkedin className="w-5 h-5" />
-                                </button>
-                                <button className="p-3 rounded-full bg-white/5 hover:bg-white/10 text-white transition-all">
+                                {post.author.linkedin && (
+                                    <a
+                                        href={post.author.linkedin}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="p-3 rounded-full bg-white/5 hover:bg-white/10 text-white transition-all"
+                                        title="Author LinkedIn"
+                                    >
+                                        <Linkedin className="w-5 h-5" />
+                                    </a>
+                                )}
+                                <button
+                                    onClick={() => {
+                                        navigator.clipboard.writeText(window.location.href);
+                                        alert('Link copied to clipboard!');
+                                    }}
+                                    className="p-3 rounded-full bg-white/5 hover:bg-white/10 text-white transition-all"
+                                    title="Copy Link"
+                                >
                                     <LinkIcon className="w-5 h-5" />
                                 </button>
                             </div>

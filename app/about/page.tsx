@@ -14,7 +14,8 @@ import {
   ArrowRight,
   Globe,
   Shield,
-  Zap
+  Zap,
+  Linkedin
 } from 'lucide-react'
 
 const AboutPage = () => {
@@ -30,7 +31,8 @@ const AboutPage = () => {
       image: "/team/Pranav_Satheesan.jpg",
       bio: "AI educator and community leader who's trained 1,000+ professionals on AI implementation. Former enterprise consultant specializing in digital transformation and revenue operations.",
       expertise: ["AI Strategy", "Revenue Operations", "Community Leadership", "B2B Consulting"],
-      highlight: "Built a large community of AI implementation professionals"
+      highlight: "Built a large community of AI implementation professionals",
+      linkedin: "https://www.linkedin.com/in/fazilfazi/"
     },
     {
       name: "Mohammed Fazil",
@@ -38,7 +40,8 @@ const AboutPage = () => {
       image: "/team/Mohammed_Fazil.png",
       bio: "Marketing strategist with a deep understanding of AI-driven customer acquisition and brand growth. Specializes in scaling B2B operations through automated marketing funnels.",
       expertise: ["Growth Marketing", "Brand Strategy", "AI Funnels", "Market Analysis"],
-      highlight: "Scaled marketing operations using AI-driven insights"
+      highlight: "Scaled marketing operations using AI-driven insights",
+      linkedin: "https://www.linkedin.com/in/fazilfazi/"
     },
     {
       name: "Thameem AR",
@@ -46,7 +49,8 @@ const AboutPage = () => {
       image: "/team/Thameer_AR.jpg",
       bio: "Growth specialist focused on expanding business reach and optimizing revenue streams through AI integration and strategic partnerships.",
       expertise: ["Business Growth", "Strategic Partnerships", "Revenue Optimization", "AI Integration"],
-      highlight: "Driven multi-fold growth for B2B enterprises"
+      highlight: "Driven multi-fold growth for B2B enterprises",
+      linkedin: "https://www.linkedin.com/in/thameemar/"
     }
   ]
 
@@ -471,9 +475,22 @@ const AboutPage = () => {
                       className="w-full h-full object-cover"
                     />
                   </motion.div>
-                  <div className="flex-1 min-w-0">
-                    <h3 className="text-lg font-bold mb-1" style={{ color: '#1C1C1C' }}>{member.name}</h3>
-                    <p className="font-semibold text-sm" style={{ color: '#535366' }}>{member.role}</p>
+                  <div className="flex-1 min-w-0 flex justify-between items-start">
+                    <div>
+                      <h3 className="text-lg font-bold mb-1" style={{ color: '#1C1C1C' }}>{member.name}</h3>
+                      <p className="font-semibold text-sm" style={{ color: '#535366' }}>{member.role}</p>
+                    </div>
+                    {member.linkedin && (
+                      <a
+                        href={member.linkedin}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="p-2 rounded-lg bg-charcoal/5 text-charcoal/40 hover:text-blue-600 hover:bg-blue-50 transition-all"
+                        title={`${member.name} LinkedIn`}
+                      >
+                        <Linkedin className="w-5 h-5" />
+                      </a>
+                    )}
                   </div>
                 </div>
 

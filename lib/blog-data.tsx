@@ -10,6 +10,7 @@ export interface BlogPost {
         name: string;
         role: string;
         avatar: string;
+        linkedin?: string;
     };
     content: React.ReactNode;
 }
@@ -26,7 +27,8 @@ export const blogPosts: BlogPost[] = [
         author: {
             name: "Pranav Satheesan",
             role: "Founder & CEO",
-            avatar: "/team/Pranav_Satheesan.jpg"
+            avatar: "/team/Pranav_Satheesan.jpg",
+            linkedin: "https://www.linkedin.com/in/pranavpambungalsatheesan/"
         },
         content: "Detailed content about AI agents in B2B sales..."
     },
@@ -41,7 +43,8 @@ export const blogPosts: BlogPost[] = [
         author: {
             name: "Mohammed Fazil",
             role: "CMO",
-            avatar: "/team/Mohammed_Fazil.png"
+            avatar: "/team/Mohammed_Fazil.png",
+            linkedin: "https://www.linkedin.com/in/fazilfazi/"
         },
         content: "Detailed content about ROI in manufacturing automation..."
     },
@@ -56,7 +59,8 @@ export const blogPosts: BlogPost[] = [
         author: {
             name: "Thameem AR",
             role: "CGO",
-            avatar: "/team/Thameer_AR.jpg"
+            avatar: "/team/Thameer_AR.jpg",
+            linkedin: "https://www.linkedin.com/in/thameemar/"
         },
         content: "Detailed content about the importance of an AI audit..."
     }
