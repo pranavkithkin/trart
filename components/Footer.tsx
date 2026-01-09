@@ -29,12 +29,12 @@ const Footer = () => {
       { name: 'Our Team', href: '/about#team' },
       { name: 'Careers', href: '/careers' },
       { name: 'Blog', href: '/blog' },
-      // { name: 'Industries', href: '/industries' },
+      { name: 'Case Studies', href: '/case-studies' },
       { name: 'Contact', href: '/contact' },
     ],
-    resources: [
-      { name: 'Case Studies', href: '/case-studies' },
-    ],
+    // resources: [
+    //   { name: 'Case Studies', href: '/case-studies' },
+    // ],
     support: [
       { name: 'Help Center', href: '/help' },
       { name: 'API Docs', href: '/api-docs' },
@@ -54,7 +54,7 @@ const Footer = () => {
     <footer className="bg-charcoal border-t border-slate/20">
       {/* Main Footer Content */}
       <div className="container-custom py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
           {/* Brand Section */}
           <div className="lg:col-span-2">
             <motion.div
@@ -95,8 +95,8 @@ const Footer = () => {
             >
               <div className="flex items-center space-x-3" style={{ color: 'rgba(234, 230, 224, 0.8)' }}>
                 <Mail className="w-5 h-5" style={{ color: '#EAE6E0' }} />
-                <a href="mailto:pranvkithkin11@gmail.com" style={{ color: 'rgba(234, 230, 224, 0.8)' }} className="hover:text-canvas transition-colors">
-                  pranvkithkin11@gmail.com
+                <a href="mailto:pranav@synopslabs.com" style={{ color: 'rgba(234, 230, 224, 0.8)' }} className="hover:text-canvas transition-colors">
+                  pranav@synopslabs.com
                 </a>
               </div>
               <div className="flex items-center space-x-3" style={{ color: 'rgba(234, 230, 224, 0.8)' }}>

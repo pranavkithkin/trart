@@ -24,7 +24,7 @@ const BlogListingPage = () => {
                         className="text-center max-w-3xl mx-auto"
                     >
                         <h1 className="text-5xl md:text-7xl font-bold mb-6 text-white">
-                            Insightful <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">AI Intelligence</span>
+                            Insightful <span className="text-white">AI Intelligence</span>
                         </h1>
                         <p className="text-xl text-slate-300 leading-relaxed mb-8">
                             Stay ahead of the curve with our latest thoughts on AI agents, automation,
@@ -123,7 +123,7 @@ const BlogListingPage = () => {
                             className="relative z-10 max-w-2xl mx-auto"
                         >
                             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
-                                Intelligence, <span className="text-blue-400">Delivered.</span>
+                                Intelligence, <span className="text-white">Delivered.</span>
                             </h2>
                             <p className="text-xl text-white/80 mb-10">
                                 Join 5,000+ growth leaders receiving our bi-weekly deep dives

@@ -4,10 +4,7 @@ import React from 'react'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-import {
-    ArrowRight,
-    TrendingUp,
-} from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 import { caseStudies } from '@/lib/case-studies-data'
 
 const CaseStudiesPage = () => {
@@ -16,15 +13,10 @@ const CaseStudiesPage = () => {
         threshold: 0.1
     })
 
-    // We only show Bright Land on this page as per user request
-    const brightLandStudy = caseStudies.find(s => s.slug === "bright-land-real-estate");
-
-    if (!brightLandStudy) return null;
-
     return (
         <div className="min-h-screen bg-canvas">
             {/* Hero Section */}
-            <section className="section-padding bg-charcoal relative overflow-hidden">
+            <section className="section-padding bg-charcoal relative overflow-hidden pt-32">
                 <div className="absolute inset-0 opacity-5" style={{
                     backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23FFFFFF' fill-opacity='0.05'%3E%3Ccircle cx='30' cy='30' r='1'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
                 }} />
@@ -40,68 +32,88 @@ const CaseStudiesPage = () => {
                             Case Studies
                         </div>
                         <h1 className="text-5xl md:text-7xl font-bold mb-6 text-white">
-                            Real Impact, <span className="text-white">Real Results</span>
+                            Real Results, <span className="text-white">Real Revenue</span>
                         </h1>
                         <p className="text-xl md:text-2xl mb-12 leading-relaxed text-white/90">
-                            Explore how we're transforming business operations with intelligent AI automation.
-                            Our featured implementation with Bright Land Real Estate demonstrates the power of automated lead orchestration.
+                            See how ambitious B2B companies are using Synopslabs AI to accelerate growth,
+                            slash costs, and dominate their markets
                         </p>
                     </motion.div>
                 </div>
             </section>
 
-            {/* Featured Section */}
+            {/* Case Studies Grid */}
             <section className="section-padding bg-canvas" ref={ref}>
                 <div className="container-custom">
-                    <div className="max-w-2xl mx-auto">
-                        <motion.div
-                            initial={{ opacity: 0, scale: 0.95 }}
-                            animate={inView ? { opacity: 1, scale: 1 } : {}}
-                            className="bg-white rounded-[2.5rem] p-10 md:p-16 border-2 border-slate/10 shadow-2xl hover:border-blue-500/20 transition-all duration-500 group"
-                        >
-                            <div className="w-20 h-20 bg-charcoal rounded-3xl flex items-center justify-center mb-10 text-white shadow-xl group-hover:scale-110 transition-transform">
-                                <brightLandStudy.icon className="w-10 h-10" />
-                            </div>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
+                        {caseStudies.map((study, index) => (
+                            <motion.div
+                                key={study.slug}
+                                initial={{ opacity: 0, y: 50 }}
+                                animate={inView ? { opacity: 1, y: 0 } : {}}
+                                transition={{ duration: 0.6, delay: 0.1 + index * 0.1 }}
+                                className="group"
+                            >
+                                <div className="bg-white rounded-3xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 flex flex-col h-full">
+                                    {/* Icon */}
+                                    <div className="w-16 h-16 bg-charcoal rounded-2xl flex items-center justify-center mb-6">
+                                        <study.icon className="w-8 h-8 text-white" />
+                                    </div>
 
-                            <div className="flex items-center space-x-3 mb-6">
-                                <span className="px-4 py-1.5 bg-blue-100 text-blue-600 text-xs font-bold rounded-full uppercase tracking-widest">
-                                    {brightLandStudy.industry}
-                                </span>
-                                <span className="text-slate/40 tracking-widest text-xs font-bold">ACTIVE IMPLEMENTATION</span>
-                            </div>
+                                    {/* Tags */}
+                                    <div className="flex items-center gap-2 mb-4 flex-wrap">
+                                        <span className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-bold uppercase tracking-wider">
+                                            {study.industry}
+                                        </span>
+                                        <span className="px-3 py-1 bg-slate-100 text-slate-600 rounded-full text-xs font-semibold uppercase tracking-wider">
+                                            Active Implementation
+                                        </span>
+                                    </div>
 
-                            <h2 className="text-3xl md:text-5xl font-bold mb-8 text-charcoal leading-tight">
-                                {brightLandStudy.title}
-                            </h2>
+                                    {/* Title */}
+                                    <h3 className="text-2xl font-bold mb-3 text-charcoal">
+                                        {study.companyName}: {study.title.split(':')[1] || study.title}
+                                    </h3>
 
-                            <p className="text-xl text-slate/70 mb-12 leading-relaxed">
-                                {brightLandStudy.description}
-                            </p>
+                                    {/* Description */}
+                                    <p className="text-slate-600 mb-6 leading-relaxed flex-grow">
+                                        {study.description}
+                                    </p>
 
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-                                <div className="bg-slate-50 rounded-2xl p-6 border border-slate-100">
-                                    <div className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-1">Impact Score</div>
-                                    <div className="text-3xl font-bold text-blue-600">{brightLandStudy.summaryResults}</div>
+                                    {/* Metrics */}
+                                    <div className="grid grid-cols-2 gap-3 mb-6">
+                                        <div className="border-2 border-slate-200 rounded-xl p-4">
+                                            <div className="text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">
+                                                Impact Score
+                                            </div>
+                                            <div className="text-3xl font-bold text-blue-600">
+                                                {study.roi}
+                                            </div>
+                                        </div>
+                                        <div className="border-2 border-slate-200 rounded-xl p-4">
+                                            <div className="text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">
+                                                Efficiency Gain
+                                            </div>
+                                            <div className="text-3xl font-bold text-green-600">
+                                                {study.results[0]?.change || study.results[1]?.change}
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    {/* CTA Button */}
+                                    <Link href={`/case-studies/${study.slug}`} className="mt-auto">
+                                        <motion.button
+                                            whileHover={{ scale: 1.02 }}
+                                            whileTap={{ scale: 0.98 }}
+                                            className="w-full bg-charcoal text-white py-4 rounded-xl font-bold text-sm flex items-center justify-center space-x-2 group-hover:bg-slate-800 transition-colors"
+                                        >
+                                            <span>Read Full Detailed Case Study</span>
+                                            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                                        </motion.button>
+                                    </Link>
                                 </div>
-                                <div className="bg-slate-50 rounded-2xl p-6 border border-slate-100">
-                                    <div className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-1">Efficiency Gain</div>
-                                    <div className="text-3xl font-bold text-green-600">520%</div>
-                                </div>
-                            </div>
-
-                            <div className="border-t border-slate/10 pt-10">
-                                <Link href={`/case-studies/${brightLandStudy.slug}`}>
-                                    <motion.button
-                                        whileHover={{ scale: 1.02 }}
-                                        whileTap={{ scale: 0.98 }}
-                                        className="w-full bg-charcoal text-white py-6 rounded-2xl font-bold text-xl flex items-center justify-center space-x-4 shadow-xl group/btn"
-                                    >
-                                        <span>Read Full Detailed Case Study</span>
-                                        <ArrowRight className="w-6 h-6 group-hover/btn:translate-x-2 transition-transform" />
-                                    </motion.button>
-                                </Link>
-                            </div>
-                        </motion.div>
+                            </motion.div>
+                        ))}
                     </div>
                 </div>
             </section>

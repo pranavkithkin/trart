@@ -13,10 +13,11 @@ const TrustedBy = () => {
     // Using the available client logo
     const clients = [
         { name: 'Bridgewater', logo: '/clients/BRIDGEWATER-logo.png' },
-        { name: 'Bridgewater 2', logo: '/clients/BRIDGEWATER-logo.png' },
-        { name: 'Bridgewater 3', logo: '/clients/BRIDGEWATER-logo.png' },
+        { name: 'Brightland', logo: '/clients/Brightland-logo.jpg' },
+        { name: 'Zorx', logo: '/clients/zorx-logo.png' },
         { name: 'Bridgewater 4', logo: '/clients/BRIDGEWATER-logo.png' },
-        { name: 'Bridgewater 5', logo: '/clients/BRIDGEWATER-logo.png' },
+        { name: 'Brightland', logo: '/clients/Brightland-logo.jpg' },
+        { name: 'Zorx', logo: '/clients/zorx-logo.png' },
     ]
 
     const duplicatedCompanies = [...clients, ...clients, ...clients]

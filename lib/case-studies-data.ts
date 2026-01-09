@@ -65,7 +65,23 @@ export const caseStudies: CaseStudy[] = [
         timeline: "3 months",
         roi: "480%",
         color: "from-blue-500 to-cyan-500",
-        icon: Users
+        icon: Users,
+        objectives: [
+            "Reduce average response time from 48 hours to under 10 minutes",
+            "Automate tier-1 support to free up team for complex issues",
+            "Improve customer satisfaction scores by 30+ points",
+            "Integrate seamlessly with existing Zendesk and Salesforce systems",
+            "Maintain 24/7 support coverage without additional headcount"
+        ],
+        architecture: "The solution leverages a multi-agent AI architecture built on GPT-4 with custom fine-tuning on TechVision's historical support tickets. The system integrates via Zendesk API and Salesforce API, with a middleware layer handling authentication, routing, and escalation logic. Real-time sentiment analysis determines when to escalate to human agents.",
+        workflows: [
+            "Automated ticket intake and categorization using NLP",
+            "Intelligent routing based on complexity and sentiment analysis",
+            "AI-powered response generation with knowledge base integration",
+            "Seamless escalation to human agents for complex issues",
+            "Continuous learning from human agent interactions and feedback"
+        ],
+        tools: ["GPT-4 (Custom Fine-tuned)", "Zendesk API", "Salesforce Integration", "Python Backend", "Redis Cache", "PostgreSQL"]
     },
     {
         slug: "precision-parts-inc",
@@ -89,7 +105,23 @@ export const caseStudies: CaseStudy[] = [
         timeline: "4 months",
         roi: "620%",
         color: "from-purple-500 to-pink-500",
-        icon: TrendingUp
+        icon: TrendingUp,
+        objectives: [
+            "Reduce sales cycle from 89 days to under 40 days",
+            "Automate quote generation and follow-up sequences",
+            "Increase conversion rates by 100%+",
+            "Free up sales team from administrative tasks",
+            "Integrate with existing ERP and CRM systems"
+        ],
+        architecture: "Built on a microservices architecture with AI agents handling different stages of the sales pipeline. The system uses GPT-4 for natural language processing, custom ML models for lead scoring, and integrates with SAP ERP and Salesforce CRM via REST APIs. Automated workflows orchestrated through Make.com.",
+        workflows: [
+            "AI-powered lead qualification and scoring",
+            "Automated custom quote generation from ERP data",
+            "Multi-touch email and SMS follow-up sequences",
+            "Intelligent meeting scheduling with calendar integration",
+            "Real-time CRM updates and sales pipeline tracking"
+        ],
+        tools: ["GPT-4", "Custom ML Models", "SAP ERP Integration", "Salesforce CRM", "Make.com", "Twilio API", "Google Calendar API"]
     },
     {
         slug: "aspire-financial-group",
@@ -113,7 +145,23 @@ export const caseStudies: CaseStudy[] = [
         timeline: "2 months",
         roi: "550%",
         color: "from-green-500 to-emerald-500",
-        icon: Clock
+        icon: Clock,
+        objectives: [
+            "Reduce invoice processing time from 12 days to under 24 hours",
+            "Achieve 99%+ accuracy in data extraction and categorization",
+            "Automate approval workflows and compliance checks",
+            "Provide real-time financial reporting and anomaly detection",
+            "Reduce manual finance team workload by 70%"
+        ],
+        architecture: "The AI Finance Ops suite combines computer vision for document processing, NLP for data extraction, and rule-based engines for compliance validation. Built on Azure cloud infrastructure with OCR capabilities, the system processes invoices, categorizes expenses, and generates real-time dashboards with anomaly detection algorithms.",
+        workflows: [
+            "Automated invoice intake via email and document upload",
+            "AI-powered OCR and data extraction from invoices",
+            "Intelligent expense categorization and GL coding",
+            "Automated approval routing based on business rules",
+            "Real-time financial reporting with anomaly alerts"
+        ],
+        tools: ["Azure AI Services", "Custom OCR Engine", "Power BI", "QuickBooks Integration", "Python Backend", "SQL Database"]
     },
     {
         slug: "medconnect-solutions",
@@ -137,14 +185,30 @@ export const caseStudies: CaseStudy[] = [
         timeline: "3 months",
         roi: "425%",
         color: "from-orange-500 to-red-500",
-        icon: Users
+        icon: Users,
+        objectives: [
+            "Reduce time-to-hire from 6+ months to under 30 days",
+            "Automate resume screening for specialized healthcare IT roles",
+            "Improve candidate quality and match scores",
+            "Eliminate bias in initial screening process",
+            "Increase HR team capacity by 300%"
+        ],
+        architecture: "The AI HR Agent uses advanced NLP models trained on healthcare IT job requirements and candidate profiles. The system integrates with major ATS platforms, uses semantic matching algorithms for skill assessment, and includes bias detection mechanisms. Automated communication handled through email and SMS APIs.",
+        workflows: [
+            "Automated resume parsing and skills extraction",
+            "AI-powered candidate matching and scoring",
+            "Intelligent interview scheduling with calendar sync",
+            "Automated candidate communication and status updates",
+            "Bias detection and diversity analytics reporting"
+        ],
+        tools: ["Custom NLP Models", "ATS Integration (Greenhouse)", "Calendly API", "SendGrid", "Twilio", "Python Backend", "MongoDB"]
     },
     {
         slug: "stylehub-retail",
         industry: "E-commerce",
         clientSize: "100-250 employees",
         companyName: "StyleHub Retail",
-        title: "StyleHub Retail: 50x Faster Content Production",
+        title: "50x Faster Content Production",
         description: "E-commerce leader scales product launches with AI-driven content engine",
         challenge: "Content creation for 5,000+ SKUs was a constant struggle. Product descriptions were inconsistent, SEO was poor, and creating marketing content took weeks, slowing down new product launches.",
         solution: "Implemented AI Content Generation Engine that creates product descriptions, SEO metadata, social media posts, and email campaigns. System learned brand voice and optimizes for conversion.",
@@ -161,7 +225,23 @@ export const caseStudies: CaseStudy[] = [
         timeline: "2 months",
         roi: "780%",
         color: "from-indigo-500 to-purple-500",
-        icon: FileText
+        icon: FileText,
+        objectives: [
+            "Scale content production from 50 to 2,500+ SKUs per month",
+            "Maintain consistent brand voice across all product descriptions",
+            "Improve SEO rankings and organic traffic",
+            "Reduce content creation costs by 80%",
+            "Accelerate new product launch timelines"
+        ],
+        architecture: "The AI Content Generation Engine uses fine-tuned GPT-4 models trained on StyleHub's brand guidelines and top-performing content. The system includes SEO optimization algorithms, A/B testing capabilities, and multi-channel content adaptation. Integration with Shopify and social media platforms enables automated publishing.",
+        workflows: [
+            "AI-powered product description generation from specs",
+            "SEO metadata optimization and keyword integration",
+            "Multi-channel content adaptation (web, email, social)",
+            "Automated A/B testing for conversion optimization",
+            "Brand voice consistency validation and quality checks"
+        ],
+        tools: ["GPT-4 (Fine-tuned)", "Shopify API", "SEMrush Integration", "Buffer/Hootsuite", "Python Backend", "Content Analytics Dashboard"]
     },
     {
         slug: "apex-consulting-group",
@@ -185,7 +265,23 @@ export const caseStudies: CaseStudy[] = [
         timeline: "5 months",
         roi: "390%",
         color: "from-teal-500 to-cyan-500",
-        icon: CheckCircle
+        icon: CheckCircle,
+        objectives: [
+            "Unify data across 6 disparate systems into single source of truth",
+            "Reduce time spent searching for client information by 90%",
+            "Enable real-time insights and predictive analytics",
+            "Improve client satisfaction through better data visibility",
+            "Identify upsell and cross-sell opportunities automatically"
+        ],
+        architecture: "Custom integration and data architecture solution built on a modern data warehouse with ETL pipelines connecting CRM, project management, billing, and communication platforms. AI-powered insights engine analyzes patterns and generates recommendations. Real-time sync ensures data consistency across all systems.",
+        workflows: [
+            "Real-time data synchronization across all platforms",
+            "AI-powered data quality validation and cleansing",
+            "Automated client insights and opportunity identification",
+            "Predictive analytics for project success and revenue forecasting",
+            "Unified search and intelligent data retrieval"
+        ],
+        tools: ["Snowflake Data Warehouse", "Fivetran ETL", "Salesforce", "Asana API", "Slack Integration", "Custom Analytics Dashboard", "Python/dbt"]
     },
     {
         slug: "bright-land-real-estate",

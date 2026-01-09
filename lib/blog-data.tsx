@@ -25,8 +25,8 @@ export const blogPosts: BlogPost[] = [
         readTime: "6 min read",
         author: {
             name: "Pranav Satheesan",
-            role: "CEO",
-            avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&q=80"
+            role: "Founder & CEO",
+            avatar: "/team/Pranav_Satheesan.jpg"
         },
         content: "Detailed content about AI agents in B2B sales..."
     },
@@ -39,9 +39,9 @@ export const blogPosts: BlogPost[] = [
         category: "Manufacturing",
         readTime: "8 min read",
         author: {
-            name: "Suhail Malayil",
-            role: "COO",
-            avatar: "https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=100&h=100&fit=crop&q=80"
+            name: "Mohammed Fazil",
+            role: "CMO",
+            avatar: "/team/Mohammed_Fazil.png"
         },
         content: "Detailed content about ROI in manufacturing automation..."
     },
@@ -54,9 +54,9 @@ export const blogPosts: BlogPost[] = [
         category: "Strategy",
         readTime: "5 min read",
         author: {
-            name: "Pranav Satheesan",
-            role: "CEO",
-            avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&q=80"
+            name: "Thameem AR",
+            role: "CGO",
+            avatar: "/team/Thameer_AR.jpg"
         },
         content: "Detailed content about the importance of an AI audit..."
     }
