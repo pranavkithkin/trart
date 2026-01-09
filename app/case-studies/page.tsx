@@ -54,7 +54,7 @@ const CaseStudiesPage = () => {
                                 transition={{ duration: 0.6, delay: 0.1 + index * 0.1 }}
                                 className="group"
                             >
-                                <div className="bg-white rounded-3xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 flex flex-col h-full">
+                                <div className="glass rounded-3xl p-8 relative group hover:bg-slate/5 border-2 border-slate/20 hover:border-slate/40 transition-all duration-300 flex flex-col h-full">
                                     {/* Icon */}
                                     <div className="w-16 h-16 bg-charcoal rounded-2xl flex items-center justify-center mb-6">
                                         <study.icon className="w-8 h-8 text-white" />
@@ -82,7 +82,7 @@ const CaseStudiesPage = () => {
 
                                     {/* Metrics */}
                                     <div className="grid grid-cols-2 gap-3 mb-6">
-                                        <div className="border-2 border-slate-100 rounded-xl p-4 transition-colors group-hover:border-blue-100 h-full flex flex-col justify-between">
+                                        <div className="border-2 border-slate/20 rounded-xl p-4 transition-colors group-hover:border-slate/40 h-full flex flex-col justify-between">
                                             <div className="text-[9px] font-bold text-slate-400 uppercase tracking-widest mb-2">
                                                 Impact Score
                                             </div>
@@ -90,7 +90,7 @@ const CaseStudiesPage = () => {
                                                 {study.roi}
                                             </div>
                                         </div>
-                                        <div className="border-2 border-slate-100 rounded-xl p-4 transition-colors group-hover:border-green-100 h-full flex flex-col justify-between">
+                                        <div className="border-2 border-slate/20 rounded-xl p-4 transition-colors group-hover:border-slate/40 h-full flex flex-col justify-between">
                                             <div className="text-[9px] font-bold text-slate-400 uppercase tracking-widest mb-2">
                                                 Efficiency Gain
                                             </div>
