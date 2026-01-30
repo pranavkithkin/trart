@@ -150,7 +150,7 @@ const AuditPage = () => {
             </h1>
             <p className="text-xl md:text-2xl mb-12 leading-relaxed" style={{ color: 'rgba(234, 230, 224, 0.9)' }}>
               In 60 seconds, discover exactly where AI can drive revenue, cut costs, 
-              and give you an unfair competitive advantage. $12M+ generated for our clients.
+              and give you an unfair competitive advantage. $50K+ generated for our clients.
             </p>
           </motion.div>
         </div>

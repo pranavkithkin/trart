@@ -93,14 +93,14 @@ const AboutPage = () => {
             className="text-center max-w-4xl mx-auto"
           >
             <div className="inline-block px-6 py-2 bg-white/10 rounded-full mb-6">
-              <span className="text-lg font-bold" style={{ color: '#EAE6E0' }}>AI-Native Since 2020</span>
+              <span className="text-lg font-bold" style={{ color: '#EAE6E0' }}>AI-Native Since 2025</span>
             </div>
             <h1 className="text-5xl md:text-7xl font-bold mb-6" style={{ color: '#FFFFFF' }}>
               Built by AI Experts, <span style={{ color: '#EAE6E0' }}>For Growth Obsessed Leaders</span>
             </h1>
             <p className="text-xl md:text-2xl mb-12 leading-relaxed" style={{ color: 'rgba(234, 230, 224, 0.9)' }}>
               We're not consultants who jumped on the AI bandwagon. We've been building
-              production AI systems since 2020, before ChatGPT made it trendy.
+              production AI systems with cutting-edge technology.
             </p>
           </motion.div>
         </div>
@@ -169,7 +169,7 @@ const AboutPage = () => {
                 </p>
                 <p className="text-lg leading-relaxed" style={{ color: '#535366' }}>
                   While most consultancies are scrambling to retrofit AI into their existing playbooks,
-                  we've been building production AI systems since 2020. We understand the technology
+                  we've been building production AI systems since 2025. We understand the technology
                   at a fundamental level because we've been living and breathing it for years.
                 </p>
                 <p className="text-lg leading-relaxed" style={{ color: '#535366' }}>
@@ -223,8 +223,8 @@ const AboutPage = () => {
                 Our <span className="text-charcoal">Track Record</span>
               </h2>
               <p className="text-xl mb-8 leading-relaxed" style={{ color: '#535366' }}>
-                We've helped 100+ B2B companies generate over $12M in new revenue and achieve
-                an average ROI of 480%. But we're not just about the numbers we're about transformation.
+                We've helped 10+ B2B companies generate over $50K in new revenue and achieve
+                an average ROI of 250%. But we're not just about the numbers we're about transformation.
               </p>
               <p className="text-lg mb-8 leading-relaxed" style={{ color: '#535366' }}>
                 Our clients don't just get AI systems. They get competitive advantages. They get
@@ -232,15 +232,15 @@ const AboutPage = () => {
               </p>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
                 <div className="text-center glass rounded-xl p-4">
-                  <div className="text-4xl font-bold text-charcoal mb-2">100+</div>
+                  <div className="text-4xl font-bold text-charcoal mb-2">10+</div>
                   <div className="text-sm" style={{ color: '#535366' }}>B2B Companies</div>
                 </div>
                 <div className="text-center glass rounded-xl p-4">
-                  <div className="text-4xl font-bold text-charcoal mb-2">$12M+</div>
+                  <div className="text-4xl font-bold text-charcoal mb-2">$50K</div>
                   <div className="text-sm" style={{ color: '#535366' }}>Revenue Generated</div>
                 </div>
                 <div className="text-center glass rounded-xl p-4">
-                  <div className="text-4xl font-bold text-charcoal mb-2">480%</div>
+                  <div className="text-4xl font-bold text-charcoal mb-2">250%</div>
                   <div className="text-sm" style={{ color: '#535366' }}>Average ROI</div>
                 </div>
                 <div className="text-center glass rounded-xl p-4">

@@ -30,9 +30,9 @@ Your website has been completely transformed to **surpass LeftClick.ai** with su
 ### 3. **TrustBanner Component** (`components/TrustBanner.tsx`)
 - **Sticky floating banner** that appears after scroll
 - Displays key trust metrics:
-  - 100+ B2B Companies
-  - $12M+ Revenue Generated
-  - 480% Average ROI
+  - 10+ B2B Companies
+  - $50K Revenue Generated
+  - 250% Average ROI
   - 98% Client Retention
 - Animated gradient underline
 - Glassmorphism design matching brand
@@ -46,7 +46,7 @@ Your website has been completely transformed to **surpass LeftClick.ai** with su
 - Headline: "AI-Powered Growth Engine for Ambitious B2B Companies"
 - Subheadline: Focus on 480% ROI and competitive advantage
 - **Enhanced floating metrics badges** with hover animations
-- Metrics: $12M+ Revenue, 480% ROI, 100+ Companies
+- Metrics: $50K Revenue, 250% ROI, 10+ Companies
 - Color-coded metric cards (green, blue, orange)
 
 ### 5. **Services Page** (`app/services/page.tsx`)
@@ -75,9 +75,9 @@ Each service includes:
 
 ### 6. **About Page** (`app/about/page.tsx`)
 **AI-Native Positioning:**
-- Badge: "AI-Native Since 2020"
+- Badge: "AI-Native Since 2025"
 - New headline: "Built by AI Experts, For Growth-Obsessed Leaders"
-- Emphasis on production AI systems since 2020 (before ChatGPT)
+- Emphasis on production AI systems since 2025
 
 **Updated Team Section:**
 - **CEO: Pranav Kumar** - AI educator, trained 1,000+ professionals, built India's largest AI community
@@ -85,7 +85,7 @@ Each service includes:
 - Larger team cards with highlights and expanded expertise
 
 **Enhanced Metrics:**
-- 4-metric grid: 100+ Companies, $12M+ Revenue, 480% ROI, 98% Retention
+- 4-metric grid: 10+ Companies, $50K Revenue, 250% ROI, 98% Retention
 
 **Operating Principles:**
 - Revenue first
@@ -102,7 +102,7 @@ Each service includes:
   - Percentage changes
   - Period indicators
 - Company size and industry context
-- Updated trust metrics: $12M+, 480%, 100+, 98%
+- Updated trust metrics: $50K, 250%, 10+, 98%
 
 ### 8. **Homepage** (`app/page.tsx`)
 **New Component Flow:**
@@ -125,7 +125,7 @@ Each service includes:
 - Enhanced field styling with focus states
 - Better placeholder text with examples
 - New headline: "Free AI Growth Audit"
-- Subheadline mentions $12M+ generated
+- Subheadline mentions $50K+ generated
 
 ### 10. **Resources Page** (`app/resources/page.tsx`) - NEW
 **Three Content Sections:**
@@ -172,20 +172,20 @@ All components maintain:
 - ✅ "AI-Powered Growth Engine for Ambitious B2B Companies"
 
 - ❌ "Unlock the power of AI agents"
-- ✅ "480% average ROI while competitors struggle with manual processes"
+- ✅ "250% average ROI while competitors struggle with manual processes"
 
 - ❌ "100+ Active Clients"
-- ✅ "100+ B2B Companies • $12M+ Revenue Generated • 480% Average ROI"
+- ✅ "10+ B2B Companies • $50K Revenue Generated • 250% Average ROI"
 
 ---
 
 ## 🚀 COMPETITIVE ADVANTAGES OVER LEFTCLICK.AI
 
 1. **More Specific Positioning:** "Growth Engine" vs generic "AI partner"
-2. **Real Revenue Metrics:** $12M+ generated (quantified)
+2. **Real Revenue Metrics:** $50K generated (quantified)
 3. **Better Case Studies:** 6 detailed stories vs generic testimonials
 4. **Superior Service Structure:** 9 services vs scattered offerings
-5. **AI-Native Credibility:** "Since 2020" positioning
+5. **AI-Native Credibility:** "Since 2025" positioning
 6. **Better UX Flow:** Multi-step audit form, progressive disclosure
 7. **Problem-Solution Mapping:** Visual before/after transformations
 8. **Comprehensive Resources:** Guides, case studies, video training
@@ -236,9 +236,9 @@ All 11 tasks completed:
 
 ## 🎯 METRICS HIGHLIGHTED THROUGHOUT
 
-- **$12M+** Revenue Generated
-- **480%** Average ROI
-- **100+** B2B Companies Served
+- **$50K** Revenue Generated
+- **250%** Average ROI
+- **10+** B2B Companies Served
 - **98%** Client Retention Rate
 - **94%** Faster response times (case study)
 - **62%** Faster sales cycles (case study)
@@ -265,10 +265,10 @@ All 11 tasks completed:
 ## 💬 POSITIONING SUMMARY
 
 Your website now positions TRART AI as:
-- **AI-natives** (since 2020, not AI-tourists)
+- **AI-natives** (since 2025)
 - **Growth-focused** (revenue engine, not just tools)
-- **Results-driven** ($12M+ generated, 480% ROI)
-- **B2B experts** (100+ companies, enterprise credibility)
+- **Results-driven** ($50K generated, 250% ROI)
+- **B2B experts** (10+ companies, enterprise credibility)
 - **Thought leaders** (educator-led, community builder)
 
 This is a **superior positioning** to LeftClick.ai with:

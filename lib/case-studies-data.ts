@@ -58,12 +58,12 @@ export const caseStudies: CaseStudy[] = [
             { label: "Cost Savings", value: "$240K", change: "annually", icon: DollarSign },
             { label: "Ticket Resolution", value: "78%", change: "automated", icon: Target }
         ],
-        summaryResults: "480% ROI",
+        summaryResults: "250% ROI",
         quote: "Synopslabs AI transformed our customer success operations. What used to take our team days now happens in minutes. Our CSAT scores have never been higher, and our team can focus on building relationships instead of answering the same questions repeatedly.",
         author: "Sarah Chen",
         authorRole: "VP of Customer Success",
         timeline: "3 months",
-        roi: "480%",
+        roi: "250%",
         color: "from-blue-500 to-cyan-500",
         icon: Users,
         objectives: [

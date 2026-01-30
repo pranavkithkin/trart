@@ -41,19 +41,19 @@ const TrustBanner = () => {
   const metrics = [
     {
       icon: Users,
-      value: "100+",
+      value: "10+",
       label: "B2B Companies",
       color: "#4ADE80"
     },
     {
       icon: DollarSign,
-      value: "$12M+",
+      value: "$50K",
       label: "Revenue Generated",
       color: "#60A5FA"
     },
     {
       icon: TrendingUp,
-      value: "480%",
+      value: "250%",
       label: "Average ROI",
       color: "#F59E0B"
     },
