@@ -18,6 +18,7 @@ const TrustedBy = () => {
         { name: 'Bridgewater 4', logo: '/clients/BRIDGEWATER-logo.png' },
         { name: 'Brightland', logo: '/clients/Brightland-logo.jpg' },
         { name: 'Zorx', logo: '/clients/zorx-logo.png' },
+        { name: 'NAM', logo: '/clients/nam-logo.png' },
     ]
 
     const duplicatedCompanies = [...clients, ...clients, ...clients]
