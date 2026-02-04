@@ -3,12 +3,12 @@
 import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-import { 
-  CheckCircle, 
-  ArrowRight, 
-  Mail, 
-  Phone, 
-  Building, 
+import {
+  CheckCircle,
+  ArrowRight,
+  Mail,
+  Phone,
+  Building,
   MessageSquare,
   Sparkles,
   Zap
@@ -22,7 +22,7 @@ const AuditPage = () => {
 
   const [step, setStep] = useState(1)
   const totalSteps = 4
-  
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -88,11 +88,11 @@ const AuditPage = () => {
           >
             <CheckCircle className="w-12 h-12" style={{ color: '#1C1C1C' }} />
           </motion.div>
-          
+
           <h1 className="text-4xl md:text-6xl font-bold mb-6">
             <span className="text-charcoal">Thank You!</span>
           </h1>
-          
+
           <p className="text-xl mb-8" style={{ color: '#535366' }}>
             Your AI audit request has been submitted successfully. Our team will review your
             information and contact you within 24 hours to schedule your free consultation.
@@ -115,7 +115,7 @@ const AuditPage = () => {
               </div>
             </div>
           </div>
-          
+
           <motion.button
             transition={{ duration: 0.2, ease: "easeOut" }}
             whileHover={{ scale: 1.05 }}
@@ -137,7 +137,7 @@ const AuditPage = () => {
         <div className="absolute inset-0 opacity-5" style={{
           backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23FFFFFF' fill-opacity='0.05'%3E%3Ccircle cx='30' cy='30' r='1'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
         }} />
-        
+
         <div className="container-custom relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -149,7 +149,7 @@ const AuditPage = () => {
               Get Your <span style={{ color: '#EAE6E0' }}>Free AI Growth Audit</span>
             </h1>
             <p className="text-xl md:text-2xl mb-12 leading-relaxed" style={{ color: 'rgba(234, 230, 224, 0.9)' }}>
-              In 60 seconds, discover exactly where AI can drive revenue, cut costs, 
+              In 60 seconds, discover exactly where AI can drive revenue, cut costs,
               and give you an unfair competitive advantage. $50K+ generated for our clients.
             </p>
           </motion.div>
@@ -179,7 +179,7 @@ const AuditPage = () => {
                   </span>
                 </div>
                 <div className="w-full bg-slate/20 rounded-full h-2">
-                  <div 
+                  <div
                     className="bg-charcoal h-2 rounded-full transition-all duration-300"
                     style={{ width: `${(step / totalSteps) * 100}%` }}
                   />
@@ -187,7 +187,7 @@ const AuditPage = () => {
               </div>
 
               <h2 className="text-3xl font-bold mb-6" style={{ color: '#1C1C1C' }}>
-                {step === 1 && "Let's start with the basics"}
+                {step === 1 && "Let's break the ice"}
                 {step === 2 && "Tell us about your company"}
                 {step === 3 && "What challenges are you facing?"}
                 {step === 4 && "Almost there!"}
@@ -203,7 +203,7 @@ const AuditPage = () => {
                     className="space-y-6"
                   >
                     <div>
-                      <label className="block font-semibold mb-2" style={{ color: '#1C1C1C' }}>Full Name *</label>
+                      <label className="block font-semibold mb-2" style={{ color: '#1C1C1C' }}>What should we call you? *</label>
                       <input
                         type="text"
                         name="name"
@@ -212,11 +212,11 @@ const AuditPage = () => {
                         required
                         className="w-full px-4 py-4 bg-canvas border-2 border-slate/30 rounded-xl focus:outline-none focus:ring-2 focus:ring-charcoal focus:border-charcoal text-lg"
                         style={{ color: '#1C1C1C' }}
-                        placeholder="John Smith"
+                        placeholder="Enter your full name"
                       />
                     </div>
                     <div>
-                      <label className="block font-semibold mb-2" style={{ color: '#1C1C1C' }}>Work Email *</label>
+                      <label className="block font-semibold mb-2" style={{ color: '#1C1C1C' }}>Where can we reach you? *</label>
                       <input
                         type="email"
                         name="email"
@@ -225,7 +225,7 @@ const AuditPage = () => {
                         required
                         className="w-full px-4 py-4 bg-canvas border-2 border-slate/30 rounded-xl focus:outline-none focus:ring-2 focus:ring-charcoal focus:border-charcoal text-lg"
                         style={{ color: '#1C1C1C' }}
-                        placeholder="john@company.com"
+                        placeholder="Enter your work email"
                       />
                     </div>
                     <div>
@@ -237,7 +237,7 @@ const AuditPage = () => {
                         onChange={handleInputChange}
                         className="w-full px-4 py-4 bg-canvas border-2 border-slate/30 rounded-xl focus:outline-none focus:ring-2 focus:ring-charcoal focus:border-charcoal text-lg"
                         style={{ color: '#1C1C1C' }}
-                        placeholder="+1 (555) 123-4567"
+                        placeholder="Enter your phone number"
                       />
                     </div>
                   </motion.div>
@@ -392,7 +392,7 @@ const AuditPage = () => {
                       Back
                     </motion.button>
                   )}
-                  
+
                   {step < totalSteps ? (
                     <motion.button
                       type="button"
