@@ -207,11 +207,11 @@ const Testimonials = () => {
           <div className="glass rounded-2xl p-8 max-w-5xl mx-auto">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               <div className="text-center">
-                <div className="text-4xl font-bold mb-2" style={{ color: '#4ADE80' }}>$50K</div>
+                <div className="text-4xl font-bold mb-2" style={{ color: '#4ADE80' }}>$50K+</div>
                 <div style={{ color: '#535366' }}>Revenue Generated</div>
               </div>
               <div className="text-center">
-                <div className="text-4xl font-bold mb-2" style={{ color: '#60A5FA' }}>250%</div>
+                <div className="text-4xl font-bold mb-2" style={{ color: '#60A5FA' }}>250%+</div>
                 <div style={{ color: '#535366' }}>Average ROI</div>
               </div>
               <div className="text-center">

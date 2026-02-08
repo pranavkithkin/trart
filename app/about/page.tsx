@@ -223,8 +223,8 @@ const AboutPage = () => {
                 Our <span className="text-charcoal">Track Record</span>
               </h2>
               <p className="text-xl mb-8 leading-relaxed" style={{ color: '#535366' }}>
-                We've helped 10+ B2B companies generate over $50K in new revenue and achieve
-                an average ROI of 250%. But we're not just about the numbers we're about transformation.
+                We've helped 10+ B2B companies generate over $50K+ in new revenue and achieve
+                an average ROI of 250%+. But we're not just about the numbers we're about transformation.
               </p>
               <p className="text-lg mb-8 leading-relaxed" style={{ color: '#535366' }}>
                 Our clients don't just get AI systems. They get competitive advantages. They get
@@ -236,11 +236,11 @@ const AboutPage = () => {
                   <div className="text-sm" style={{ color: '#535366' }}>B2B Companies</div>
                 </div>
                 <div className="text-center glass rounded-xl p-4">
-                  <div className="text-4xl font-bold text-charcoal mb-2">$50K</div>
+                  <div className="text-4xl font-bold text-charcoal mb-2">$50K+</div>
                   <div className="text-sm" style={{ color: '#535366' }}>Revenue Generated</div>
                 </div>
                 <div className="text-center glass rounded-xl p-4">
-                  <div className="text-4xl font-bold text-charcoal mb-2">250%</div>
+                  <div className="text-4xl font-bold text-charcoal mb-2">250%+</div>
                   <div className="text-sm" style={{ color: '#535366' }}>Average ROI</div>
                 </div>
                 <div className="text-center glass rounded-xl p-4">

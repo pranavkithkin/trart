@@ -49,7 +49,7 @@ const Hero = () => {
               style={{ color: '#EAE6E0' }}
             >
               We don't just implement AI we transform B2B operations into revenue-generating
-              machines. Our clients achieve 250% average ROI while their competitors struggle with manual processes.
+              machines. Our clients achieve 250%+ average ROI while their competitors struggle with manual processes.
             </motion.p>
 
             {/* CTA Buttons */}
@@ -85,7 +85,7 @@ const Hero = () => {
                 whileHover={{ scale: 1.05, y: -5 }}
                 className="glass-dark px-4 py-3 sm:px-6 sm:py-4 rounded-xl border border-white/10 flex-1 min-w-[140px] sm:flex-none"
               >
-                <div className="text-2xl sm:text-3xl md:text-4xl font-bold font-accent" style={{ color: '#4ADE80' }}>$50K</div>
+                <div className="text-2xl sm:text-3xl md:text-4xl font-bold font-accent" style={{ color: '#4ADE80' }}>$50K+</div>
                 <div style={{ color: 'rgba(234, 230, 224, 0.9)' }} className="text-xs sm:text-sm">Revenue Generated</div>
               </motion.div>
               <motion.div
@@ -93,7 +93,7 @@ const Hero = () => {
                 whileHover={{ scale: 1.05, y: -5 }}
                 className="glass-dark px-4 py-3 sm:px-6 sm:py-4 rounded-xl border border-white/10 flex-1 min-w-[140px] sm:flex-none"
               >
-                <div className="text-2xl sm:text-3xl md:text-4xl font-bold font-accent" style={{ color: '#60A5FA' }}>250%</div>
+                <div className="text-2xl sm:text-3xl md:text-4xl font-bold font-accent" style={{ color: '#60A5FA' }}>250%+</div>
                 <div style={{ color: 'rgba(234, 230, 224, 0.9)' }} className="text-xs sm:text-sm">Average ROI</div>
               </motion.div>
               <motion.div

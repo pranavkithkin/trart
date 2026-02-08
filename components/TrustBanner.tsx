@@ -47,13 +47,13 @@ const TrustBanner = () => {
     },
     {
       icon: DollarSign,
-      value: "$50K",
+      value: "$50K+",
       label: "Revenue Generated",
       color: "#60A5FA"
     },
     {
       icon: TrendingUp,
-      value: "250%",
+      value: "250%+",
       label: "Average ROI",
       color: "#F59E0B"
     },
