@@ -44,6 +44,91 @@ export interface CaseStudy {
 
 export const caseStudies: CaseStudy[] = [
     {
+        slug: "zorx-media",
+        industry: "Digital Marketing",
+        clientSize: "10-20 employees",
+        companyName: "Zorx Media",
+        title: "Zorx Media: 95% Faster Meeting Scheduling with AI Automation",
+        description: "Digital marketing agency eliminates manual scheduling with intelligent n8n automation",
+        challenge: "Zorx Media's team was spending 20-30 hours every month just scheduling meetings. Every single meeting took 8-12 minutes of manual work adding it to the calendar, writing emails, and sending confirmations. With 150-200 client meetings each month, this became a huge problem. They had scheduling mistakes, slow responses (sometimes taking a full day), and their team couldn't focus on actual marketing work.",
+        solution: "We built a smart meeting scheduler that does everything automatically. When someone requests a meeting through a simple form, the AI reads the details, checks the calendar, creates the meeting with a video link, and sends a professional confirmation email all in just 30 seconds. It works 24/7, never double-books, and handles different time zones perfectly.",
+        results: [
+            { label: "Scheduling Time", value: "30 sec", change: "95% faster", icon: Clock },
+            { label: "Monthly Capacity", value: "500+", change: "200%+ increase", icon: Target },
+            { label: "Cost Savings", value: "$10.2K", change: "annually", icon: DollarSign },
+            { label: "Error Reduction", value: "98%", change: "accuracy", icon: CheckCircle }
+        ],
+        summaryResults: "$10,200 saved annually",
+        quote: "This automation transformed our scheduling process completely. What used to take our team 8-12 minutes per meeting now happens in 30 seconds with zero errors. We've eliminated scheduling conflicts, our clients get instant confirmations, and our team can focus on delivering exceptional marketing results instead of coordinating calendars. The ROI was immediate—we're now handling 200%+ more meetings with the same team.",
+        author: "Mohammed Fazil",
+        authorRole: "CEO",
+        timeline: "2 days",
+        roi: "850%",
+        color: "from-violet-500 to-purple-500",
+        icon: Clock,
+        objectives: [
+            "Eliminate 20-30 hours of monthly manual scheduling work",
+            "Reduce meeting setup time from 8-12 minutes to under 1 minute",
+            "Achieve 98%+ accuracy and eliminate scheduling conflicts",
+            "Enable instant client confirmations with professional branding",
+            "Scale meeting capacity from 150-200 to 500+ monthly meetings"
+        ],
+
+        workflows: [
+            "Web form submission triggers n8n workflow execution",
+            "Claude AI extracts and validates meeting details from request",
+            "Google Calendar API checks availability and prevents conflicts",
+            "Automated Google Calendar event creation with Meet link",
+            "Google Sheets logging for centralized booking tracking",
+            "Branded email confirmation sent via Gmail to client and team"
+        ],
+        tools: ["n8n (Workflow Automation)", "Claude AI (NLP)", "Google Calendar API", "Gmail API", "Google Sheets Integration", "Web Forms", "Timezone Handler"]
+    },
+    {
+        slug: "bridgewater-management",
+        industry: "Business Consulting",
+        clientSize: "10-20 employees",
+        companyName: "Bridgewater Management Consultancies",
+        title: "Bridgewater Management: 99.8% Faster Client Response with AI WhatsApp Agent",
+        description: "Business consultancy transforms client engagement with intelligent WhatsApp automation handling 2,000+ monthly conversations",
+        challenge: "Bridgewater Management was drowning in WhatsApp messages 80 to 120 every single day. Their consultants spent 4-6 hours daily answering the same questions about business setup costs, visa requirements, and paperwork. Responses took 2-4 hours during the day, and sometimes a full day if someone messaged after work hours. Because of these delays, 30-40% of potential clients lost interest and went elsewhere. They also had no way to know which leads were serious buyers versus people just browsing, and 40% of clients sent voice messages that had to be listened to and typed out manually.",
+        solution: "We created an AI WhatsApp assistant that talks to clients instantly, 24/7. It answers common questions about UAE business setup, asks the right questions to understand what each client needs, and figures out who's ready to buy now versus who's just researching. The AI can even listen to voice messages in Arabic and English and respond appropriately. It saves all client information automatically and only sends the serious, qualified leads to the sales team. Everything happens in seconds instead of hours.",
+        results: [
+            { label: "Response Time", value: "3 sec", change: "99.8% faster", icon: Clock },
+            { label: "Lead Capture", value: "92%", change: "+104% increase", icon: Target },
+            { label: "Time Saved", value: "100hrs", change: "per month", icon: TrendingUp },
+            { label: "Monthly Savings", value: "AED 21K", change: "labor + revenue", icon: DollarSign }
+        ],
+        summaryResults: "1,580% ROI",
+        quote: "The AI WhatsApp assistant has transformed how we engage with potential clients. We're now responding instantly at 2 AM to inquiries from Europe and Asia—something impossible before. Our consultants focus on high-value conversations while the AI handles qualification and information delivery flawlessly. The ROI was visible within the first week.",
+        author: "Mahesh Thadani",
+        authorRole: "CEO",
+        timeline: "3 weeks",
+        roi: "1,580%",
+        color: "from-emerald-500 to-teal-500",
+        icon: Users,
+        objectives: [
+            "Reduce response time from 2-4 hours to under 1 minute for all inquiries",
+            "Automate lead qualification and capture 90%+ complete lead profiles",
+            "Provide 24/7 coverage for international clients across all time zones",
+            "Save 88-104 hours monthly per consultant on repetitive queries",
+            "Increase inquiry-to-client conversion rate by 40% through instant engagement",
+            "Handle voice messages automatically with Arabic and English transcription"
+        ],
+
+        workflows: [
+            "WhatsApp message received triggers n8n workflow with instant acknowledgment",
+            "GPT-4 analyzes inquiry and determines intent (FAQ, pricing, qualification, escalation)",
+            "Voice messages automatically transcribed using OpenAI Whisper (Arabic/English)",
+            "Lead qualification algorithm scores prospect and collects systematic information",
+            "Real-time pricing lookup from Google Sheets database based on requirements",
+            "Conversation context maintained across sessions for personalized follow-up",
+            "Complex queries flagged and escalated to senior consultants with full context",
+            "All lead data auto-logged to Google Sheets CRM with qualification score"
+        ],
+        tools: ["n8n (Workflow Automation)", "WhatsApp Business API", "OpenAI GPT-4", "OpenAI Whisper (Voice Transcription)", "OpenAI TTS", "Google Sheets CRM", "Lead Scoring Engine"]
+    },
+    {
         slug: "techvision-global",
         industry: "Enterprise SaaS",
         clientSize: "500+ employees",
